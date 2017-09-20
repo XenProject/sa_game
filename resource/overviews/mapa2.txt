@@ -1,0 +1,8 @@
+mapa2
+{
+	material materials/overviews/mapa2.vmat
+	pos_x -4096
+	pos_y 4096
+	scale 8.000
+}
+

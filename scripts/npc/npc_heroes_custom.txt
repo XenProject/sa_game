@@ -1,0 +1,187 @@
+"DOTAHeroes"
+{
+  "npc_dota_hero_ancient_apparition_barebones"
+  {
+    "AbilityLayout"     "6"
+    "override_hero"     "npc_dota_hero_ancient_apparition"
+    "SoundSet"          "0" 
+    "Ability1"        "example_ability" 
+    "Ability2"        "xen_ability" 
+    "Ability3"        "xen_ability_two" 
+    "Ability4"        "barebones_empty4"
+    "Ability5"        "barebones_empty5"
+    "Ability6"        "barebones_empty6"
+    "Ability7"        ""
+    "Ability8"        ""
+    "Ability9"        ""
+    "Ability10"       ""
+    "Ability11"       ""
+    "Ability12"       ""
+    "Ability13"       ""
+    "Ability14"       ""
+    "Ability15"       ""
+    "Ability16"       ""
+
+    "ArmorPhysical"       "0"                 // Physical protection.
+    "MagicalResistance"       "0"                 // Magical protection (percentage).
+
+    "AttackCapabilities"    "DOTA_UNIT_CAP_NO_ATTACK"
+    "AttackDamageMin"     "1"                   // Damage range min.
+    "AttackDamageMax"     "1"                   // Damage range max.
+
+    //"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"   "0"                   // Base strength
+    "AttributeStrengthGain"   "0"                   // Strength bonus per level.
+    "AttributeBaseIntelligence" "0"                   // Base intelligence
+    "AttributeIntelligenceGain" "0"                   // Intelligence bonus per level.
+    "AttributeBaseAgility"    "0"                   // Base agility
+    "AttributeAgilityGain"    "0"                   // Agility bonus per level.
+
+    "BountyXP"          "0"                 // Experience earn.
+    "BountyGoldMin"       "0"                   // Gold earned min.
+    "BountyGoldMax"       "0"                   // Gold earned max.
+
+    //"BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+    //"RingRadius"        "70"
+
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"       "360"                 // Speed.
+    "MovementTurnRate"      "1.0"                 // Turning rate.
+
+    "StatusHealth"        "1000"                 // Base health.
+    "StatusHealthRegen"     "0.0"                 // Health regeneration rate.
+    "StatusMana"        "400"                   // Base mana.
+    "StatusManaRegen"     "100.0"                 // Mana regeneration rate.
+
+    "VisionDaytimeRange"    "1800"                  // Range of vision at night time.
+    "VisionNighttimeRange"    "1800"                  // Range of vision at night time.
+  }
+
+  "npc_dota_hero_treant_barebones"
+  {
+    "AbilityLayout"     "6"
+    "override_hero"     "npc_dota_hero_treant"
+    "Ability1"        "treant_hive" 
+    "Ability2"        "treant_splinter" 
+    "Ability3"        "treant_take_root" 
+    "Ability4"        ""
+    "Ability5"        ""
+    "Ability6"        ""
+    "Ability7"        ""
+    "Ability8"        ""
+    "Ability9"        ""
+    "Ability10"       ""
+    "Ability11"       ""
+    "Ability12"       ""
+    "Ability13"       ""
+    "Ability14"       ""
+    "Ability15"       ""
+    "Ability16"       ""
+    "MovementSpeed"       "550"
+    "AttackRate"    "0.5"
+    "ProjectileModel"   "particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
+    "ProjectileSpeed"    "900"
+  }
+  "npc_dota_hero_garp"
+  {
+    "AbilityLayout"     "6"
+    "override_hero"     "npc_dota_hero_kunkka"
+    "Ability1"        "garp_spear" 
+    "Ability2"        "garp_instant_hit" 
+    "Ability3"        "garp_increased_agility" 
+    "Ability4"        "garp_agression"
+    "Ability5"        ""
+    "Ability6"        ""
+    "Ability7"        ""
+    "Ability8"        ""
+    "Ability9"        ""
+    "Ability10"       ""
+    "Ability11"       ""
+    "Ability12"       ""
+    "Ability13"       ""
+    "Ability14"       ""
+    "Ability15"       ""
+    "Ability16"       ""
+    "MovementSpeed"       "550"
+    "AttackRate"    "0.5"
+    "ProjectileSpeed"    "900"
+    "AttributePrimary"      "DOTA_ATTRIBUTE_AGILITY"
+    "AttributeBaseStrength"     "22"
+    "AttributeStrengthGain"     "2.000000"
+    "AttributeBaseAgility"      "30"
+    "AttributeAgilityGain"      "2.800000"
+    "AttributeBaseIntelligence"     "16"
+    "AttributeIntelligenceGain"     "1.700000"
+    "AttackDamageMin"       "39"
+    "AttackDamageMax"       "42"
+  }
+  "npc_dota_hero_elay"
+  {
+    "AbilityLayout"     "6"
+    "override_hero"     "npc_dota_hero_invoker"
+    "Ability1"        "elay_energy_ball" 
+    "Ability2"        "elay_great_knowledge" 
+    "Ability3"        "elay_master_of_magic" 
+    "Ability4"        "elay_additional_energy"
+    "Ability5"        ""
+    "Ability6"        ""
+    "Ability7"        ""
+    "Ability8"        ""
+    "Ability9"        ""
+    "Ability10"       ""
+    "Ability11"       ""
+    "Ability12"       ""
+    "Ability13"       ""
+    "Ability14"       ""
+    "Ability15"       ""
+    "Ability16"       ""
+    "MovementSpeed"       "550"
+    "AttackRate"    "0.5"
+  }
+  "npc_dota_hero_ti_15"
+  {
+    "AbilityLayout"     "6"
+    "override_hero"     "npc_dota_hero_rattletrap"
+    "Ability1"        "ti_15_missile_defense" 
+    "Ability2"        "ti_15_protective_gear" 
+    "Ability3"        "ti_15_barbed_armor" 
+    "Ability4"        "ti_15_self_destruction"
+    "Ability5"        ""
+    "Ability6"        ""
+    "Ability7"        ""
+    "Ability8"        ""
+    "Ability9"        ""
+    "Ability10"       ""
+    "Ability11"       ""
+    "Ability12"       ""
+    "Ability13"       ""
+    "Ability14"       ""
+    "Ability15"       ""
+    "Ability16"       ""
+    "MovementSpeed"       "550"
+    "AttackRate"    "0.5"
+  }
+  "npc_dota_hero_lora"
+  {
+    "AbilityLayout"     "6"
+    "override_hero"     "npc_dota_hero_crystal_maiden"
+    "Ability1"        "" 
+    "Ability2"        "" 
+    "Ability3"        "" 
+    "Ability4"        ""
+    "Ability5"        ""
+    "Ability6"        ""
+    "Ability7"        ""
+    "Ability8"        ""
+    "Ability9"        ""
+    "Ability10"       ""
+    "Ability11"       ""
+    "Ability12"       ""
+    "Ability13"       ""
+    "Ability14"       ""
+    "Ability15"       ""
+    "Ability16"       ""
+    "MovementSpeed"       "550"
+    "AttackRate"    "0.5"
+  }
+}
