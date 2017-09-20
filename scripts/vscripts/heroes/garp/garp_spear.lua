@@ -1,6 +1,6 @@
 garp_spear = class({})
 LinkLuaModifier( "modifier_stun", LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_garp_bleeding", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_garp_bleeding", "heroes/garp/modifier_garp_bleeding", LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
 
