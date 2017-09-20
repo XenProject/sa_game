@@ -1195,6 +1195,29 @@
         }
       }
     }
+    "lora_fiery_explosion"
+    {
+      "BaseClass"                 "ability_lua"
+      "ScriptFile"            "heroes/lora/lora_fiery_explosion.lua"
+      "AbilityTextureName"      "ability_name"
+      "MaxLevel"             "3"
+
+      "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+      "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_ENEMY"
+      "AbilityUnitTargetType"      "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+      "AbilityUnitDamageType"      "DAMAGE_TYPE_MAGICAL"
+
+      "AbilityCooldown"        "170.0 140.0 110.0"
+
+      "AbilitySpecial"
+      {
+        "01"
+        {
+          "var_type"      "FIELD_INTEGER"
+          "int_multiplier_prt"      "80 140 200"
+        }
+      }
+    }
   //====================================
   //Xen Ability
   //=========================================

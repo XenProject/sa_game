@@ -170,7 +170,7 @@
     "Ability3"        "lora_magical_aura" 
     "Ability4"        ""
     "Ability5"        ""
-    "Ability6"        ""
+    "Ability6"        "lora_fiery_explosion"
     "Ability7"        ""
     "Ability8"        ""
     "Ability9"        ""
@@ -184,5 +184,6 @@
     "MovementSpeed"       "550"
     "AttackRate"    "0.5"
     "StatusMana"        "900"
+    "AttributeBaseIntelligence"     "100"
   }
 }
