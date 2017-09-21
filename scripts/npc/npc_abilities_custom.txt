@@ -26,7 +26,7 @@
 
       "precache"
       {
-        "particle"  "particles/batrider_bug.vpcf"
+        "particle"  "particles/heroes/treant/treant_hive.vpcf"
       }
 
       "OnSpellStart"
@@ -40,7 +40,7 @@
         "LinearProjectile"
         {
           "Target" "POINT"
-          "EffectName"     "particles/batrider_bug.vpcf"
+          "EffectName"     "particles/heroes/treant/treant_hive.vpcf"
           "MoveSpeed"      "800"
           "StartRadius"    "115"
           "EndRadius"      "115"
@@ -80,7 +80,7 @@
           {
             "AttachEffect"
             {
-              "EffectName"   "particles/bee_test.vpcf"
+              "EffectName"   "particles/heroes/treant/hive_modifier.vpcf"
               "EffectAttachType"     "follow_overhead"
               "EffectDurationScale"    "1"
               "EffectLifeDurationScale"   "1"
@@ -775,7 +775,7 @@
 
       "precache"
       {
-        "particle"  "particles/cog_test.vpcf"
+        "particle"  "particles/heroes/ti_15/protective_gear.vpcf"
       }
 
       "OnProjectileHitUnit"
@@ -993,20 +993,6 @@
             }
           }
         }
-        "AttachEffect"
-        {
-          "EffectName"        "particles/self_destruction_finish.vpcf"
-          "EffectAttachType"  "follow_origin"
-          "EffectRadius"    "200"
-          "Target"            "CASTER"
-        }
-        "AttachEffect"
-        {
-          "EffectName"        "particles/self_destruction_finish_2.vpcf"
-          "EffectAttachType"  "follow_origin"
-          "EffectRadius"    "200"
-          "Target"            "CASTER"
-        }
         "RunScript"
         {
           "ScriptFile"  "heroes/ti_15/ti_15.lua"
@@ -1035,7 +1021,7 @@
           {
             "AttachEffect"
             {
-              "EffectName"   "particles/self_destruction.vpcf"
+              "EffectName"   "particles/heroes/ti_15/self_destruction.vpcf"
               "EffectAttachType"  "follow_origin"
               "Target"            "CASTER"
               //"EffectRadius"  "1000"

@@ -27,7 +27,7 @@ function ProtectiveGear( keys )
 		ability:ApplyDataDrivenModifier(keys.attacker, keys.attacker, modifier, {})
 		local projectileTable =
 	    {
-	        EffectName = "particles/cog_test.vpcf",
+	        EffectName = "particles/heroes/ti_15/protective_gear.vpcf",
 	        Ability = ability,
 	        vSpawnOrigin = caster_location,
 	        vVelocity = Vector( forwardVec.x * 600, forwardVec.y * 600, 0 ),
