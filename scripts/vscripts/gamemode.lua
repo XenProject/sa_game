@@ -5,6 +5,10 @@ BAREBONES_VERSION = "1.00"
 -- You can also change the cvar 'barebones_spew' at any time to 1 or 0 for output/no output
 BAREBONES_DEBUG_SPEW = false 
 
+GAME_ROUND = 0 -- номер текущего раунда
+MAX_ROUNDS = 5 -- номер конечного раунда
+ROUND_UNITS = 2 -- кол-во юнитов на 1 раунде
+
 if GameMode == nil then
     DebugPrint( '[BAREBONES] creating barebones game mode' )
     _G.GameMode = class({})
@@ -121,13 +125,21 @@ end
   is useful for starting any game logic timers/thinkers, beginning the first round, etc.
 ]]
 function GameMode:OnGameInProgress()
-  DebugPrint("[BAREBONES] The game has officially begun")
+      --[[ local point = Entities:FindByName( nil, "spawn1"):GetAbsOrigin()
+      local return_time = 10
 
-  Timers:CreateTimer(30, -- Start this timer 30 game-time seconds later
-    function()
-      DebugPrint("This function is called 30 seconds after the game begins, and every 30 seconds thereafter")
-      return 30.0 -- Rerun this timer every 30 game-time seconds 
-    end)
+      Timers:CreateTimer(15, function()
+        GAME_ROUND = GAME_ROUND + 1
+        if GAME_ROUND == MAX_ROUNDS then
+          return_time = nil
+        end
+        --Say(nil,"Wave № ".. GAME_ROUND, false)
+        for i=1, ROUND_UNITS do
+          local unit = CreateUnitByName( "example_unit_" .. GAME_ROUND, point + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
+          unit:SetInitialGoalEntity( waypoint )
+        end   
+        return return_time
+      end)]]
 end
 
 

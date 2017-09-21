@@ -1101,6 +1101,24 @@
       "AbilityCooldown"        "30.0"
       "AbilityManaCost"        "100"
 
+      "OnSpellStart"
+      {
+        "ApplyModifier"
+        {
+          "ModifierName"  "modifier_fireballs"
+          "Target"     "CASTER"
+          "Duration"    "%duration"
+        }
+      }
+
+      "Modifiers"
+      {
+        "modifier_fireballs"
+        {
+          
+        }
+      }
+
       "AbilitySpecial"
       {
         "01"
@@ -1117,6 +1135,31 @@
         {
           "var_type"    "FIELD_FLOAT"
           "duration"    "7.0"
+        }
+        "04"
+        {
+          "var_type"      "FIELD_INTEGER"
+          "radius"    "700"
+        }
+        "05"
+        {
+          "var_type"      "FIELD_INTEGER"
+          "fireball_speed"    "500"
+        }
+        "06"
+        {
+          "var_type"      "FIELD_INTEGER"
+          "max_distance"    "1000"
+        }
+        "07"  
+        {
+          "var_type"          "FIELD_FLOAT"
+          "delay_between_fireballs"   "0.3"
+        }
+        "08"
+        {
+          "var_type"          "FIELD_FLOAT"
+          "min_time_between_attacks"  "3.0"
         }
       }
     }
