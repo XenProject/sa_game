@@ -11,4 +11,5 @@
   "npc_dota_hero_invoker" "1"
   "npc_dota_hero_rattletrap" "1"
   "npc_dota_hero_crystal_maiden" "1"
+  "npc_dota_hero_windrunner" "1"
 }

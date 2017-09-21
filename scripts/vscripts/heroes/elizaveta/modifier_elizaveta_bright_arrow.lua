@@ -1,0 +1,1 @@
+modifier_elizaveta_bright_arrow = class({})

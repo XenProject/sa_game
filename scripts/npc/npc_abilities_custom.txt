@@ -1101,8 +1101,25 @@
       "AbilityCooldown"        "30.0"
       "AbilityManaCost"        "100"
 
+      "precache"
+      {
+        "particle"  "particles/heroes/lora/magical_fireballs.vpcf"
+        "particle"  "particles/heroes/lora/fireball_laser.vpcf"
+      }
+
       "OnSpellStart"
       {
+        "RunScript"
+        {
+          "ScriptFile"  "heroes/lora/lora_fireballs.lua"
+          "Function"    "FireBallsDeath"
+        }
+    
+        "RemoveModifier"
+        {
+          "ModifierName"  "modifier_fireballs"
+          "Target"    "CASTER"
+        }
         "ApplyModifier"
         {
           "ModifierName"  "modifier_fireballs"
@@ -1115,7 +1132,88 @@
       {
         "modifier_fireballs"
         {
-          
+          "OnCreated"
+          {
+            "RunScript"
+            {
+              "ScriptFile"  "heroes/lora/lora_fireballs.lua"
+              "Function"    "FireBallsStart"
+            }
+          }
+
+          "OnDeath"
+          {
+            "RunScript"
+            {
+              "ScriptFile"  "heroes/lora/lora_fireballs.lua"
+              "Function"    "FireBallsDeath"
+            }
+          }
+    
+          "OnDestroy"
+          {
+            "RunScript"
+            {
+              "ScriptFile"  "heroes/lora/lora_fireballs.lua"
+              "Function"    "FireBallsEnd"
+            }
+          }
+        }
+        "modifier_fireball"
+        {
+          "OnCreated"
+          {
+            "RunScript"
+            {
+              "ScriptFile"  "heroes/lora/lora_fireballs.lua"
+              "Function"    "FireBallsPhysics"
+            }
+            "AttachEffect"
+            {
+              "EffectName"        "particles/heroes/lora/magical_fireballs.vpcf"
+              "EffectAttachType"  "follow_origin"
+              "Target"            "TARGET"
+            }
+          }
+          "ThinkInterval" "1.0"
+          "OnIntervalThink"
+          {
+            "ActOnTargets"
+            {
+              "Target"
+              {
+                "Center"    "TARGET"
+                "Radius"   "%damage_aoe"
+                "Teams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+                "Types"   "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+              }   
+              "Action"    
+              {
+                "Damage"
+                {
+                  "Target"    "TARGET"
+                  "Type"      "DAMAGE_TYPE_MAGICAL"
+                  "Damage"    "%damage"
+                }
+                "AttachEffect"
+                {
+                  "EffectName"        "particles/units/heroes/hero_phoenix/phoenix_fire_spirit_burn.vpcf"
+                  "EffectAttachType"  "follow_origin"
+                  "Target"            "TARGET"
+                }
+              }
+            }
+          }
+          "States"
+            {
+              "MODIFIER_STATE_INVULNERABLE"   "MODIFIER_STATE_VALUE_ENABLED"
+              "MODIFIER_STATE_NO_HEALTH_BAR"    "MODIFIER_STATE_VALUE_ENABLED"
+              "MODIFIER_STATE_NO_UNIT_COLLISION"  "MODIFIER_STATE_VALUE_ENABLED"
+              "MODIFIER_STATE_NOT_ON_MINIMAP"   "MODIFIER_STATE_VALUE_ENABLED"
+              "MODIFIER_STATE_UNSELECTABLE"   "MODIFIER_STATE_VALUE_ENABLED"
+              "MODIFIER_STATE_FLYING"       "MODIFIER_STATE_VALUE_ENABLED"
+              "MODIFIER_STATE_DISARMED"     "MODIFIER_STATE_VALUE_ENABLED"
+            }
         }
       }
 
@@ -1124,7 +1222,7 @@
         "01"
         {
           "var_type"      "FIELD_INTEGER"
-          "damage"      "30"
+          "damage"      "60"
         }
         "02"
         {
@@ -1139,7 +1237,7 @@
         "04"
         {
           "var_type"      "FIELD_INTEGER"
-          "radius"    "700"
+          "radius"    "650"
         }
         "05"
         {
@@ -1161,6 +1259,11 @@
           "var_type"          "FIELD_FLOAT"
           "min_time_between_attacks"  "3.0"
         }
+        "09"
+        {
+          "var_type"      "FIELD_INTEGER"
+          "damage_aoe"    "300"
+        }
       }
     }
     "lora_fire_shield"
@@ -1173,6 +1276,11 @@
       "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
       "AbilityUnitTargetType"      "DOTA_UNIT_TARGET_HERO"
       "AbilityUnitDamageType"      "DAMAGE_TYPE_MAGICAL"
+
+      "precache"
+      {
+        "particle"  "particles/heroes/lora/fire_shield.vpcf"
+      }
 
       "AbilitySpecial"
       {
@@ -1261,15 +1369,35 @@
     {
       "BaseClass"                 "ability_lua"
       "ScriptFile"            "heroes/lora/lora_fiery_explosion.lua"
-      "AbilityTextureName"      "ability_name"
+      "AbilityTextureName"      "lora_fiery_explosion"
       "MaxLevel"             "3"
 
-      "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+      "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_AURA"
       "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_ENEMY"
       "AbilityUnitTargetType"      "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
       "AbilityUnitDamageType"      "DAMAGE_TYPE_MAGICAL"
 
       "AbilityCooldown"        "170.0 140.0 110.0"
+
+      "precache"
+      {
+        "particle"  "particles/econ/events/ti6/radiance_owner_ti6.vpcf"
+        "particle"  "particles/units/heroes/hero_phoenix/phoenix_fire_spirit_burn.vpcf"
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+      }
+
+      "Modifiers"
+      {
+        "modifier_fiery_explosion_particle"
+        {
+          "Passive"      "0"
+          "IsHidden"      "1"
+          "IsDebuff"      "0"
+      
+          "EffectName"      "particles/items2_fx/radiance.vpcf"
+          "EffectAttachType"    "follow_origin"
+        }
+      }
 
       "AbilitySpecial"
       {
@@ -1277,6 +1405,54 @@
         {
           "var_type"      "FIELD_INTEGER"
           "int_multiplier_prt"      "80 140 200"
+        }
+      }
+    }
+  
+  //===============
+  //Elizaveta
+  //==================
+    "elizaveta_bright_arrow"
+    {
+      "BaseClass"                 "ability_lua"
+      "ScriptFile"              "heroes/elizaveta/elizaveta_bright_arrow.lua"
+      "AbilityTextureName"      "ability_name"
+      "MaxLevel"             "4"
+
+      "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+      "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_ENEMY"
+      "AbilityUnitTargetType"      "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+      "AbilityUnitDamageType"      "DAMAGE_TYPE_PHYSICAL"
+
+      "AbilityCooldown"        "15.0 12.0 9.0 6.0"
+      "AbilityManaCost"        "100"
+
+      "AbilitySpecial"
+      {
+        "01"
+        {
+          "var_type"      "FIELD_INTEGER"
+          "damage_base"      "100 200 300 400"
+        }
+        "02"
+        {
+          "var_type"      "FIELD_INTEGER"
+          "expl_damage_base"    "50 100 150 200"
+        }
+        "03"
+        {
+          "var_type"      "FIELD_INTEGER"
+          "radius"      "250"
+        }
+        "04"
+        {
+          "var_type"      "FIELD_INTEGER"
+          "damage_per_stack"      "8 16 24 32"
+        }
+        "05"
+        {
+          "var_type"      "FIELD_INTEGER"
+          "expl_damage_per_stack"      "4 8 12 16"
         }
       }
     }

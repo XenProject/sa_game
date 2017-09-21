@@ -1,21 +1,48 @@
 modifier_lora_fiery_explosion = class({})
 
-function modifier_lora_fiery_explosion:IsBuff()
-    return true
+function modifier_lora_fiery_explosion:IsHidden()
+	return true
+end
+
+--------------------------------------------------------------------------------
+
+function modifier_lora_fiery_explosion:IsAura()
+	return true
+end
+
+function modifier_lora_fiery_explosion:GetModifierAura()
+	return "modifier_lora_fiery_explosion_debuff"
+end
+
+function modifier_lora_fiery_explosion:GetAuraSearchTeam()
+	return DOTA_UNIT_TARGET_TEAM_ENEMY
+end
+
+function modifier_lora_fiery_explosion:GetAuraSearchType()
+	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
+end
+
+--------------------------------------------------------------------------------
+
+function modifier_lora_fiery_explosion:GetAuraSearchFlags()
+	return DOTA_UNIT_TARGET_FLAG_INVULNERABLE
+end
+
+--------------------------------------------------------------------------------
+
+function modifier_lora_fiery_explosion:GetAuraRadius()
+	return (self.int_multiplier_prt / 100.0) * self:GetParent():GetIntellect()
 end
 
 function modifier_lora_fiery_explosion:OnCreated( kv )
 	self.int_multiplier_prt = self:GetAbility():GetSpecialValueFor( "int_multiplier_prt" )
-	if IsServer() then
-		self:StartIntervalThink( 1.0 )
-	end
 end
 
 function modifier_lora_fiery_explosion:OnRefresh( kv )
 	self.int_multiplier_prt = self:GetAbility():GetSpecialValueFor( "int_multiplier_prt" )
 end
 
-function modifier_lora_fiery_explosion:OnIntervalThink()
+--[[function modifier_lora_fiery_explosion:OnIntervalThink()
 	if IsServer() then
 		local int = self:GetParent():GetIntellect()
 		local maxRadius = (self.int_multiplier_prt / 100.0) * int
@@ -39,4 +66,4 @@ function modifier_lora_fiery_explosion:OnIntervalThink()
 			ApplyDamage( damageTable )
 		end
 	end
-end
+end]]

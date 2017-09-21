@@ -1,5 +1,6 @@
 lora_fiery_explosion = class({})
 LinkLuaModifier( "modifier_lora_fiery_explosion", "heroes/lora/modifier_lora_fiery_explosion", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_lora_fiery_explosion_debuff", "heroes/lora/modifier_lora_fiery_explosion_debuff", LUA_MODIFIER_MOTION_NONE )
 
 function lora_fiery_explosion:GetIntrinsicModifierName()
 	return "modifier_lora_fiery_explosion"
@@ -29,6 +30,7 @@ function lora_fiery_explosion:OnSpellStart()
 			}
 			ApplyDamage( damageTable )
 		end
+		EmitSoundOn("Hero_Antimage.ManaVoid", self:GetCaster() )
 		self:GetCaster():SetMana(0)
 	end
 end
