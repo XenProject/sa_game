@@ -1,7 +1,11 @@
 -- This is the entry-point to your game mode and should be used primarily to precache models/particles/sounds/etc
 
-require('internal/util')
-require('gamemode')
+require( 'timers' )
+require( 'spec_arena' )
+
+GAME_ROUND = 0 -- номер текущего раунда
+MAX_ROUNDS = 5 -- номер конечного раунда
+ROUND_UNITS = 2 -- кол-во юнитов на 1 раунде
 
 function Precache( context )
 --[[
@@ -14,7 +18,7 @@ function Precache( context )
   See GameMode:PostLoadPrecache() in gamemode.lua for more information
   ]]
 
-  DebugPrint("[BAREBONES] Performing pre-load precache")
+  DebugPrint("[Spec_arena] Performing pre-load precache")
 
   -- Particles can be precached individually or by folder
   -- It it likely that precaching a single particle system will precache all of its children, but this may not be guaranteed
@@ -44,10 +48,29 @@ function Precache( context )
   -- Custom units from npc_units_custom.txt can also have all of their abilities and precache{} blocks precached in this way
   PrecacheUnitByNameSync("npc_dota_hero_ancient_apparition", context)
   PrecacheUnitByNameSync("npc_dota_hero_enigma", context)
+  PrecacheUnitByNameSync("example_unit_1", context)
 end
 
 -- Create the game mode when we activate
 function Activate()
   GameRules.GameMode = GameMode()
   GameRules.GameMode:_InitGameMode()
+end
+
+function GameMode:OnGameInProgress() -- Функция начнет выполняться, когда начнется матч( на часах будет 00:00 ).
+      local point = Entities:FindByName( nil, "spawn1"):GetAbsOrigin() -- Записываем в переменную 'point' координаты нашего спавнера 'spawn1'
+      -- local waypoint = Entities:FindByName( nil, "way1") -- Записываем в переменную 'waypoint' координаты первого бокса way1
+      local return_time = 10 -- Записываем в переменную значение '10'
+      Timers:CreateTimer(15, function()  -- Создаем таймер, который запустится через 15 секунд после начала матча и запустит следующую функцию
+       GAME_ROUND = GAME_ROUND + 1 -- Значение GAME_ROUND увеличивается на 1
+       if GAME_ROUND == MAX_ROUNDS -- Если GAME_ROUND равно MAX_ROUNDS, переменная return_time получит нулевое значение
+            return_time = nil
+         end
+         Say(nil,"Wave №" .. GAME_ROUND, false) -- Выводим в чат сообщение 'Wave №', в конце к которому добавится значение GAME_ROUND.
+         for i=1, ROUND_UNITS do -- Произведет нижние действия столько раз, сколько указано в ROUND_UNITS. То есть в нашем случае создаст 2 юнита.
+              local unit = CreateUnitByName( "example_unit_" .. GAME_ROUND, point + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_GOODGUYS ) --[[ Создаем юнита 'example_unit_', в конце к названию добавится 1,2,3,4 или 5, в зависимости от раунда, и в итоге получатся наши example_unit_1, example_unit_2 и т.д. Юнит появится в векторе point + RandomVector (RandomFloat( 0, 200 ) ) - point - наша переменная, а рандомный вектор добавляется для того, чтобы мобы не появлялись в одной точке и не застревали. Мобы будут за силы света. ]]
+         unit:SetInitialGoalEntity( waypoint ) -- Посылаем мобов на наш way1, координаты которого мы записали в переменную 'waypoint'
+         end   
+          return return_time -- Возвращаем таймеру время, через которое он должен снова сработать. Когда пройдет последний раунд таймер получит значение 'nil' и выключится.
+      end)
 end
