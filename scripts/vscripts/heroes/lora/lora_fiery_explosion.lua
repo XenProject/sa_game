@@ -6,6 +6,11 @@ function lora_fiery_explosion:GetIntrinsicModifierName()
 	return "modifier_lora_fiery_explosion"
 end
 
+function lora_fiery_explosion:GetCastRange()
+	local int_multiplier_prt = self:GetSpecialValueFor( "int_multiplier_prt" )
+	return (int_multiplier_prt / 100.0) * self:GetCaster():GetMana()
+end
+
 function lora_fiery_explosion:OnSpellStart()
 	if IsServer() then
 		local mana = self:GetCaster():GetMana()
