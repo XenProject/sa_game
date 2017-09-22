@@ -1416,16 +1416,25 @@
     {
       "BaseClass"                 "ability_lua"
       "ScriptFile"              "heroes/elizaveta/elizaveta_bright_arrow.lua"
-      "AbilityTextureName"      "ability_name"
+      "AbilityTextureName"      "elizaveta_bright_arrow"
       "MaxLevel"             "4"
 
-      "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+      "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
       "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_ENEMY"
       "AbilityUnitTargetType"      "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
       "AbilityUnitDamageType"      "DAMAGE_TYPE_PHYSICAL"
 
       "AbilityCooldown"        "15.0 12.0 9.0 6.0"
       "AbilityManaCost"        "100"
+
+      "AbilityCastAnimation"    "ACT_DOTA_ATTACK"
+      "AbilityCastRange"        "700"
+      "AbilityCastPoint"        "0.2"
+
+      "precache"
+      {
+        "particle"  "particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"
+      }
 
       "AbilitySpecial"
       {
@@ -1453,6 +1462,109 @@
         {
           "var_type"      "FIELD_INTEGER"
           "expl_damage_per_stack"      "4 8 12 16"
+        }
+      }
+    }
+    "elizaveta_accurate_shot"
+    {
+      "BaseClass"                 "ability_datadriven"
+      "AbilityTextureName"      "elizaveta_accurate_shot"
+      "MaxLevel"             "4"
+      "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+      "AbilityUnitDamageType"      "DAMAGE_TYPE_PHYSICAL"
+
+      "Modifiers"
+      {
+        "modifier_accurate_shot_passive"
+        {
+          "Passive"      "1"
+          "IsHidden"      "1"
+          "IsDebuff"      "0"
+
+          "OnAttackLanded"
+          {
+            "Random"
+            {
+              "Chance"      "%chance"
+              "PseudoRandom" "DOTA_PSEUDO_RANDOM_ITEM_MKB"
+              "OnSuccess"
+              {
+                "ApplyModifier"
+                {
+                  "Target"      "TARGET"
+                  "ModifierName"    "modifier_accurate_shot_stun"
+                }
+                "Damage"
+                {
+                  "Target"    "TARGET"
+                  "Type"      "DAMAGE_TYPE_PHYSICAL"
+                  "Damage"    "%damage"
+                }
+                
+                "FireSound"
+                {
+                  "EffectName"    "DOTA_Item.MKB.Minibash"
+                  "Target"      "TARGET"
+                }
+              }
+            }
+          }
+        }
+        "modifier_accurate_shot_stun"
+        {
+          "Passive"      "0"
+          "IsHidden"      "0"
+          "IsDebuff"      "1"
+          "IsPurgable"      "1"
+          "Duration"    "%stun_duration"
+        
+          "EffectName"            "particles/generic_gameplay/generic_stunned.vpcf"
+          "EffectAttachType"      "follow_overhead"
+          "OverrideAnimation"     "ACT_DOTA_DISABLED"
+          
+          "States"
+          {
+            "MODIFIER_STATE_STUNNED"    "MODIFIER_STATE_VALUE_ENABLED"
+          }
+        }
+      }
+
+      "AbilitySpecial"
+      {
+        "01"
+        {
+          "var_type"      "FIELD_INTEGER"
+          "chance"      "20 25 30 35"
+        }
+        "02"
+        {
+          "var_type"      "FIELD_FLOAT"
+          "stun_duration"    "0.1"
+        }
+        "03"
+        {
+          "var_type"      "FIELD_INTEGER"
+          "damage"      "60 80 100 120"
+        }
+      }
+    }
+    "elizaveta_at_full_strength"
+    {
+      "BaseClass"                 "ability_lua"
+      "ScriptFile"          "heroes/elizaveta/elizaveta_at_full_strength.lua"
+      "AbilityTextureName"      "elizaveta_at_full_strength"
+      "MaxLevel"             "4"
+      "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+      "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_ENEMY"
+      "AbilityUnitTargetType"      "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+      "AbilityUnitDamageType"      "DAMAGE_TYPE_MAGICAL"
+
+      "AbilitySpecial"
+      {
+        "01"
+        {
+          "var_type"      "FIELD_FLOAT"
+          "damage_per_stack"      "0.15 0.3 0.45 0.6"
         }
       }
     }

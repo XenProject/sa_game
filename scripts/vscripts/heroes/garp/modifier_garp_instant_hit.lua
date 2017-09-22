@@ -41,6 +41,7 @@ function modifier_garp_instant_hit:OnAttackLanded( params )
 				ApplyDamage( { victim = target, attacker = self:GetParent(), damage = cleaveDamage, damage_type = DAMAGE_TYPE_PHYSICAL, ability = self:GetAbility()} )
 				DoCleaveAttack( self:GetParent(), target, self:GetAbility(), cleaveDamage, self.radius, 100, self.radius, "particles/units/heroes/hero_kunkka/kunkka_spell_tidebringer.vpcf" )
 				self:GetParent():Heal( cleaveDamage * (self.vamp_prt/100.0), self:GetParent())
+				PopupHealing(self:GetParent(), cleaveDamage)
 			end
 		end
 	end
