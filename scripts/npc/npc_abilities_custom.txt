@@ -1425,7 +1425,7 @@
       "AbilityUnitDamageType"      "DAMAGE_TYPE_PHYSICAL"
 
       "AbilityCooldown"        "15.0 12.0 9.0 6.0"
-      "AbilityManaCost"        "100"
+      "AbilityManaCost"        "60"
 
       "AbilityCastAnimation"    "ACT_DOTA_ATTACK"
       "AbilityCastRange"        "700"
@@ -1568,6 +1568,134 @@
         }
       }
     }
+    "elizaveta_accuracy"
+    {
+      "BaseClass"                 "ability_datadriven"
+      "AbilityTextureName"      "elizaveta_accuracy"
+      "MaxLevel"             "3"
+      "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+      "Modifiers"
+      {
+        "modifier_elizaveta_accuracy"
+        {
+          "Passive"      "1"
+          "IsHidden"      "1"
+          "IsDebuff"      "0"
+
+          "OnAttackStart"
+          {
+            "RemoveModifier"
+            {
+              "ModifierName"  "modifier_elizaveta_accuracy_crit"
+              "Target"    "CASTER"
+            }
+    
+            "Random"
+            {
+              "Chance"    "%chance"
+              "PseudoRandom"  "DOTA_PSEUDO_RANDOM_PHANTOMASSASSIN_CRIT"
+    
+              "OnSuccess"
+              {
+                "ApplyModifier"
+                {
+                  "ModifierName"  "modifier_elizaveta_accuracy_crit"
+                  "Target"    "CASTER"
+                }
+              }
+            }
+          }
+
+          "Properties"
+          {
+            "MODIFIER_PROPERTY_EVASION_CONSTANT" "%chance"
+          }
+
+          "States"
+          {
+            "MODIFIER_STATE_CANNOT_MISS"      "MODIFIER_STATE_VALUE_ENABLED"
+          }
+        }
+        "modifier_elizaveta_accuracy_crit"
+        {
+          "Passive"      "0"
+          "IsHidden"      "1"
+          "IsDebuff"      "0"
+
+          "Properties"
+          {
+            "MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%damage_crit"
+          }
+    
+          "OnAttackLanded"
+          {
+            "RemoveModifier"
+            {
+              "ModifierName"  "modifier_elizaveta_accuracy_crit"
+              "Target"    "CASTER"
+            }
+          }
+        }
+      }
+
+      "AbilitySpecial"
+      {
+        "01"
+        {
+          "var_type"      "FIELD_INTEGER"
+          "chance"      "10 20 30"
+        }
+        "02"
+        {
+          "var_type"      "FIELD_INTEGER"
+          "damage_crit"    "200"
+        }
+      }
+    }
+  
+  //=========================
+  //Vasya
+  //====================
+    "vasya_clear_sky"
+    {
+      "BaseClass"                 "ability_lua"
+      "ScriptFile"        "heroes/vasya/vasya_clear_sky.lua"
+      "AbilityTextureName"      "vasya_clear_sky"
+      "MaxLevel"             "4"
+
+      "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+      "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_ENEMY"
+      "AbilityUnitTargetType"      "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+      "AbilityUnitDamageType"      "DAMAGE_TYPE_MAGICAL"
+
+      "AbilityCooldown"        "16.0"
+      "AbilityManaCost"        "100"
+
+      "AbilityCastRange"        "650"
+      "AbilityCastPoint"        "0.3"
+      "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_2"
+
+      "precache"
+      {
+        "particle"  "particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf"
+      }
+
+      "AbilitySpecial"
+      {
+        "01"
+        {
+          "var_type"      "FIELD_INTEGER"
+          "max_radius"      "550"
+        }
+        "02"
+        {
+          "var_type"      "FIELD_INTEGER"
+          "damage"    "125 250 375 500"
+        }
+      }
+    }
+
   //====================================
   //Xen Ability
   //=========================================
