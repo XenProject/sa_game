@@ -19,10 +19,14 @@ function vasya_clear_sky:OnSpellStart()
 				nil, radius,
 	    		DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL,
 	        	DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+	local friendlyUnits = FindUnitsInRadius(caster:GetTeamNumber(), point,
+				nil, radius,
+	    		DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL,
+	        	DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 
-	for _,unit in pairs(enemyUnits) do
+	for _,enemy in pairs(enemyUnits) do
 		local damageTable = {
-			victim = unit,
+			victim = enemy,
 			attacker = caster,
 			damage = damage,
 			damage_type = DAMAGE_TYPE_MAGICAL,
@@ -30,4 +34,8 @@ function vasya_clear_sky:OnSpellStart()
 		}
 		ApplyDamage(damageTable)
 	end
+	for _,unit in pairs(friendlyUnits) do
+		unit:Heal(damage, caster)
+		PopupHealing(unit, damage)
+	end 
 end
