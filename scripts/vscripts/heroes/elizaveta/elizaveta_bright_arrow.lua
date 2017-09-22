@@ -11,7 +11,7 @@ end
 
 function elizaveta_bright_arrow:OnSpellStart()
 	local info = {
-			EffectName = "particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf",
+			EffectName = "particles/heroes/elizaveta/elizaveta_bright_arrow.vpcf",
 			Ability = self,
 			iMoveSpeed = 950,
 			Source = self:GetCaster(),

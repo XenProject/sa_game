@@ -215,7 +215,7 @@
         "AbilityLayout"     "6"
         "override_hero"     "npc_dota_hero_omniknight"
         "Ability1"        "vasya_clear_sky" 
-        "Ability2"        "" 
+        "Ability2"        "vasya_rescue" 
         "Ability3"        "" 
         "Ability4"        ""
         "Ability5"        ""
