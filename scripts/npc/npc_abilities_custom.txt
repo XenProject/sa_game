@@ -1715,7 +1715,79 @@
         }
       }
     }
+    "vasya_regeneration"
+    {
+      "BaseClass"                 "ability_lua"
+      "ScriptFile"        "heroes/vasya/vasya_regeneration.lua"
+      "AbilityTextureName"      "vasya_regeneration"
+      "MaxLevel"             "4"
 
+      "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+      "AbilityUnitDamageType"      "DAMAGE_TYPE_MAGICAL"
+
+      "AbilitySpecial"
+      {
+        "01"
+        {
+          "var_type"      "FIELD_INTEGER"
+          "damage"      "50 100 150 200"
+        }
+      }
+    }
+    "vasya_blessing"
+    {
+      "BaseClass"                 "ability_datadriven"
+      "AbilityTextureName"      "vasya_blessing"
+      "MaxLevel"             "3"
+
+      "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+      "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+      "AbilityUnitTargetType"      "DOTA_UNIT_TARGET_HERO"
+
+      "OnSpellStart"
+      {
+        "ApplyModifier"
+        {
+          "ModifierName"  "modifier_vasya_blessing"
+          "Target"     "TARGET"
+        }
+      }
+
+      "Modifiers"
+      {
+        "modifier_vasya_blessing"
+        {
+          "Passive"      "0"
+          "IsHidden"      "0"
+          "IsDebuff"      "0"
+
+          "ThinkInterval"  "0.1"
+          "OnIntervalThink"
+          {
+            "RunScript"
+            {
+              "ScriptFile"  "heroes/vasya/vasya_blessing.lua"
+              "Function"    "VasyaBlessing"
+              "modifier"    "modifier_vasya_blessing"
+            }
+          }
+
+          "Properties"
+          {
+            "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "%health_regen"
+          }
+        }
+      }
+
+      "AbilitySpecial"
+      {
+        "01"
+        {
+          "var_type"      "FIELD_INTEGER"
+          "health_regen"      "500"
+        }
+      }
+    }
   //====================================
   //Xen Ability
   //=========================================
