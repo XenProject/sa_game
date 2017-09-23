@@ -37,9 +37,14 @@ function elizaveta_bright_arrow:OnProjectileHit( hTarget, vLocation )
 			damage_type = DAMAGE_TYPE_MAGICAL,
 			ability = self
 		}
-
 		ApplyDamage(damageTable)
+
 		if not hTarget:IsAlive() then
+
+			local nFXIndex = ParticleManager:CreateParticle( "particles/heroes/elizaveta/elizaveta_bright_arrow_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget )
+			ParticleManager:SetParticleControl( nFXIndex, 1, Vector( radius, 0, 0 ) )
+			--ParticleManager:ReleaseParticleIndex( nFXIndex )
+
 			enemies = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), hTarget:GetAbsOrigin(),
 				nil, radius,
 	    		DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL,

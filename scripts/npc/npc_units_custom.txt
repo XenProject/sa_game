@@ -180,7 +180,7 @@
         "RingRadius"            "40"
         "HealthBarOffset"         "170"
 
-        "BountyXP"               "24"      // Experience earn.
+        "BountyXP"               "5"      // Experience earn.
         "BountyGoldMin"            "21"      // Gold earned min.
         "BountyGoldMax"            "29"      // Gold earned max.
 
