@@ -5,6 +5,7 @@ end
 GAME_ROUND = 0 -- номер текущего раунда
 MAX_ROUNDS = 2 -- номер конечного раунда
 ROUND_UNITS = 20 -- кол-во юнитов на 1 раунде
+UNITS_LEFT = 0
 
 function SpecArena:Init()
 	_G.ALL_HEROES = FindUnitsInRadius(DOTA_TEAM_GOODGUYS, Vector(0,0,0),
@@ -16,22 +17,33 @@ function SpecArena:Init()
 	_G.SHOP_MID = Entities:FindByName(nil, "shop_mid"):GetAbsOrigin()
 	_G.SPAWN_1 = Entities:FindByName(nil, "spawn_1"):GetAbsOrigin()
 
-	Timers:CreateTimer(15, function() 
-		self:SpawnWaveUnits()
-		return nil 
+	self:SpawnWaveUnits(15)
+end
+
+function SpecArena:SpawnWaveUnits(delay)
+	Timers:CreateTimer(delay, function() 
+		GAME_ROUND = GAME_ROUND + 1
+		for i=1, ROUND_UNITS do
+		  local unit = CreateUnitByName( "wave_unit_" .. GAME_ROUND, SPAWN_1 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
+		end
+		self:TeleportHeroes(ARENA_MID)
+		UNITS_LEFT = ROUND_UNITS
 	end)
 end
 
-function SpecArena:SpawnWaveUnits()
-	GAME_ROUND = GAME_ROUND + 1
-	--Say(nil,"Wave № ".. GAME_ROUND, false)
-	for i=1, ROUND_UNITS do
-	  local unit = CreateUnitByName( "wave_unit_" .. GAME_ROUND, SPAWN_1 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
-	  --unit:SetInitialGoalEntity( waypoint )
-	end
+function SpecArena:WaveEnd()
+	self:TeleportHeroes(SHOP_MID)
+	self:SpawnWaveUnits(30)
+end
+
+function SpecArena:TeleportHeroes( point )
 	for _,hero in pairs(ALL_HEROES) do
-		hero:SetAbsOrigin(ARENA_MID)
-		FindClearSpaceForUnit(hero, ARENA_MID, false)
+		hero:Heal(hero:GetMaxHealth(), nil)
+		hero:SetAbsOrigin(point)
+		FindClearSpaceForUnit(hero, point, false)
+		hero:Stop()
+		PlayerResource:SetCameraTarget(hero:GetPlayerID(), hero )
+		SendToConsole("dota_camera_center")
+		PlayerResource:SetCameraTarget(hero:GetPlayerID(), nil )
 	end
-	return nil
 end

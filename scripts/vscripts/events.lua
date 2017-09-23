@@ -251,6 +251,12 @@ function GameMode:OnEntityKilled( keys )
   local damagebits = keys.damagebits -- This might always be 0 and therefore useless
 
   -- Put code here to handle when an entity gets killed
+  if not killedUnit:IsHero() then
+    _G.UNITS_LEFT = _G.UNITS_LEFT-1
+    if _G.UNITS_LEFT == 0 then
+      SpecArena:WaveEnd()
+    end
+  end
 end
 
 

@@ -155,7 +155,7 @@
     }
     "wave_unit_2"
     {
-        "Model"                   "models/creeps/neutral_creeps/n_creep_ghost_b/n_creep_ghost_a.vmdl"
+        "Model"                   "models/creeps/neutral_creeps/n_creep_ghost_a/n_creep_ghost_a.vmdl"
         "BaseClass"               "npc_dota_creature"
         "Level"                         "1"
         "SoundSet"               "n_creep_Ranged"
