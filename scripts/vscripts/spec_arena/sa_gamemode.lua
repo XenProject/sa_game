@@ -23,8 +23,9 @@ function SpecArena:Init()
 end
 
 function SpecArena:SpawnWaveUnits(delay)
+	GAME_ROUND = GAME_ROUND + 1
+	StartTimer(delay,1,GAME_ROUND)
 	Timers:CreateTimer(delay, function() 
-		GAME_ROUND = GAME_ROUND + 1
 		for i=1, ROUND_UNITS do
 			if i%3 == 0 then 
 		  		local unit = CreateUnitByName( "wave_unit_" .. GAME_ROUND, SPAWN_3 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
@@ -46,7 +47,11 @@ end
 
 function SpecArena:TeleportHeroes( point )
 	for _,hero in pairs(ALL_HEROES) do
-		hero:Heal(hero:GetMaxHealth(), nil)
+		if hero:IsAlive() then
+			hero:Heal(hero:GetMaxHealth(), nil)
+		else
+			hero:RespawnUnit()
+		end
 		hero:SetAbsOrigin(point)
 		FindClearSpaceForUnit(hero, point, false)
 		hero:Stop()
