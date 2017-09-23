@@ -10,8 +10,8 @@ function vasya_clear_sky:OnSpellStart()
 	local radius = RandomInt(0, self:GetSpecialValueFor("max_radius"))
 	local damage = self:GetSpecialValueFor("damage")
 
-	local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf", PATTACH_WORLDORIGIN, nil )
-	ParticleManager:SetParticleControl( nFXIndex, 0, point )
+	local nFXIndex = ParticleManager:CreateParticle( "particles/heroes/vasya/vasya_clear_sky.vpcf", PATTACH_WORLDORIGIN, nil )
+	ParticleManager:SetParticleControl( nFXIndex, 3, point )
 	ParticleManager:SetParticleControl( nFXIndex, 1, Vector( radius, 1, 1 ) )
 	ParticleManager:ReleaseParticleIndex( nFXIndex )
 

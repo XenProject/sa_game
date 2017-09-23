@@ -1683,7 +1683,7 @@
 
       "precache"
       {
-        "particle"  "particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf"
+        "particle"  "particles/heroes/vasya/vasya_clear_sky.vpcf"
       }
 
       "AbilitySpecial"
@@ -1730,6 +1730,11 @@
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE"
       "AbilityUnitDamageType"      "DAMAGE_TYPE_MAGICAL"
 
+      "precache"
+      {
+        "particle"  "particles/heroes/vasya/vasya_regeneration.vpcf"
+      }
+
       "AbilitySpecial"
       {
         "01"
@@ -1765,6 +1770,16 @@
           "Passive"      "0"
           "IsHidden"      "0"
           "IsDebuff"      "0"
+
+          "OnCreated"
+          {
+            "AttachEffect"
+            {
+              "EffectName"        "particles/units/heroes/hero_omniknight/omniknight_guardian_angel_omni.vpcf"
+              "EffectAttachType"  "follow_origin"
+              "Target"            "TARGET"
+            }
+          }
 
           "ThinkInterval"  "0.1"
           "OnIntervalThink"

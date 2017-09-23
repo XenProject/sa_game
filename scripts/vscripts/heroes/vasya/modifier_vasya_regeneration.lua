@@ -32,6 +32,19 @@ function modifier_vasya_regeneration:OnTakeDamage( event )
 			damage_type = DAMAGE_TYPE_MAGICAL,
 			ability = self:GetAbility()
 		}
+
+		local particleName = "particles/heroes/vasya/vasya_regeneration.vpcf"	
+		local particle = ParticleManager:CreateParticle( particleName, PATTACH_POINT_FOLLOW, event.attacker )
+
+		ParticleManager:SetParticleControlEnt(particle, 0, event.attacker, PATTACH_POINT_FOLLOW, "attach_hitloc", event.attacker:GetAbsOrigin(), true)
+		ParticleManager:SetParticleControlEnt(particle, 1, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", event.attacker:GetAbsOrigin(), true)
+
+		-- Show the particle target-> caster	
+		local particle = ParticleManager:CreateParticle( particleName, PATTACH_POINT_FOLLOW, caster )
+
+		ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", event.attacker:GetAbsOrigin(), true)
+		ParticleManager:SetParticleControlEnt(particle, 1, event.attacker, PATTACH_POINT_FOLLOW, "attach_hitloc", event.attacker:GetAbsOrigin(), true)
+
 		ApplyDamage(damageTable)
 		caster:Heal(self.damage, caster)
 		PopupHealing(caster, self.damage)

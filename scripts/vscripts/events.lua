@@ -26,15 +26,11 @@ function GameMode:OnNPCSpawned(keys)
 
   local npc = EntIndexToHScript(keys.entindex)
 
-  --[[if npc:IsRealHero() == false and npc.bFirstSpawned == nil then
-    npc.bFirstSpawned = true
-    local damageTable = {
-      victim = npc,
-      attacker = npc,
-      damage = 100,
-      damage_type = DAMAGE_TYPE_PURE,
-    }
-    ApplyDamage(damageTable)
+  --[[if npc:GetName() == "npc_dota_hero_omniknight" and npc.bFirstSpawned == true then
+    npc.bFirstSpawned = false
+    --local nFXIndex = ParticleManager:CreateParticle("particles/units/heroes/hero_omniknight/omniknight_guardian_angel_halo_buff.vpcf", PATTACH_ABSORIGIN_FOLLOW, npc)
+    --ParticleManager:SetParticleControl( nFXIndex, 0, Vector(0,5,150) )
+    --ParticleManager:SetParticleControlEnt(nFXIndex, 0, npc, PATTACH_OVERHEAD_FOLLOW, "follow_overhead", npc:GetAbsOrigin(), true)
   end]]
 end
 
