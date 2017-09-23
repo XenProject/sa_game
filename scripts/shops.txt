@@ -10,6 +10,14 @@
     "item"      "item_sa_drum"
     "item"      "item_sa_pitchfork"
     "item"      "item_sa_staff"
+    "item"      "item_sa_book"
+    "item"      "item_sa_amulet_of_mana"
+    "item"      "item_sa_amulet_of_health"
+    "item"      "item_sa_ring_of_regen"
+    "item"      "item_sa_recovery_ring"
+    "item"      "item_sa_spell_ring"
+    "item"      "item_sa_ring_of_mana"
+    "item"      "item_sa_amulet_of_life"
   }
 
   "weapons_armor"
