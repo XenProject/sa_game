@@ -211,7 +211,7 @@
     "ID"   "2000"
     "BaseClass"                 "item_datadriven"
     "AbilityTextureName"      "item_sa_drum"
-    "PingOverrideText" "DOTA_Chat_Text_sa_drum"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_drum"
     "Model" "models/props_gameplay/red_box.vmdl"
     //"ItemQuality"
     //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -274,7 +274,7 @@
     "ID"   "2001"
     "BaseClass"                 "item_datadriven"
     "AbilityTextureName"      "item_sa_pitchfork"
-    "PingOverrideText" "DOTA_Chat_Text_sa_pitchfork"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_pitchfork"
     "Model" "models/props_gameplay/red_box.vmdl"
     //"ItemQuality"
     //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -337,7 +337,7 @@
     "ID"   "2002"
     "BaseClass"                 "item_datadriven"
     "AbilityTextureName"      "item_sa_staff"
-    "PingOverrideText" "DOTA_Chat_Text_sa_staff"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_staff"
     "Model" "models/props_gameplay/red_box.vmdl"
     //"ItemQuality"
     //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -400,7 +400,7 @@
     "ID"   "2003"
     "BaseClass"                 "item_datadriven"
     "AbilityTextureName"      "item_sa_book"
-    "PingOverrideText" "DOTA_Chat_Text_sa_book"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_book"
     "Model" "models/props_gameplay/red_box.vmdl"
     //"ItemQuality"
     //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -445,7 +445,7 @@
 
         "Properties"
         {
-          "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"  "%bonus_dmg"
+          "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "%bonus_dmg"
           "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%bonus_int"
         }
       }
@@ -469,7 +469,7 @@
     "ID"   "2004"
     "BaseClass"                 "item_datadriven"
     "AbilityTextureName"      "item_sa_amulet_of_mana"
-    "PingOverrideText" "DOTA_Chat_Text_sa_amulet_of_mana"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_amulet_of_mana"
     "Model" "models/props_gameplay/red_box.vmdl"
     //"ItemQuality"
     //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -532,7 +532,7 @@
     "ID"   "2005"
     "BaseClass"                 "item_datadriven"
     "AbilityTextureName"      "item_sa_amulet_of_health"
-    "PingOverrideText" "DOTA_Chat_Text_sa_amulet_of_health"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_amulet_of_health"
     "Model" "models/props_gameplay/red_box.vmdl"
     //"ItemQuality"
     //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -595,7 +595,7 @@
     "ID"   "2006"
     "BaseClass"                 "item_datadriven"
     "AbilityTextureName"      "item_sa_ring_of_regen"
-    "PingOverrideText" "DOTA_Chat_Text_sa_ring_of_regen"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_ring_of_regen"
     "Model" "models/props_gameplay/red_box.vmdl"
     //"ItemQuality"
     //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -658,7 +658,7 @@
     "ID"   "2007"
     "BaseClass"                 "item_datadriven"
     "AbilityTextureName"      "item_sa_recovery_ring"
-    "PingOverrideText" "DOTA_Chat_Text_sa_recovery_ring"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_recovery_ring"
     "Model" "models/props_gameplay/red_box.vmdl"
     //"ItemQuality"
     //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -721,7 +721,7 @@
     "ID"   "2008"
     "BaseClass"                 "item_datadriven"
     "AbilityTextureName"      "item_sa_spell_ring"
-    "PingOverrideText" "DOTA_Chat_Text_sa_spell_ring"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_spell_ring"
     "Model" "models/props_gameplay/red_box.vmdl"
     //"ItemQuality"
     //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -784,7 +784,7 @@
     "ID"   "2009"
     "BaseClass"                 "item_datadriven"
     "AbilityTextureName"      "item_sa_ring_of_mana"
-    "PingOverrideText" "DOTA_Chat_Text_sa_ring_of_mana"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_ring_of_mana"
     "Model" "models/props_gameplay/red_box.vmdl"
     //"ItemQuality"
     //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -847,7 +847,7 @@
     "ID"   "2010"
     "BaseClass"                 "item_datadriven"
     "AbilityTextureName"      "item_sa_amulet_of_life"
-    "PingOverrideText" "DOTA_Chat_Text_sa_amulet_of_life"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_amulet_of_life"
     "Model" "models/props_gameplay/red_box.vmdl"
     //"ItemQuality"
     //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -902,6 +902,195 @@
       {
         "var_type"      "FIELD_INTEGER"
         "bonus_health"      "100"
+      }
+    }
+  }
+  "item_sa_claws"
+  {
+    "ID"   "2011"
+    "BaseClass"                 "item_datadriven"
+    "AbilityTextureName"      "item_sa_claws"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_claws"
+    "Model" "models/props_gameplay/red_box.vmdl"
+    //"ItemQuality"
+    //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+    "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+    "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+    "ItemAlertable" "1"
+
+    "ItemCost"            "90"
+    "ItemPurchasable"          "1"
+    "ItemKillable"             "1"
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+
+    //"ItemStockMax" "1" 
+    //"ItemStockTime" "100"
+    //"ItemStockInitial" "3"
+
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+
+    "ItemStackable" "0"
+    "ItemPermanent" "0"
+
+    //"ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    
+    //"MaxUpgradeLevel"       "1"
+    //"ItemBaseLevel"         "1"
+
+    //"ItemShopTags" "int;str;agi;mana_pool;health_pool;hard_to_tag"
+    //"ItemAliases" "this;appears_in;search"
+
+    "Modifiers"
+    {
+      "item"
+      {
+        "Passive"      "1"
+        "IsHidden"      "1"
+        "IsDebuff"      "0"
+        "Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+        "Properties"
+        {
+          "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "%bonus_dmg"
+        }
+      }
+    }
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_dmg"      "4"
+      }
+    }
+  }
+  "item_sa_sword"
+  {
+    "ID"   "2012"
+    "BaseClass"                 "item_datadriven"
+    "AbilityTextureName"      "item_sa_sword"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_sword"
+    "Model" "models/props_gameplay/red_box.vmdl"
+    //"ItemQuality"
+    //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+    "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+    "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+    "ItemAlertable" "1"
+
+    "ItemCost"            "140"
+    "ItemPurchasable"          "1"
+    "ItemKillable"             "1"
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+
+    //"ItemStockMax" "1" 
+    //"ItemStockTime" "100"
+    //"ItemStockInitial" "3"
+
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+
+    "ItemStackable" "0"
+    "ItemPermanent" "0"
+
+    //"ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    
+    //"MaxUpgradeLevel"       "1"
+    //"ItemBaseLevel"         "1"
+
+    //"ItemShopTags" "int;str;agi;mana_pool;health_pool;hard_to_tag"
+    //"ItemAliases" "this;appears_in;search"
+
+    "Modifiers"
+    {
+      "item"
+      {
+        "Passive"      "1"
+        "IsHidden"      "1"
+        "IsDebuff"      "0"
+        "Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+        "Properties"
+        {
+          "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "%bonus_dmg"
+        }
+      }
+    }
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_dmg"      "6"
+      }
+    }
+  }
+  "item_sa_hummer"
+  {
+    "ID"   "2013"
+    "BaseClass"                 "item_datadriven"
+    "AbilityTextureName"      "item_sa_hummer"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_hummer"
+    "Model" "models/props_gameplay/red_box.vmdl"
+    //"ItemQuality"
+    //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+    "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+    "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+    "ItemAlertable" "1"
+
+    "ItemCost"            "180"
+    "ItemPurchasable"          "1"
+    "ItemKillable"             "1"
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+
+    //"ItemStockMax" "1" 
+    //"ItemStockTime" "100"
+    //"ItemStockInitial" "3"
+
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+
+    "ItemStackable" "0"
+    "ItemPermanent" "0"
+
+    //"ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    
+    //"MaxUpgradeLevel"       "1"
+    //"ItemBaseLevel"         "1"
+
+    //"ItemShopTags" "int;str;agi;mana_pool;health_pool;hard_to_tag"
+    //"ItemAliases" "this;appears_in;search"
+
+    "Modifiers"
+    {
+      "item"
+      {
+        "Passive"      "1"
+        "IsHidden"      "1"
+        "IsDebuff"      "0"
+        "Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+        "Properties"
+        {
+          "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "%bonus_dmg"
+        }
+      }
+    }
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_dmg"      "8"
       }
     }
   }

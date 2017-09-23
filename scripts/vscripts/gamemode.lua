@@ -5,10 +5,6 @@ BAREBONES_VERSION = "1.00"
 -- You can also change the cvar 'barebones_spew' at any time to 1 or 0 for output/no output
 BAREBONES_DEBUG_SPEW = false 
 
-GAME_ROUND = 0 -- номер текущего раунда
-MAX_ROUNDS = 5 -- номер конечного раунда
-ROUND_UNITS = 2 -- кол-во юнитов на 1 раунде
-
 if GameMode == nil then
     DebugPrint( '[BAREBONES] creating barebones game mode' )
     _G.GameMode = class({})

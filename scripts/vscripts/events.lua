@@ -275,6 +275,7 @@ function GameMode:OnConnectFull(keys)
   
   -- The Player ID of the joining player
   local playerID = ply:GetPlayerID()
+
 end
 
 -- This function is called whenever illusions are created and tells you which was/is the original entity
@@ -348,4 +349,11 @@ function GameMode:OnPlayerChat(keys)
   local playerID = self.vUserIds[userID]:GetPlayerID()
 
   local text = keys.text
+
+  if text == "+" and SpecArena.State == _G.STATE_PRE_ROUND_TIME and PlayerResource:GetPlayer(playerID).bFirstVote == nil then
+    print(playerID.." is ready!")
+    PlayerResource:GetPlayer(playerID).bFirstVote = false
+    _G.READY_PLAYERS = _G.READY_PLAYERS + 1
+    SpecArena:CheckReadyPlayers()
+  end
 end
