@@ -16,6 +16,8 @@ function SpecArena:Init()
 	_G.ARENA_MID = Entities:FindByName(nil, "arena_mid"):GetAbsOrigin()
 	_G.SHOP_MID = Entities:FindByName(nil, "shop_mid"):GetAbsOrigin()
 	_G.SPAWN_1 = Entities:FindByName(nil, "spawn_1"):GetAbsOrigin()
+	_G.SPAWN_2 = Entities:FindByName(nil, "spawn_2"):GetAbsOrigin()
+	_G.SPAWN_3 = Entities:FindByName(nil, "spawn_3"):GetAbsOrigin()
 
 	self:SpawnWaveUnits(15)
 end
@@ -24,7 +26,13 @@ function SpecArena:SpawnWaveUnits(delay)
 	Timers:CreateTimer(delay, function() 
 		GAME_ROUND = GAME_ROUND + 1
 		for i=1, ROUND_UNITS do
-		  local unit = CreateUnitByName( "wave_unit_" .. GAME_ROUND, SPAWN_1 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
+			if i%3 == 0 then 
+		  		local unit = CreateUnitByName( "wave_unit_" .. GAME_ROUND, SPAWN_3 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
+		  	elseif	i%2 == 0 then
+		  		local unit = CreateUnitByName( "wave_unit_" .. GAME_ROUND, SPAWN_2 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
+		  	else
+		  		local unit = CreateUnitByName( "wave_unit_" .. GAME_ROUND, SPAWN_1 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
+		  	end
 		end
 		self:TeleportHeroes(ARENA_MID)
 		UNITS_LEFT = ROUND_UNITS
