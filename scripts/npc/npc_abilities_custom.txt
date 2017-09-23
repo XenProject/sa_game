@@ -266,6 +266,11 @@
 
       "AbilityCooldown"        "150.0"
 
+      "precache"
+      {
+        "particle"  "particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
+      }
+
       "OnSpellStart"
       {
         "FireSound"

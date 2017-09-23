@@ -133,21 +133,7 @@ end
   is useful for starting any game logic timers/thinkers, beginning the first round, etc.
 ]]
 function GameMode:OnGameInProgress()
-      --[[ local point = Entities:FindByName( nil, "spawn1"):GetAbsOrigin()
-      local return_time = 10
-
-      Timers:CreateTimer(15, function()
-        GAME_ROUND = GAME_ROUND + 1
-        if GAME_ROUND == MAX_ROUNDS then
-          return_time = nil
-        end
-        --Say(nil,"Wave № ".. GAME_ROUND, false)
-        for i=1, ROUND_UNITS do
-          local unit = CreateUnitByName( "example_unit_" .. GAME_ROUND, point + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
-          unit:SetInitialGoalEntity( waypoint )
-        end   
-        return return_time
-      end)]]
+  SpecArena:Init()
 end
 
 
