@@ -22,6 +22,11 @@
     "item"      "item_sa_bow"
     "item"      "item_sa_spear"
     "item"      "item_sa_wooden_shield"
+    "item"      "item_sa_strong_helmet"
+    "item"      "item_sa_knight_helmet"
+    "item"      "item_sa_speed_glove"
+    "item"      "item_sa_lightning_glove"
+    "item"      "item_sa_boots"
   }
       
   "misc"

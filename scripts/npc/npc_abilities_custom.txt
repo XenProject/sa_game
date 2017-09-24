@@ -966,7 +966,7 @@
         }
       }
 
-      "OnChannelFinish"
+      "OnChannelSucceeded"
       {
         "RemoveModifier"
         {
@@ -1029,7 +1029,10 @@
               "EffectName"   "particles/heroes/ti_15/self_destruction.vpcf"
               "EffectAttachType"  "follow_origin"
               "Target"            "CASTER"
-              //"EffectRadius"  "1000"
+              "ControlPoints"
+              {
+                  "01" "%radius 0 0"
+              }
             }  
           }        
           
@@ -1055,6 +1058,10 @@
                 }
               }
             }
+          }
+          "States"
+          {
+            "MODIFIER_STATE_STUNNED"    "MODIFIER_STATE_VALUE_ENABLED"
           }
         }
       }
