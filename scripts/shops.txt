@@ -19,6 +19,9 @@
     "item"      "item_sa_claws"
     "item"      "item_sa_sword"
     "item"      "item_sa_hummer"
+    "item"      "item_sa_bow"
+    "item"      "item_sa_spear"
+    "item"      "item_sa_wooden_shield"
   }
       
   "misc"

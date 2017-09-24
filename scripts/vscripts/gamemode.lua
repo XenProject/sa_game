@@ -44,6 +44,7 @@ require('events')
 
 require('libraries/popups')
 require('libraries/timerPopup')
+require('libraries/pseudoRandom')
 
 
 -- This is a detailed example of many of the containers.lua possibilities, but only activates if you use the provided "playground" map

@@ -1094,4 +1094,257 @@
       }
     }
   }
+  "item_sa_bow"
+  {
+    "ID"   "2014"
+    "BaseClass"                 "item_datadriven"
+    "AbilityTextureName"      "item_sa_bow"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_bow"
+    "Model" "models/props_gameplay/red_box.vmdl"
+    //"ItemQuality"
+    //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+    "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+    "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+    "ItemAlertable" "1"
+
+    "ItemCost"            "230"
+    "ItemPurchasable"          "1"
+    "ItemKillable"             "1"
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+
+    //"ItemStockMax" "1" 
+    //"ItemStockTime" "100"
+    //"ItemStockInitial" "3"
+
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+
+    "ItemStackable" "0"
+    "ItemPermanent" "0"
+
+    //"ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    
+    //"MaxUpgradeLevel"       "1"
+    //"ItemBaseLevel"         "1"
+
+    //"ItemShopTags" "int;str;agi;mana_pool;health_pool;hard_to_tag"
+    //"ItemAliases" "this;appears_in;search"
+
+    "Modifiers"
+    {
+      "item"
+      {
+        "Passive"      "1"
+        "IsHidden"      "1"
+        "IsDebuff"      "0"
+        "Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+        "Properties"
+        {
+          "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "%bonus_dmg"
+          "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"  "%bonus_as"
+        }
+      }
+    }
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_dmg"      "6"
+      }
+      "02"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_as"      "6"
+      }
+    }
+  }
+  "item_sa_spear"
+  {
+    "ID"   "2015"
+    "BaseClass"                 "item_datadriven"
+    "AbilityTextureName"      "item_sa_spear"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_spear"
+    "Model" "models/props_gameplay/red_box.vmdl"
+    //"ItemQuality"
+    //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+    "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+    "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+    "ItemAlertable" "1"
+
+    "ItemCost"            "160"
+    "ItemPurchasable"          "1"
+    "ItemKillable"             "1"
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+
+    //"ItemStockMax" "1" 
+    //"ItemStockTime" "100"
+    //"ItemStockInitial" "3"
+
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+
+    "ItemStackable" "0"
+    "ItemPermanent" "0"
+
+    //"ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    
+    //"MaxUpgradeLevel"       "1"
+    //"ItemBaseLevel"         "1"
+
+    //"ItemShopTags" "int;str;agi;mana_pool;health_pool;hard_to_tag"
+    //"ItemAliases" "this;appears_in;search"
+
+    "precache"
+    {
+      "soundfile" "DOTA_Item.MKB.Minibash"
+    }
+
+    "Modifiers"
+    {
+      "modifier_sa_spear"
+      {
+        "Passive"     "1"
+        "IsHidden"      "1"
+        "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+        
+        "Properties"
+        {
+          "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "%bonus_dmg"
+        }
+        
+        "OnAttackLanded"
+        {
+          "Random"
+          {
+            "Chance"      "%bash_chance"
+            "PseudoRandom"    "DOTA_PSEUDO_RANDOM_ITEM_MKB"
+            "OnSuccess"
+            {
+              "Damage"
+              {
+                "Target"    "TARGET"
+                "Type"      "DAMAGE_TYPE_PHYSICAL"
+                "Damage"    "%bash_damage"
+              }
+              
+              "ApplyModifier"
+              {
+                "Target"      "TARGET"
+                "ModifierName"    "modifier_sa_spear_bash"
+              }
+              
+              "FireSound"
+              {
+                "EffectName"    "DOTA_Item.MKB.Minibash"
+                "Target"      "TARGET"
+              }
+            }
+          }
+        }
+      }
+      "modifier_sa_spear_bash"
+      {
+        "Duration"              "%bash_stun"
+        "Passive"       "0"
+        "IsHidden"        "0"
+        "IsBuff"        "0"
+        "IsDebuff"        "1"
+        "IsPurgable"      "1"
+        
+        "EffectName"            "particles/generic_gameplay/generic_stunned.vpcf"
+        "EffectAttachType"      "follow_overhead"
+        "OverrideAnimation"     "ACT_DOTA_DISABLED"
+        
+        "States"
+        {
+          "MODIFIER_STATE_STUNNED"    "MODIFIER_STATE_VALUE_ENABLED"
+        }
+      }
+    }
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_dmg"      "6"
+      }
+      "02"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "bash_chance"     "15"
+      }
+      "03"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "bash_damage"     "15"
+      }
+      "04"
+      {
+        "var_type"        "FIELD_FLOAT"
+        "bash_stun"       "0.1"
+      }
+    }
+  }
+  "item_sa_wooden_shield"
+  {
+    "ID"   "2016"
+    "BaseClass"                 "item_lua"
+    "ScriptFile"            "items/item_sa_wooden_shield.lua"
+    "AbilityTextureName"      "item_sa_wooden_shield"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_wooden_shield"
+    "Model" "models/props_gameplay/red_box.vmdl"
+    //"ItemQuality"
+    //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+    "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+    "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+    "ItemAlertable" "1"
+
+    "ItemCost"            "100"
+    "ItemPurchasable"          "1"
+    "ItemKillable"             "1"
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+
+    //"ItemStockMax" "1" 
+    //"ItemStockTime" "100"
+    //"ItemStockInitial" "3"
+
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+
+    "ItemStackable" "0"
+    "ItemPermanent" "0"
+
+    //"ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    
+    //"MaxUpgradeLevel"       "1"
+    //"ItemBaseLevel"         "1"
+
+    //"ItemShopTags" "int;str;agi;mana_pool;health_pool;hard_to_tag"
+    //"ItemAliases" "this;appears_in;search"
+
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "chance"      "20"
+      }
+      "02"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "damage_blocked"      "12"
+      }
+    }
+  }
 }

@@ -5,7 +5,7 @@ function elay_energy_ball:OnSpellStart()
 	self.ms = 1000
 
 	local info = {
-			EffectName = "particles/units/heroes/hero_lich/lich_chain_frost.vpcf",
+			EffectName = "particles/heroes/elay/elay_energy_ball.vpcf",
 			Ability = self,
 			iMoveSpeed = self.ms,
 			Source = self:GetCaster(),
@@ -61,13 +61,13 @@ function elay_energy_ball:OnProjectileHit( hTarget, vLocation )
 			end
 
 			if target_to_jump then
-				print("Bounce number "..self.jump_counter)
+				--print("Bounce number "..self.jump_counter)
 				-- Create the next projectile
 				local info = {
 					Target = target_to_jump,
 					Source = hTarget,
 					Ability = self,
-					EffectName = "particles/units/heroes/hero_lich/lich_chain_frost.vpcf",
+					EffectName = "particles/heroes/elay/elay_energy_ball.vpcf",
 					iMoveSpeed = self.ms,
 					iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_1
 				}
