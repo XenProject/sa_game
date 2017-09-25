@@ -580,7 +580,7 @@
 
       "precache"
       {
-        "particle"  "particles/units/heroes/hero_lich/lich_chain_frost.vpcf"
+        "particle"  "particles/heroes/elay/elay_energy_ball.vpcf"
       }
 
       "AbilitySpecial"
@@ -665,6 +665,7 @@
       "BaseClass"                 "ability_datadriven"
       "AbilityTextureName"      "tinker_heat_seeking_missile"
       "MaxLevel"             "4"
+      "AbilityType"     "DOTA_ABILITY_TYPE_BASIC"
 
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
       "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -676,11 +677,12 @@
       "AbilityCastAnimation"      "ACT_DOTA_CHANNEL_ABILITY_1"
 
       "AbilityCooldown"        "18.0"
-      "AbilityManaCost"        "100"
+      "AbilityManaCost"        "140"
 
       "precache"
       {
-        "particle"  "particles/units/heroes/hero_tinker/tinker_missile.vpcf"
+        "particle"  "particles/heroes/ti_15/ti_15_missile_defense.vpcf"
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts"
       }
 
       "OnSpellStart"
@@ -690,6 +692,11 @@
           "ModifierName"  "modifier_missile_defense"
           "Target"     "CASTER"
           "Duration"    "%duration"
+        }
+        "FireSound"
+        {
+            "Target"            "CASTER"
+            "EffectName"        "Hero_Tinker.Heat-Seeking_Missile"
         }
       }
 
@@ -701,6 +708,11 @@
           "Target"    "TARGET"
           "Type"      "DAMAGE_TYPE_MAGICAL"
           "Damage"    "%damage"
+        }
+        "FireSound"
+        {
+            "Target"            "TARGET"
+            "EffectName"        "Hero_Tinker.Heat-Seeking_Missile.Impact"
         }
       }
 
@@ -730,7 +742,7 @@
                   "TrackingProjectile"
                   {
                     "Target"        "TARGET"
-                    "EffectName"    "particles/units/heroes/hero_tinker/tinker_missile.vpcf"
+                    "EffectName"    "particles/heroes/ti_15/ti_15_missile_defense.vpcf"
                     "Dodgeable"      "1"
                     "ProvidesVision"  "1"
                     "VisionRadius"    "350"
@@ -772,6 +784,7 @@
       "BaseClass"                 "ability_datadriven"
       "AbilityTextureName"      "rattletrap_battery_assault"
       "MaxLevel"             "4"
+      "AbilityType"     "DOTA_ABILITY_TYPE_BASIC"
 
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE"
       "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -891,6 +904,7 @@
       "BaseClass"                 "ability_datadriven"
       "AbilityTextureName"      "ti_15_barbed_armor"
       "MaxLevel"             "4"
+      "AbilityType"     "DOTA_ABILITY_TYPE_BASIC"
 
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE"
       "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -942,6 +956,7 @@
       "BaseClass"                 "ability_datadriven"
       "AbilityTextureName"      "ti_15_self_destruction"
       "MaxLevel"             "3"
+      "AbilityType"     "DOTA_ABILITY_TYPE_ULTIMATE"
 
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
       "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -951,10 +966,14 @@
       "AbilityCastRange"        "%radius"
       "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
 
+      "AbilityCooldown"        "120.0"
+      "AbilityManaCost"        "200"
+
       "precache"
       {
-        "particle"  "particles/econ/items/techies/techies_arcana/techies_suicide_arcana.vpcf"
-        "particle"  "particles/econ/items/gyrocopter/hero_gyrocopter_gyrotechnics/gyro_guided_missile_target.vpcf"
+        "particle"  "particles/heroes/ti_15/self_destruction.vpcf"
+        "particle"  "particles/heroes/ti_15/self_destruction_endcap.vpcf"
+        "soundfile" "soundevents/heroes/game_sounds_ti_15.vsndevts"
       }
 
       "OnSpellStart"
@@ -963,6 +982,11 @@
         {
           "ModifierName"  "modifier_channeling"
           "Target"     "CASTER"
+        }
+        "RunScript"
+        {
+          "ScriptFile"  "heroes/ti_15/ti_15.lua"
+          "Function"    "SelfDestructionSound"
         }
       }
 
@@ -998,10 +1022,30 @@
             }
           }
         }
+        "AttachEffect"
+        {
+          "EffectName"        "particles/heroes/ti_15/self_destruction_endcap.vpcf"
+          "EffectAttachType"  "attach_origin"
+          "Target"            "CASTER"
+        }
         "RunScript"
         {
           "ScriptFile"  "heroes/ti_15/ti_15.lua"
           "Function"    "Suicide"
+        }
+      }
+
+      "OnChannelFinish"
+      {
+        "RemoveModifier"
+        {
+          "ModifierName"  "modifier_channeling"
+          "Target"     "CASTER"
+        }
+        "RunScript"
+        {
+          "ScriptFile"  "heroes/ti_15/ti_15.lua"
+          "Function"    "StopSound"
         }
       }
 
@@ -1031,7 +1075,7 @@
               "Target"            "CASTER"
               "ControlPoints"
               {
-                  "01" "%radius 0 0"
+                "01" "%radius 0 0"
               }
             }  
           }        
@@ -1058,10 +1102,6 @@
                 }
               }
             }
-          }
-          "States"
-          {
-            "MODIFIER_STATE_STUNNED"    "MODIFIER_STATE_VALUE_ENABLED"
           }
         }
       }

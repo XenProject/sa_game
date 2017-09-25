@@ -31,7 +31,7 @@ function Precache( context )
   --PrecacheModel("models/props_debris/merchant_debris_chest002.vmdl", context)
 
   -- Sounds can precached here like anything else
-  --PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts", context)
+  --PrecacheResource("soundfile", "soundevents/game_sounds_custom.vsndevts", context)
 
   -- Entire items can be precached by name
   -- Abilities can also be precached in this way despite the name

@@ -3,7 +3,7 @@ if not SpecArena then
 end
 
 _G.GAME_ROUND = 1 -- номер текущего раунда
-_G.MAX_ROUNDS = 2 -- номер конечного раунда
+_G.MAX_ROUNDS = 10 -- номер конечного раунда
 _G.ROUND_UNITS = 20 -- кол-во юнитов на 1 раунде
 _G.UNITS_LEFT = 0
 _G.READY_PLAYERS = 0

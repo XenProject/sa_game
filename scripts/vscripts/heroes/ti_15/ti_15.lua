@@ -42,11 +42,22 @@ function ProtectiveGear( keys )
 	        iUnitTargetType = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO
 	    }
 
+	caster:EmitSoundParams("Hero_Rattletrap.Battery_Assault_Launch", 200.0, 200.0, 1.0)
     projectile_id = ProjectileManager:CreateLinearProjectile( projectileTable )
 	end
 end
 
 function Suicide( event )
 	--print("SDOHNI")
+	event.caster:StopSound("Hero_TI_15.Self_Destruction.Cast")
+	event.caster:EmitSound("Hero_TI_15.Self_Destruction.End")
 	event.caster:Kill(event.ability, event.caster)
+end
+
+function SelfDestructionSound( event )
+	event.caster:EmitSoundParams("Hero_TI_15.Self_Destruction.Cast", 70.0, 100.0, 1.0)
+end
+
+function StopSound( event )
+	event.caster:StopSound("Hero_TI_15.Self_Destruction.Cast")
 end
