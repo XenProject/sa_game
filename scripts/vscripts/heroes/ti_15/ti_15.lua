@@ -55,7 +55,7 @@ function Suicide( event )
 end
 
 function SelfDestructionSound( event )
-	event.caster:EmitSoundParams("Hero_TI_15.Self_Destruction.Cast", 70.0, 100.0, 1.0)
+	event.caster:EmitSound("Hero_TI_15.Self_Destruction.Cast")
 end
 
 function StopSound( event )

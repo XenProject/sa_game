@@ -96,3 +96,7 @@ function SpecArena:ChangeState( state )
 		end
 	end
 end
+
+function SpecArena:Distance( v1, v2 )
+	return math.sqrt( math.pow( (v1.x-v2.x), 2) + math.pow( (v1.y-v2.y), 2) )
+end

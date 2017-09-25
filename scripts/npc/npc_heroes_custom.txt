@@ -1,5 +1,6 @@
 "DOTAHeroes"
 {
+    //Attack rate: str = 1.5  agi = 1.2  int = 1.4
     "npc_dota_hero_ancient_apparition_barebones"
     {
         "AbilityLayout"     "6"
@@ -102,16 +103,15 @@
         "Ability14"       ""
         "Ability15"       ""
         "Ability16"       ""
-        "MovementSpeed"       "550"
-        "AttackRate"    "0.5"
-        "ProjectileSpeed"    "900"
+        "MovementSpeed"       "300"
+        "AttackRate"    "1.2"
         "AttributePrimary"      "DOTA_ATTRIBUTE_AGILITY"
         "AttributeBaseStrength"     "22"
-        "AttributeStrengthGain"     "2.000000"
+        "AttributeStrengthGain"     "1.900000"
         "AttributeBaseAgility"      "30"
-        "AttributeAgilityGain"      "2.800000"
+        "AttributeAgilityGain"      "2.700000"
         "AttributeBaseIntelligence"     "16"
-        "AttributeIntelligenceGain"     "1.700000"
+        "AttributeIntelligenceGain"     "1.800000"
         "AttackDamageMin"       "39"
         "AttackDamageMax"       "42"
     }
@@ -158,8 +158,17 @@
         "Ability14"       ""
         "Ability15"       ""
         "Ability16"       ""
-        "MovementSpeed"       "550"
-        "AttackRate"    "0.5"
+        "MovementSpeed"       "300"
+        "AttackRate"    "1.5"
+        "AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+        "AttributeBaseStrength"     "31"
+        "AttributeStrengthGain"     "2.600000"
+        "AttributeBaseAgility"      "14"
+        "AttributeAgilityGain"      "1.900000"
+        "AttributeBaseIntelligence"     "25"
+        "AttributeIntelligenceGain"     "2.500000"
+        "AttackDamageMin"       "39"
+        "AttackDamageMax"       "42"
     }
     "npc_dota_hero_lora"
     {
@@ -169,8 +178,8 @@
         "Ability2"        "lora_fire_shield" 
         "Ability3"        "lora_magical_aura" 
         "Ability4"        ""
-        "Ability5"        ""
-        "Ability6"        "lora_fiery_explosion"
+        "Ability5"        "lora_fiery_explosion"
+        "Ability6"        ""
         "Ability7"        ""
         "Ability8"        ""
         "Ability9"        ""
@@ -183,8 +192,6 @@
         "Ability16"       ""
         "MovementSpeed"       "550"
         "AttackRate"    "0.5"
-        "StatusMana"        "900"
-        "AttributeBaseIntelligence"     "100"
     }
     "npc_dota_hero_elizaveta"
     {

@@ -422,6 +422,7 @@
       "ScriptFile"                  "heroes/garp/garp_spear.lua"
       "AbilityTextureName"      "phantom_lancer_spirit_lance"
       "MaxLevel"             "4"
+      "AbilityType"     "DOTA_ABILITY_TYPE_BASIC"
 
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
       "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -433,7 +434,7 @@
       "AbilityCastPoint"        "0.2"
       "AbilityCastAnimation"      "ACT_RESET"
 
-      "AbilityManaCost"       "200"
+      "AbilityManaCost"       "110"
 
       "precache"
       {
@@ -441,6 +442,7 @@
         "particle"  "particles/heroes/garp/garp_spear_bleeding.vpcf"
         "particle"  "particles/units/heroes/hero_bloodseeker/bloodseeker_rupture_nuke.vpcf"
         "particle"  "particles/heroes/garp/garp_spear_burst.vpcf"
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_phantom_lancer.vsndevts"
       }
 
       "AbilitySpecial"
@@ -448,7 +450,7 @@
         "01"
         {
           "var_type"      "FIELD_INTEGER"
-          "damage"      "50 150 200 250"
+          "damage"      "100 150 200 250"
         }
         "02"
         {
@@ -463,7 +465,7 @@
         "04"
         {
           "var_type"    "FIELD_INTEGER"
-          "agi_multiplier_prt"   "100 20 30 40"
+          "agi_multiplier_prt"   "10 20 30 40"
         }
         "05"
         {
@@ -489,6 +491,7 @@
       "AbilityTextureName"      "troll_warlord_fervor"
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE"
       "MaxLevel"             "4"
+      "AbilityType"     "DOTA_ABILITY_TYPE_BASIC"
 
       "AbilitySpecial"
       {
@@ -506,6 +509,7 @@
       "AbilityTextureName"      "kunkka_tidebringer"
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE"
       "MaxLevel"             "4"
+      "AbilityType"     "DOTA_ABILITY_TYPE_BASIC"
 
       "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_ENEMY"
       "AbilityUnitTargetType"      "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -551,6 +555,7 @@
       "AbilityTextureName"      "huskar_berserkers_blood"
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE"
       "MaxLevel"             "3"
+      "AbilityType"     "DOTA_ABILITY_TYPE_ULTIMATE"
 
       "AbilitySpecial"
       {
@@ -575,6 +580,8 @@
       "ScriptFile"              "heroes/elay/elay_energy_ball"
       "AbilityTextureName"      "lich_chain_frost"
       "MaxLevel"             "4"
+      "AbilityType"     "DOTA_ABILITY_TYPE_BASIC"
+
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
       "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_ENEMY"
       "AbilityUnitTargetType"      "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -611,6 +618,7 @@
       "AbilityTextureName"      "tome"
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE"
       "MaxLevel"             "4"
+      "AbilityType"     "DOTA_ABILITY_TYPE_BASIC"
 
       "AbilitySpecial"
       {
@@ -632,6 +640,7 @@
       "AbilityTextureName"      "rubick_null_field"
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE"
       "MaxLevel"             "4"
+      "AbilityType"     "DOTA_ABILITY_TYPE_BASIC"
 
       "AbilitySpecial"
       {
@@ -648,6 +657,7 @@
       "AbilityTextureName"      "invoker_invoke"
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE"
       "MaxLevel"             "3"
+      "AbilityType"     "DOTA_ABILITY_TYPE_ULTIMATE"
 
       "AbilitySpecial"
       {
@@ -1146,6 +1156,7 @@
       "BaseClass"                 "ability_datadriven"
       "AbilityTextureName"      "lora_fireballs"
       "MaxLevel"             "4"
+      "AbilityType"     "DOTA_ABILITY_TYPE_BASIC"
 
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
       "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -1159,6 +1170,7 @@
       {
         "particle"  "particles/heroes/lora/magical_fireballs.vpcf"
         "particle"  "particles/heroes/lora/fireball_laser.vpcf"
+        "particle"    "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
       }
 
       "OnSpellStart"
@@ -1326,6 +1338,8 @@
       "ScriptFile"            "heroes/lora/lora_fire_shield.lua"
       "AbilityTextureName"      "lora_fire_shield"
       "MaxLevel"             "4"
+      "AbilityType"     "DOTA_ABILITY_TYPE_BASIC"
+
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
       "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
       "AbilityUnitTargetType"      "DOTA_UNIT_TARGET_HERO"
@@ -1360,6 +1374,8 @@
       "BaseClass"                 "ability_datadriven"
       "AbilityTextureName"      "lora_magical_aura"
       "MaxLevel"             "4"
+      "AbilityType"     "DOTA_ABILITY_TYPE_BASIC"
+
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
       "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
       "AbilityUnitTargetType"      "DOTA_UNIT_TARGET_HERO"
@@ -1425,6 +1441,7 @@
       "ScriptFile"            "heroes/lora/lora_fiery_explosion.lua"
       "AbilityTextureName"      "lora_fiery_explosion"
       "MaxLevel"             "3"
+      "AbilityType"     "DOTA_ABILITY_TYPE_ULTIMATE"
 
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_AURA"
       "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -1438,19 +1455,6 @@
         "particle"  "particles/econ/events/ti6/radiance_owner_ti6.vpcf"
         "particle"  "particles/units/heroes/hero_phoenix/phoenix_fire_spirit_burn.vpcf"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
-      }
-
-      "Modifiers"
-      {
-        "modifier_fiery_explosion_particle"
-        {
-          "Passive"      "0"
-          "IsHidden"      "1"
-          "IsDebuff"      "0"
-      
-          "EffectName"      "particles/items2_fx/radiance.vpcf"
-          "EffectAttachType"    "follow_origin"
-        }
       }
 
       "AbilitySpecial"
@@ -1472,6 +1476,7 @@
       "ScriptFile"              "heroes/elizaveta/elizaveta_bright_arrow.lua"
       "AbilityTextureName"      "elizaveta_bright_arrow"
       "MaxLevel"             "4"
+      "AbilityType"     "DOTA_ABILITY_TYPE_BASIC"
 
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
       "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -1524,6 +1529,8 @@
       "BaseClass"                 "ability_datadriven"
       "AbilityTextureName"      "elizaveta_accurate_shot"
       "MaxLevel"             "4"
+      "AbilityType"     "DOTA_ABILITY_TYPE_BASIC"
+
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE"
       "AbilityUnitDamageType"      "DAMAGE_TYPE_PHYSICAL"
 
@@ -1608,6 +1615,8 @@
       "ScriptFile"          "heroes/elizaveta/elizaveta_at_full_strength.lua"
       "AbilityTextureName"      "elizaveta_at_full_strength"
       "MaxLevel"             "4"
+      "AbilityType"     "DOTA_ABILITY_TYPE_BASIC"
+
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE"
       "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_ENEMY"
       "AbilityUnitTargetType"      "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -1627,6 +1636,8 @@
       "BaseClass"                 "ability_datadriven"
       "AbilityTextureName"      "elizaveta_accuracy"
       "MaxLevel"             "3"
+      "AbilityType"     "DOTA_ABILITY_TYPE_ULTIMATE"
+
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
       "Modifiers"
@@ -1717,6 +1728,7 @@
       "ScriptFile"        "heroes/vasya/vasya_clear_sky.lua"
       "AbilityTextureName"      "vasya_clear_sky"
       "MaxLevel"             "4"
+      "AbilityType"     "DOTA_ABILITY_TYPE_BASIC"
 
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
       "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -1755,6 +1767,7 @@
       "ScriptFile"        "heroes/vasya/vasya_rescue.lua"
       "AbilityTextureName"      "vasya_rescue"
       "MaxLevel"             "4"
+      "AbilityType"     "DOTA_ABILITY_TYPE_BASIC"
 
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
       "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -1775,6 +1788,7 @@
       "ScriptFile"        "heroes/vasya/vasya_regeneration.lua"
       "AbilityTextureName"      "vasya_regeneration"
       "MaxLevel"             "4"
+      "AbilityType"     "DOTA_ABILITY_TYPE_BASIC"
 
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE"
       "AbilityUnitDamageType"      "DAMAGE_TYPE_MAGICAL"
@@ -1798,6 +1812,7 @@
       "BaseClass"                 "ability_datadriven"
       "AbilityTextureName"      "vasya_blessing"
       "MaxLevel"             "3"
+      "AbilityType"     "DOTA_ABILITY_TYPE_ULTIMATE"
 
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
       "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_FRIENDLY"

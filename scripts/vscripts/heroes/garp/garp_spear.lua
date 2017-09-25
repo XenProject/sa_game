@@ -19,7 +19,7 @@ function garp_spear:OnSpellStart()
 			iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_1
 		}
 	ProjectileManager:CreateTrackingProjectile( info )
-	--EmitSoundOn( "Hero_VengefulSpirit.MagicMissile", self:GetCaster() )
+	EmitSoundOn( "Hero_PhantomLancer.PreAttack", self:GetCaster() )
 end
 
 --------------------------------------------------------------------------------
@@ -40,7 +40,8 @@ function garp_spear:OnProjectileHit( hTarget, vLocation )
 		ApplyDamage( damage )
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stun", { duration = duration_stun } )
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_garp_bleeding", nil)
-	end
 
+		EmitSoundOn( "Hero_PhantomLancer.Attack", hTarget )
+	end
 	return true
 end

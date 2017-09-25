@@ -7,8 +7,9 @@ function modifier_lora_fire_shield:OnCreated()
 
 	self:SetDuration( self.duration, true )
 	self:StartIntervalThink( 1.0 )
-	local nFXIndex = ParticleManager:CreateParticle( "particles/heroes/lora/fire_shield.vpcf", PATTACH_POINT_FOLLOW, self:GetParent() )
-	ParticleManager:SetParticleControl(nFXIndex, 1, Vector(100,100,100))
+	local nFXIndex = ParticleManager:CreateParticle( "particles/heroes/lora/lora_fire_shield.vpcf", PATTACH_POINT_FOLLOW, self:GetParent() )
+	ParticleManager:SetParticleControl(nFXIndex, 1, Vector(70,70,0))
+	ParticleManager:SetParticleControlEnt(nFXIndex, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true)
 	self:AddParticle( nFXIndex, false, false, -1, false, false )
 end
 
