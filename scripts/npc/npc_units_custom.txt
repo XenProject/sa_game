@@ -208,7 +208,7 @@
             "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
             "MovementSpeed"            "270"      // Speed.      
 
-            "StatusHealth"            "240"      // Base health.
+            "StatusHealth"            "110"      // Base health.
             "StatusHealthRegen"         "0.5"      // Health regeneration rate.
             "StatusMana"            "0"         // Base mana.
             "StatusManaRegen"         "0.0"      // Mana regeneration rate.   
@@ -712,6 +712,7 @@
                 "BountyGain"            "3"
                 "XPGain"               "15"
             }
+        }
         "wave_unit_10" // Boss + ему можно пассивку или бкб найкса
         {
             "Model"                   "models/items/lone_druid/bear/spirit_of_anger/spirit_of_anger.vmdl"

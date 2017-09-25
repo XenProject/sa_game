@@ -1,6 +1,5 @@
 function Test(keys)
 	print("PROC!!!!")
-	print(keys.qwer)
 end
 
 function Test1()
