@@ -34,7 +34,7 @@ function modifier_garp_bleeding:OnIntervalThink()
 		}
 		ApplyDamage( damage )
 
-		local particle = ParticleManager:CreateParticle( "particles/generic_gameplay/generic_hit_blood.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+		local particle = ParticleManager:CreateParticle( "particles/heroes/garp/garp_spear_bleeding.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
 		ParticleManager:SetParticleControl(particle, 0, self:GetParent():GetAbsOrigin())
 
 		if RollPercentage(self.chance_stop) then
@@ -46,7 +46,9 @@ end
 function modifier_garp_bleeding:OnDeath( params )
 	if params.unit == self:GetParent() then
 		local particle = ParticleManager:CreateParticle( "particles/units/heroes/hero_bloodseeker/bloodseeker_rupture_nuke.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-		--ParticleManager:SetParticleControl(particle, 0, self:GetParent():GetAbsOrigin())
+		ParticleManager:SetParticleControl(particle, 1, Vector(250,0,0))
+		
+		particle = ParticleManager:CreateParticle( "particles/heroes/garp/garp_spear_burst.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
 		ParticleManager:SetParticleControl(particle, 1, Vector(250,0,0))
 
 		enemyUnits = FindUnitsInRadius(DOTA_TEAM_BADGUYS, self:GetParent():GetAbsOrigin(),

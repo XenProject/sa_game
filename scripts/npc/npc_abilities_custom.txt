@@ -423,7 +423,7 @@
       "AbilityTextureName"      "phantom_lancer_spirit_lance"
       "MaxLevel"             "4"
 
-      "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+      "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
       "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_ENEMY"
       "AbilityUnitTargetType"      "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
       "AbilityUnitDamageType"      "DAMAGE_TYPE_PHYSICAL"
@@ -431,14 +431,16 @@
       "AbilityCooldown"        "15 13 11 9"
       "AbilityCastRange"        "600"
       "AbilityCastPoint"        "0.2"
-      "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
+      "AbilityCastAnimation"      "ACT_RESET"
 
       "AbilityManaCost"       "200"
 
       "precache"
       {
-        "particle"  "particles/econ/items/phantom_lancer/phantom_lancer_immortal_ti6/phantom_lancer_immortal_ti6_spiritlance.vpcf"
+        "particle"  "particles/heroes/garp/garp_spear.vpcf"
+        "particle"  "particles/heroes/garp/garp_spear_bleeding.vpcf"
         "particle"  "particles/units/heroes/hero_bloodseeker/bloodseeker_rupture_nuke.vpcf"
+        "particle"  "particles/heroes/garp/garp_spear_burst.vpcf"
       }
 
       "AbilitySpecial"
@@ -446,7 +448,7 @@
         "01"
         {
           "var_type"      "FIELD_INTEGER"
-          "damage"      "100 150 200 250"
+          "damage"      "50 150 200 250"
         }
         "02"
         {
@@ -461,7 +463,7 @@
         "04"
         {
           "var_type"    "FIELD_INTEGER"
-          "agi_multiplier_prt"   "10 20 30 40"
+          "agi_multiplier_prt"   "100 20 30 40"
         }
         "05"
         {

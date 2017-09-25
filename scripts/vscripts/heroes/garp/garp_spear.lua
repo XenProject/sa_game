@@ -3,12 +3,17 @@ LinkLuaModifier( "modifier_stun", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_garp_bleeding", "heroes/garp/modifier_garp_bleeding", LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
+function garp_spear:GetAOERadius()
+	return self:GetSpecialValueFor( "radius_burst" )
+end
+
 
 function garp_spear:OnSpellStart()
+	StartAnimation(self:GetCaster(), {duration=0.5, activity=ACT_DOTA_CAST_GHOST_SHIP, rate=1.0})
 	local info = {
-			EffectName = "particles/econ/items/phantom_lancer/phantom_lancer_immortal_ti6/phantom_lancer_immortal_ti6_spiritlance.vpcf",
+			EffectName = "particles/heroes/garp/garp_spear.vpcf",
 			Ability = self,
-			iMoveSpeed = 900,
+			iMoveSpeed = 1000,
 			Source = self:GetCaster(),
 			Target = self:GetCursorTarget(),
 			iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_1
