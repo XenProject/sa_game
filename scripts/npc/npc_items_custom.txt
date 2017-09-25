@@ -1680,7 +1680,7 @@
     "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
     "ItemAlertable" "1"
 
-    "ItemCost"            "100"
+    "ItemCost"            "0"
     "ItemPurchasable"          "1"
     "ItemKillable"             "1"
     "ItemDroppable"         "1"
@@ -1748,7 +1748,263 @@
       }
     }
   }
+  "item_sa_giant_axe"
+  {
+    "ID"   "2023"
+    "BaseClass"                 "item_datadriven"
+    "AbilityTextureName"      "item_sa_giant_axe"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_giant_axe"
+    "Model" "models/props_gameplay/red_box.vmdl"
+    "ItemQuality"     "common"
+    //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
+    "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+    "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+    "ItemAlertable" "1"
+
+    "ItemCost"            "0"
+    "ItemPurchasable"          "1"
+    "ItemKillable"             "1"
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+
+    //"ItemStockMax" "1" 
+    //"ItemStockTime" "100"
+    //"ItemStockInitial" "3"
+
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+
+    "ItemStackable" "0"
+    "ItemPermanent" "0"
+
+    //"ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    
+    //"MaxUpgradeLevel"       "1"
+    //"ItemBaseLevel"         "1"
+
+    //"ItemShopTags" "int;str;agi;mana_pool;health_pool;hard_to_tag"
+    //"ItemAliases" "this;appears_in;search"
+
+    "Modifiers"
+    {
+      "modifier_sa_giant_axe"
+      {
+        "Passive"     "1"
+        "IsHidden"      "1"
+        "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+        
+        "Properties"
+        {
+          "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"    "%bonus_dmg"
+          "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"    "%bonus_str"
+        }
+        
+        "OnCreated"
+        {
+          "RunScript"
+          {
+            "ScriptFile"    "items/cleave.lua"
+            "Function"      "OnEquipGiantAxe"
+          }
+        }
+        
+        "OnDestroy"
+        {
+          "RunScript"
+          {
+            "ScriptFile"    "items/cleave.lua"
+            "Function"      "OnUnequip"
+          }
+        }
+        
+      }
+      "modifier_sa_giant_axe_cleave"  //Only melee units can cleave, so only melee units should get this modifier.
+      {
+        "Passive"     "0"
+        "IsHidden"      "0"
+        
+        "OnAttackLanded"
+        {
+          "CleaveAttack"
+          {
+            "CleavePercent"   "%cleave_damage_percent"
+            "CleaveRadius"    "%cleave_radius"
+            "CleaveEffect"    "particles/items_fx/battlefury_cleave.vpcf"
+          }
+          
+          "FireSound"
+          {
+            "EffectName"        "DOTA_Item.BattleFury"
+            "Target"          "TARGET"
+          }
+        }     
+      }
+    }
+
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_str"      "6"
+      }
+      "02"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_dmg"      "12"
+      }
+      "03"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "cleave_radius"      "250"
+      }
+      "04"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "cleave_damage_percent"      "10"
+      }
+    }
+  }
+  "item_sa_warrior_glove"
+  {
+    "ID"   "2024"
+    "BaseClass"                 "item_datadriven"
+    "AbilityTextureName"      "item_sa_warrior_glove"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_warrior_glove"
+    "Model" "models/props_gameplay/red_box.vmdl"
+    "ItemQuality"     "common"
+    //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+    "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+    "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+    "ItemAlertable" "1"
+
+    "ItemCost"            "0"
+    "ItemPurchasable"          "1"
+    "ItemKillable"             "1"
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+
+    //"ItemStockMax" "1" 
+    //"ItemStockTime" "100"
+    //"ItemStockInitial" "3"
+
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+
+    "ItemStackable" "0"
+    "ItemPermanent" "0"
+
+    //"ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    
+    //"MaxUpgradeLevel"       "1"
+    //"ItemBaseLevel"         "1"
+
+    //"ItemShopTags" "int;str;agi;mana_pool;health_pool;hard_to_tag"
+    //"ItemAliases" "this;appears_in;search"
+
+    "Modifiers"
+    {
+      "item"
+      {
+        "Passive"      "1"
+        "IsHidden"      "1"
+        "IsDebuff"      "0"
+        "Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+        "Properties"
+        {
+          "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"    "%bonus_dmg"
+          "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"  "%bonus_as"
+        }
+      }
+    }
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_dmg"      "8"
+      }
+      "02"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_as"      "12"
+      }
+    }
+  }
+  "item_sa_heavy_hammer"
+  {
+    "ID"   "2025"
+    "BaseClass"                 "item_datadriven"
+    "AbilityTextureName"      "item_sa_heavy_hammer"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_heavy_hammer"
+    "Model" "models/props_gameplay/red_box.vmdl"
+    "ItemQuality"     "common"
+    //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+    "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+    "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+    "ItemAlertable" "1"
+
+    "ItemCost"            "0"
+    "ItemPurchasable"          "1"
+    "ItemKillable"             "1"
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+
+    //"ItemStockMax" "1" 
+    //"ItemStockTime" "100"
+    //"ItemStockInitial" "3"
+
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+
+    "ItemStackable" "0"
+    "ItemPermanent" "0"
+
+    //"ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    
+    //"MaxUpgradeLevel"       "1"
+    //"ItemBaseLevel"         "1"
+
+    //"ItemShopTags" "int;str;agi;mana_pool;health_pool;hard_to_tag"
+    //"ItemAliases" "this;appears_in;search"
+
+    "Modifiers"
+    {
+      "item"
+      {
+        "Passive"      "1"
+        "IsHidden"      "1"
+        "IsDebuff"      "0"
+        "Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+        "Properties"
+        {
+          "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"    "%bonus_dmg"
+          "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "%bonus_armor"
+        }
+      }
+    }
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_dmg"      "12"
+      }
+      "02"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_armor"      "5"
+      }
+    }
+  }
 
   //Recipes
     "item_recipe_sa_forest_staff" 
@@ -1763,6 +2019,48 @@
         "ItemRequirements"
         {
             "01" "item_sa_staff;item_sa_claws"
+        }
+    }
+    "item_recipe_sa_giant_axe" 
+    {
+        "ID" "3001"
+        "BaseClass"           "item_datadriven"
+        "Model"        "models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"    "recipe"
+        "ItemRecipe"          "1" //destroyed after combine
+        "ItemCost"            "225" //if its 0, it will combine without needing a recipe.
+        "ItemResult"          "item_sa_giant_axe" //the result of combining the ItemRequirements
+        "ItemRequirements"
+        {
+            "01" "item_sa_drum;item_sa_hummer"
+        }
+    }
+    "item_recipe_sa_warrior_glove" 
+    {
+        "ID" "3002"
+        "BaseClass"           "item_datadriven"
+        "Model"        "models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"    "recipe"
+        "ItemRecipe"          "1" //destroyed after combine
+        "ItemCost"            "180" //if its 0, it will combine without needing a recipe.
+        "ItemResult"          "item_sa_warrior_glove" //the result of combining the ItemRequirements
+        "ItemRequirements"
+        {
+            "01" "item_sa_claws;item_sa_speed_glove"
+        }
+    }
+    "item_recipe_sa_heavy_hammer" 
+    {
+        "ID" "3003"
+        "BaseClass"           "item_datadriven"
+        "Model"        "models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"    "recipe"
+        "ItemRecipe"          "1" //destroyed after combine
+        "ItemCost"            "200" //if its 0, it will combine without needing a recipe.
+        "ItemResult"          "item_sa_heavy_hammer" //the result of combining the ItemRequirements
+        "ItemRequirements"
+        {
+            "01" "item_sa_strong_helmet;item_sa_hummer"
         }
     }
 }

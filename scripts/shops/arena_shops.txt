@@ -44,6 +44,9 @@
   "basics"
   {
     "item"      "item_sa_forest_staff"
+    "item"      "item_sa_giant_axe"
+    "item"      "item_sa_warrior_glove"
+    "item"      "item_sa_heavy_hammer"
   }
 
   // Level 2 - Blue Recipes

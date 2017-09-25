@@ -151,7 +151,7 @@ end
 
 -- This is an example console command
 function GameMode:ExampleConsoleCommand()
-  print( '******* Example Console Command ***************' )
+  --[[print( '******* Example Console Command ***************' )
   local cmdPlayer = Convars:GetCommandClient()
   if cmdPlayer then
     local playerID = cmdPlayer:GetPlayerID()
@@ -161,5 +161,5 @@ function GameMode:ExampleConsoleCommand()
     end
   end
 
-  print( '*********************************************' )
+  print( '*********************************************' )]]
 end

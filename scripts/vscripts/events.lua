@@ -26,12 +26,12 @@ function GameMode:OnNPCSpawned(keys)
 
   local npc = EntIndexToHScript(keys.entindex)
 
-  --[[if npc:GetName() == "npc_dota_hero_omniknight" and npc.bFirstSpawned == true then
+  if npc:GetName() == "npc_dota_hero_omniknight" and npc.bFirstSpawned == true then
     npc.bFirstSpawned = false
-    --local nFXIndex = ParticleManager:CreateParticle("particles/units/heroes/hero_omniknight/omniknight_guardian_angel_halo_buff.vpcf", PATTACH_ABSORIGIN_FOLLOW, npc)
-    --ParticleManager:SetParticleControl( nFXIndex, 0, Vector(0,5,150) )
-    --ParticleManager:SetParticleControlEnt(nFXIndex, 0, npc, PATTACH_OVERHEAD_FOLLOW, "follow_overhead", npc:GetAbsOrigin(), true)
-  end]]
+    local nFXIndex = ParticleManager:CreateParticle("particles/halo.vpcf", PATTACH_POINT_FOLLOW, npc)
+    --ParticleManager:SetParticleControl( nFXIndex, 0, Vector(0,0,55) )
+    ParticleManager:SetParticleControlEnt(nFXIndex, 0, npc, PATTACH_POINT_FOLLOW, "attach_hitloc", npc:GetAbsOrigin(), true)
+  end
 end
 
 -- An entity somewhere has been hurt.  This event fires very often with many units so don't do too many expensive

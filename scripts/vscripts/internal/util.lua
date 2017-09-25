@@ -123,3 +123,15 @@ function ShowWearables( unit )
     v:RemoveEffects(EF_NODRAW)
   end
 end
+
+function GetItemInInventory(unit,itemName)
+  for i = 0, 5 do
+    local item = unit:GetItemInSlot(i) 
+    if item then
+      if item:GetName() == itemName then
+        return item 
+      end
+    end
+  end
+  return nil
+end
