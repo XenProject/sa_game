@@ -1442,6 +1442,7 @@
       "AbilityTextureName"      "lora_fiery_explosion"
       "MaxLevel"             "3"
       "AbilityType"     "DOTA_ABILITY_TYPE_ULTIMATE"
+      "AbilityCastAnimation"    "ACT_RESET"
 
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_AURA"
       "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_ENEMY"

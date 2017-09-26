@@ -18,7 +18,10 @@ function lora_fiery_explosion:OnSpellStart()
 		local int_multiplier_prt = self:GetSpecialValueFor( "int_multiplier_prt" )
 		local maxRadius = (int_multiplier_prt / 100.0) * mana
 
-		enemyUnits = FindUnitsInRadius(DOTA_TEAM_BADGUYS, caster:GetAbsOrigin(),
+		StartAnimation(caster, {duration=1, activity=ACT_DOTA_CAST_ABILITY_1, rate=1.5, translate="glacier"})
+
+		Timers:CreateTimer(0.4 , function()
+			enemyUnits = FindUnitsInRadius(DOTA_TEAM_BADGUYS, caster:GetAbsOrigin(),
 					nil, maxRadius,
 		    		DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL,
 		        	DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
@@ -57,5 +60,6 @@ function lora_fiery_explosion:OnSpellStart()
 		end		
 
 		caster:SetMana(0)
+		end)
 	end
 end

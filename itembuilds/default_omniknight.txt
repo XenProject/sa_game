@@ -1,0 +1,14 @@
+"itembuilds"
+{
+	"author"		"Xen"
+	"hero"			"npc_dota_hero_omniknight"
+	"Title"			"Recommended items for Vasya"
+	
+	"Items"
+	{		
+		"#DOTA_Item_Build_Starting_Items"
+		{
+			"item"		"item_sa_drum"
+		}
+	}
+}
