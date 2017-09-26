@@ -47,6 +47,7 @@
     "item"      "item_sa_giant_axe"
     "item"      "item_sa_warrior_glove"
     "item"      "item_sa_heavy_hammer"
+    "item"      "item_sa_forest_boots"
   }
 
   // Level 2 - Blue Recipes
@@ -74,7 +75,9 @@
   // Level 4 - Orange / Orb / Artifacts       
   "artifacts"
   { 
-        
+    "item"    "item_sa_bloodblade"
+    "item"    "item_sa_bloodsabre"
+    "item"    "item_sa_bloodsword"
   }
 
   "sideshop1"

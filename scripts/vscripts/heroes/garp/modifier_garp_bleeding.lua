@@ -51,7 +51,7 @@ function modifier_garp_bleeding:OnDeath( params )
 		particle = ParticleManager:CreateParticle( "particles/heroes/garp/garp_spear_burst.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
 		ParticleManager:SetParticleControl(particle, 1, Vector(250,0,0))
 
-		enemyUnits = FindUnitsInRadius(DOTA_TEAM_BADGUYS, self:GetParent():GetAbsOrigin(),
+		local enemyUnits = FindUnitsInRadius(DOTA_TEAM_BADGUYS, self:GetParent():GetAbsOrigin(),
 				nil, self.radius_burst,
 	    		DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL,
 	        	DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)

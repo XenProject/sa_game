@@ -39,7 +39,7 @@ function modifier_garp_instant_hit:OnAttackLanded( params )
 			if target ~= nil and target:GetTeamNumber() ~= self:GetParent():GetTeamNumber() then
 				local cleaveDamage = ( self.agi_multiplier_prt / 100.0 ) * self:GetParent():GetAgility() + self.damage
 				ApplyDamage( { victim = target, attacker = self:GetParent(), damage = cleaveDamage, damage_type = DAMAGE_TYPE_PHYSICAL, ability = self:GetAbility()} )
-				DoCleaveAttack( self:GetParent(), target, self:GetAbility(), cleaveDamage, self.radius, 100, self.radius, "particles/units/heroes/hero_kunkka/kunkka_spell_tidebringer.vpcf" )
+				DoCleaveAttack( self:GetParent(), target, self:GetAbility(), cleaveDamage, self.radius, 100, self.radius, "particles/heroes/garp/garp_instant_hit.vpcf" )
 				self:GetParent():Heal( cleaveDamage * (self.vamp_prt/100.0), self:GetParent())
 				PopupHealing(self:GetParent(), cleaveDamage)
 			end

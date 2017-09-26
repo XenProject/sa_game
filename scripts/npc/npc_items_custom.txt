@@ -1823,7 +1823,7 @@
       "modifier_sa_giant_axe_cleave"  //Only melee units can cleave, so only melee units should get this modifier.
       {
         "Passive"     "0"
-        "IsHidden"      "0"
+        "IsHidden"      "1"
         
         "OnAttackLanded"
         {
@@ -2005,6 +2005,435 @@
       }
     }
   }
+  "item_sa_bloodblade"
+  {
+    "ID"   "2026"
+    "BaseClass"                 "item_datadriven"
+    "AbilityTextureName"      "item_sa_bloodblade"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_bloodblade"
+    "Model" "models/props_gameplay/red_box.vmdl"
+    "ItemQuality"     "common"
+    //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+    "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+    "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+    "ItemAlertable" "1"
+
+    "ItemCost"            "0"
+    "ItemPurchasable"          "1"
+    "ItemKillable"             "1"
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+
+    //"ItemStockMax" "1" 
+    //"ItemStockTime" "100"
+    //"ItemStockInitial" "3"
+
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+
+    "ItemStackable" "0"
+    "ItemPermanent" "0"
+
+    //"ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    
+    //"MaxUpgradeLevel"       "1"
+    //"ItemBaseLevel"         "1"
+
+    //"ItemShopTags" "int;str;agi;mana_pool;health_pool;hard_to_tag"
+    //"ItemAliases" "this;appears_in;search"
+
+    "OnEquip"
+    {
+      "RunScript"
+      {
+        "ScriptFile"  "items/vamp.lua"
+        "Function"    "OnEquipVampItem"
+      }
+    }
+
+    "OnUnequip"
+    {
+      "RunScript"
+      {
+        "ScriptFile"  "items/vamp.lua"
+        "Function"    "OnUnequipVampItem"
+      }
+    }
+
+    "Modifiers"
+    {
+      "modifier_item_sa_bloodblade"
+      {
+        "Passive"      "1"
+        "IsHidden"      "1"
+        "IsDebuff"      "0"
+        "Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+        "Properties"
+        {
+          "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"    "%bonus_dmg"
+        }
+      }
+    }
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_dmg"      "12"
+      }
+      "02"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "vamp_prt"      "10"
+      }
+    }
+  }
+  "item_sa_bloodsabre"
+  {
+    "ID"   "2027"
+    "BaseClass"                 "item_datadriven"
+    "AbilityTextureName"      "item_sa_bloodsabre"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_bloodsabre"
+    "Model" "models/props_gameplay/red_box.vmdl"
+    "ItemQuality"     "rare"
+    //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+    "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+    "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+    "ItemAlertable" "1"
+
+    "ItemCost"            "0"
+    "ItemPurchasable"          "1"
+    "ItemKillable"             "1"
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+
+    //"ItemStockMax" "1" 
+    //"ItemStockTime" "100"
+    //"ItemStockInitial" "3"
+
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+
+    "ItemStackable" "0"
+    "ItemPermanent" "0"
+
+    //"ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    
+    //"MaxUpgradeLevel"       "1"
+    //"ItemBaseLevel"         "1"
+
+    //"ItemShopTags" "int;str;agi;mana_pool;health_pool;hard_to_tag"
+    //"ItemAliases" "this;appears_in;search"
+
+    "OnEquip"
+    {
+      "RunScript"
+      {
+        "ScriptFile"  "items/vamp.lua"
+        "Function"    "OnEquipVampItem"
+      }
+    }
+
+    "OnUnequip"
+    {
+      "RunScript"
+      {
+        "ScriptFile"  "items/vamp.lua"
+        "Function"    "OnUnequipVampItem"
+      }
+    }
+
+    "Modifiers"
+    {
+      "modifier_item_sa_bloodsabre"
+      {
+        "Passive"      "1"
+        "IsHidden"      "1"
+        "IsDebuff"      "0"
+        "Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+        "Properties"
+        {
+          "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"    "%bonus_dmg"
+          "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"       "%bonus_agi"
+        }
+      }
+    }
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_dmg"      "24"
+      }
+      "02"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "vamp_prt"      "20"
+      }
+      "03"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_agi"      "6"
+      }
+
+    }
+  }
+  "item_sa_bloodsword"
+  {
+    "ID"   "2028"
+    "BaseClass"                 "item_datadriven"
+    "AbilityTextureName"      "item_sa_bloodsword"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_bloodsword"
+    "Model" "models/props_gameplay/red_box.vmdl"
+    "ItemQuality"     "epic"
+    //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+    "AbilityCooldown"        "70.0"
+    "AbilityManaCost"        "100"
+
+    "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+    "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+    "ItemAlertable" "1"
+
+    "ItemCost"            "0"
+    "ItemPurchasable"          "1"
+    "ItemKillable"             "1"
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+
+    //"ItemStockMax" "1" 
+    //"ItemStockTime" "100"
+    //"ItemStockInitial" "3"
+
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+
+    "ItemStackable" "0"
+    "ItemPermanent" "0"
+
+    //"ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    
+    //"MaxUpgradeLevel"       "1"
+    //"ItemBaseLevel"         "1"
+
+    //"ItemShopTags" "int;str;agi;mana_pool;health_pool;hard_to_tag"
+    //"ItemAliases" "this;appears_in;search"
+
+    "OnEquip"
+    {
+      "RunScript"
+      {
+        "ScriptFile"  "items/vamp.lua"
+        "Function"    "OnEquipVampItem"
+      }
+    }
+
+    "OnUnequip"
+    {
+      "RunScript"
+      {
+        "ScriptFile"  "items/vamp.lua"
+        "Function"    "OnUnequipVampItem"
+      }
+    }
+
+    "OnSpellStart"
+    {
+      "RunScript"
+      {
+        "ScriptFile"  "items/item_sa_bloodsword.lua"
+        "Function"    "BloodSword"
+      }
+    }
+
+    "Modifiers"
+    {
+      "modifier_item_sa_bloodsword"
+      {
+        "Passive"      "1"
+        "IsHidden"      "1"
+        "IsDebuff"      "0"
+        "Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+        "Properties"
+        {
+          "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"    "%bonus_dmg"
+          "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"       "%bonus_agi"
+        }
+      }
+    }
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_dmg"      "40"
+      }
+      "02"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "vamp_prt"      "25"
+      }
+      "03"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_agi"      "12"
+      }
+      "04"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "health_prt"      "50"
+      }
+      "05"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "health_min"      "800"
+      }
+    }
+  }
+  "item_sa_forest_boots"
+  {
+    "ID"   "2029"
+    "BaseClass"                 "item_datadriven"
+    "AbilityTextureName"      "item_sa_forest_boots"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_forest_boots"
+    "Model" "models/props_gameplay/red_box.vmdl"
+    "ItemQuality"     "common"
+    //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+    "AoERadius"   "%radius"
+    "AbilityCastRange"        "%distance"
+
+    "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+    "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+    "ItemAlertable" "1"
+
+    "ItemCost"            "100"
+    "ItemPurchasable"          "1"
+    "ItemKillable"             "1"
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+
+    //"ItemStockMax" "1" 
+    //"ItemStockTime" "100"
+    //"ItemStockInitial" "3"
+
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+
+    "ItemStackable" "0"
+    "ItemPermanent" "0"
+
+    //"ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    
+    //"MaxUpgradeLevel"       "1"
+    //"ItemBaseLevel"         "1"
+
+    //"ItemShopTags" "int;str;agi;mana_pool;health_pool;hard_to_tag"
+    //"ItemAliases" "this;appears_in;search"
+
+    "precache"
+    {
+      "particle"  "particles/units/heroes/hero_treant/treant_overgrowth_vines_small.vpcf"
+    }
+
+    "OnSpellStart"
+    {
+      "RunScript"
+      {
+        "ScriptFile"  "items/item_sa_forest_boots.lua"
+        "Function"    "Blink"
+        "Target"        "POINT"
+        "maxRange"    "%distance"
+        "radius"      "%radius"
+      }
+    }
+
+    "Modifiers"
+    {
+      "item"
+      {
+        "Passive"      "1"
+        "IsHidden"      "1"
+        "IsDebuff"      "0"
+        "Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+        "Properties"
+        {
+          "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"  "%bonus_ms"
+          "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"       "%bonus_agi"
+        }
+      }
+      "modifier_sa_forest_boots_root"
+      {
+        "Duration"  "%duration"
+        "IsDebuff"  "1"
+        "OnCreated"
+        {
+          "AttachEffect"
+          {
+            "EffectName" "particles/units/heroes/hero_treant/treant_overgrowth_vines_small.vpcf"
+            "EffectAttachType" "follow_origin"
+            "Target"            "TARGET"
+          }
+        }
+        "ThinkInterval"  "1.0"
+        "OnIntervalThink"
+        {
+          "Damage"
+          {
+            "Target"    "TARGET"
+            "Type"      "DAMAGE_TYPE_MAGICAL"
+            "Damage"    "%damage"
+          }
+        }
+        "States"
+        {
+          "MODIFIER_STATE_ROOTED"    "MODIFIER_STATE_VALUE_ENABLED"
+        }
+      }
+    }
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_ms"      "60"
+      }
+      "02"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_agi"      "8"
+      }
+      "02"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "distance"      "600"
+      }
+      "02"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "radius"      "250"
+      }
+      "02"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "duration"      "2"
+      }
+      "02"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "damage"      "20"
+      }
+    }
+  }
 
   //Recipes
     "item_recipe_sa_forest_staff" 
@@ -2061,6 +2490,62 @@
         "ItemRequirements"
         {
             "01" "item_sa_strong_helmet;item_sa_hummer"
+        }
+    }
+    "item_recipe_sa_bloodblade" 
+    {
+        "ID" "3004"
+        "BaseClass"           "item_datadriven"
+        "Model"        "models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"    "recipe"
+        "ItemRecipe"          "1" //destroyed after combine
+        "ItemCost"            "300" //if its 0, it will combine without needing a recipe.
+        "ItemResult"          "item_sa_bloodblade" //the result of combining the ItemRequirements
+        "ItemRequirements"
+        {
+            "01" "item_sa_sword"
+        }
+    }
+    "item_recipe_sa_bloodsabre" 
+    {
+        "ID" "3005"
+        "BaseClass"           "item_datadriven"
+        "Model"        "models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"    "recipe"
+        "ItemRecipe"          "1" //destroyed after combine
+        "ItemCost"            "550" //if its 0, it will combine without needing a recipe.
+        "ItemResult"          "item_sa_bloodsabre" //the result of combining the ItemRequirements
+        "ItemRequirements"
+        {
+            "01" "item_sa_bloodblade;item_sa_pitchfork"
+        }
+    }
+    "item_recipe_sa_bloodsword" 
+    {
+        "ID" "3006"
+        "BaseClass"           "item_datadriven"
+        "Model"        "models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"    "recipe"
+        "ItemRecipe"          "1" //destroyed after combine
+        "ItemCost"            "1000" //if its 0, it will combine without needing a recipe.
+        "ItemResult"          "item_sa_bloodsword" //the result of combining the ItemRequirements
+        "ItemRequirements"
+        {
+            "01" "item_sa_bloodsabre"
+        }
+    }
+    "item_recipe_sa_forest_boots" 
+    {
+        "ID" "3007"
+        "BaseClass"           "item_datadriven"
+        "Model"        "models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"    "recipe"
+        "ItemRecipe"          "1" //destroyed after combine
+        "ItemCost"            "200" //if its 0, it will combine without needing a recipe.
+        "ItemResult"          "item_sa_forest_boots" //the result of combining the ItemRequirements
+        "ItemRequirements"
+        {
+            "01" "item_sa_boots;item_sa_pitchfork"
         }
     }
 }

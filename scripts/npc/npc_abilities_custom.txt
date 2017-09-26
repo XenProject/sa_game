@@ -519,6 +519,11 @@
       "AOERadius"           "%radius"
       "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_2"
 
+      "precache"
+      {
+        "particle"  "particles/heroes/garp/garp_instant_hit.vpcf"
+      }
+
       "AbilitySpecial"
       {
         "01"
