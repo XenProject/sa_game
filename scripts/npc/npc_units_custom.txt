@@ -436,7 +436,7 @@
             "AttackRate"            "1.5"      // Speed of attack.
             "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
-            "AttackRange"            "200"   // Range within a target can be attacked.
+            "AttackRange"            "450"   // Range within a target can be attacked.
 
             "RingRadius"            "40"
             "HealthBarOffset"         "170"
@@ -556,7 +556,7 @@
             "AttackRate"            "1.5"      // Speed of attack.
             "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
-            "AttackRange"            "200"   // Range within a target can be attacked.
+            "AttackRange"            "450"   // Range within a target can be attacked.
 
             "RingRadius"            "40"
             "HealthBarOffset"         "170"
@@ -676,7 +676,7 @@
             "AttackRate"            "1.5"      // Speed of attack.
             "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
-            "AttackRange"            "200"   // Range within a target can be attacked.
+            "AttackRange"            "450"   // Range within a target can be attacked.
 
             "RingRadius"            "40"
             "HealthBarOffset"         "170"
