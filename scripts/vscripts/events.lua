@@ -17,6 +17,12 @@ function GameMode:OnGameRulesStateChange(keys)
   DebugPrintTable(keys)
 
   local newState = GameRules:State_Get()
+
+  if newState == DOTA_GAMERULES_STATE_STRATEGY_TIME then
+    Timers:CreateTimer(0.5, function()
+      CustomGameEventManager:Send_ServerToAllClients("StrategyScreen", nil)
+    end) 
+  end
 end
 
 -- An NPC has spawned somewhere in game.  This includes heroes
@@ -247,7 +253,7 @@ function GameMode:OnEntityKilled( keys )
   local damagebits = keys.damagebits -- This might always be 0 and therefore useless
 
   -- Put code here to handle when an entity gets killed
-  if not killedUnit:IsHero() then
+  if not killedUnit:IsHero() and string.find(killedUnit:GetUnitName(),"wave_unit_")then
     _G.UNITS_LEFT = _G.UNITS_LEFT-1
     if _G.UNITS_LEFT == 0 then
       SpecArena:WaveEnd()

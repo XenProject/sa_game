@@ -418,7 +418,7 @@
             "Model"                   "models/creeps/item_creeps/i_creep_necro_archer/necro_archer.vmdl"
             "BaseClass"               "npc_dota_creature"
             "Level"                         "1"
-            "SoundSet"               "n_creep_Ranged"
+            "SoundSet"               "Creep_Good_Range"
             "GameSoundsFile"         "soundevents/game_sounds_creeps.vsndevts"
             "Modelscale"              ".9"
 
@@ -437,6 +437,8 @@
             "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
             "AttackRange"            "450"   // Range within a target can be attacked.
+            "ProjectileModel"           "particles/items2_fx/necronomicon_archer_projectile.vpcf" // Particle system model for projectile.
+            "ProjectileSpeed"           "900"       // Speed of projectile.
 
             "RingRadius"            "40"
             "HealthBarOffset"         "170"

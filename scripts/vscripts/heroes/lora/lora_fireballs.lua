@@ -10,7 +10,7 @@ function FireBallsStart( event )
 
 	-- Initialize the table to keep track of all spirits
 	ability.fireballs = {}
-	print("Spawning "..fireballs_num.." spirits")
+	--print("Spawning "..fireballs_num.." spirits")
 	for i=1,fireballs_num do
 		Timers:CreateTimer(i * delay_between_fireballs, function()
 			local unit = CreateUnitByName(unit_name, caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
@@ -178,7 +178,7 @@ function FireBallsPhysics( event )
 					unit.state = "target_acquired"
 					unit.current_target = target_enemy
 					point = unit.current_target:GetAbsOrigin()
-					print("Acquiring -> Enemy Target acquired: "..unit.current_target:GetUnitName())
+					--print("Acquiring -> Enemy Target acquired: "..unit.current_target:GetUnitName())
 
 				-- If no enemies, set the unit to collide with a random idle point.
 				else
@@ -200,7 +200,7 @@ function FireBallsPhysics( event )
 				point = source + RandomVector(RandomInt(radius/2, radius))
 				point.z = GetGroundHeight(point,nil)
 				
-				print("Waiting for attack time. Acquiring -> Random Point Target acquired")
+				--print("Waiting for attack time. Acquiring -> Random Point Target acquired")
 				if Debug then DebugDrawCircle(point, idleColor, 100, 25, true, draw_duration) end
 			end
 
@@ -339,7 +339,7 @@ function FireBallsEnd( event )
 	local ability = event.ability
 	local targets = ability.fireballs
 
-	print("Exorcism End")
+	--print("Exorcism End")
 	for _,unit in pairs(targets) do		
 	   	if unit and IsValidEntity(unit) then
     	  	unit.state = "end"
@@ -356,7 +356,7 @@ function FireBallsDeath( event )
 	local ability = event.ability
 	local targets = ability.spirits or {}
 
-	print("Exorcism Death")
+	--print("Exorcism Death")
 	for _,unit in pairs(targets) do		
 	   	if unit and IsValidEntity(unit) then
     	  	unit:SetPhysicsVelocity(Vector(0,0,0))
