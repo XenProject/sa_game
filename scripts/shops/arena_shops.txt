@@ -1,4 +1,4 @@
-"dota_shops"
+"arena_shops"
 {
   "consumables"
   {
@@ -90,5 +90,13 @@
   "secretshop"
   {             
     
+  }
+
+  "pregame"
+  {
+    "item"      "item_sa_drum"
+    "item"      "item_sa_pitchfork"
+    "item"      "item_sa_staff"
+    "item"      "item_sa_book"
   } 
 }
