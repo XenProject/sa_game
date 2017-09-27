@@ -43,11 +43,11 @@
   // Level 1 - Green Recipes
   "basics"
   {
-    "item"      "item_sa_forest_staff"
     "item"      "item_sa_giant_axe"
     "item"      "item_sa_warrior_glove"
     "item"      "item_sa_heavy_hammer"
     "item"      "item_sa_forest_boots"
+    "item"      "item_sa_amulet_of_will"
   }
 
   // Level 2 - Blue Recipes
@@ -58,13 +58,17 @@
         
   "magics"      
   {
-    
+    "item"    "item_sa_forest_staff"
+    "item"    "item_sa_druid_staff"
+    "item"    "item_sa_shaman_staff"
+    "item"    "item_sa_archmage_staff"
   }
     
   // Level 3 - Purple Recipes 
   "defense"
   {
-    
+    "item"    "item_sa_iron_plate"
+    "item"    "item_sa_armored_boots"
   }
       
   "weapons"

@@ -37,6 +37,9 @@ function Precache( context )
   --PrecacheUnitByNameSync("npc_dota_hero_enigma", context)
 
   --PrecacheItemByNameSync("item_drum", context)
+  PrecacheItemByNameSync("item_sa_forest_staff", context)
+  PrecacheItemByNameSync("item_sa_shaman_staff", context)
+  PrecacheItemByNameSync("item_sa_archmage_staff", context)
   for i=1,_G.MAX_ROUNDS do
     PrecacheUnitByNameSync("wave_unit_"..i, context)
   end

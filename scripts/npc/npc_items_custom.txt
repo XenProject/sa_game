@@ -1675,6 +1675,7 @@
 
     "AbilityCooldown"        "40.0"
     "AbilityManaCost"        "50"
+    "AbilityCastAnimation"  "ACT_RESET"
 
     "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
     "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
@@ -2197,6 +2198,7 @@
 
     "AbilityCooldown"        "70.0"
     "AbilityManaCost"        "100"
+    "AbilityCastAnimation"  "ACT_RESET"
 
     "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
     "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
@@ -2226,6 +2228,11 @@
     //"ItemShopTags" "int;str;agi;mana_pool;health_pool;hard_to_tag"
     //"ItemAliases" "this;appears_in;search"
 
+    "precache"
+    {
+      "soundfile" "soundevents/game_sounds_items.vsndevts"
+    }
+
     "OnEquip"
     {
       "RunScript"
@@ -2246,6 +2253,11 @@
 
     "OnSpellStart"
     {
+      "FireSound"
+      {
+        "EffectName"  "DOTA_Item.Satanic.Activate"
+        "Target"     "CASTER"
+      }
       "RunScript"
       {
         "ScriptFile"  "items/item_sa_bloodsword.lua"
@@ -2310,12 +2322,13 @@
     "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
     "AoERadius"   "%radius"
     "AbilityCastRange"        "%distance"
+    "AbilityCastAnimation"  "ACT_RESET"
 
     "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
     "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
     "ItemAlertable" "1"
 
-    "ItemCost"            "100"
+    "ItemCost"            "0"
     "ItemPurchasable"          "1"
     "ItemKillable"             "1"
     "ItemDroppable"         "1"
@@ -2341,7 +2354,9 @@
 
     "precache"
     {
-      "particle"  "particles/units/heroes/hero_treant/treant_overgrowth_vines_small.vpcf"
+      "particle"  "particles/units/heroes/hero_lone_druid/lone_druid_bear_entangle_body.vpcf"
+      "particle"  "particles/econ/items/enchantress/enchantress_lodestar/ench_death_lodestar_flower.vpcf"
+      "particle"  "particles/econ/events/fall_major_2016/blink_dagger_start_fm06.vpcf"
     }
 
     "OnSpellStart"
@@ -2379,7 +2394,7 @@
         {
           "AttachEffect"
           {
-            "EffectName" "particles/units/heroes/hero_treant/treant_overgrowth_vines_small.vpcf"
+            "EffectName" "particles/units/heroes/hero_lone_druid/lone_druid_bear_entangle_body.vpcf"
             "EffectAttachType" "follow_origin"
             "Target"            "TARGET"
           }
@@ -2415,7 +2430,7 @@
       "02"
       {
         "var_type"      "FIELD_INTEGER"
-        "distance"      "600"
+        "distance"      "800"
       }
       "02"
       {
@@ -2434,7 +2449,564 @@
       }
     }
   }
+  "item_sa_amulet_of_will"
+  {
+    "ID"   "2030"
+    "BaseClass"                 "item_datadriven"
+    "AbilityTextureName"      "item_sa_amulet_of_will"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_amulet_of_will"
+    "Model" "models/props_gameplay/red_box.vmdl"
+    "ItemQuality"         "common"
+    //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
+    "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+    "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+    "ItemAlertable" "1"
+
+    "ItemCost"            "0"
+    "ItemPurchasable"          "1"
+    "ItemKillable"             "1"
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+
+    //"ItemStockMax" "1" 
+    //"ItemStockTime" "100"
+    //"ItemStockInitial" "3"
+
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+
+    "ItemStackable" "0"
+    "ItemPermanent" "0"
+
+    //"ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    
+    //"MaxUpgradeLevel"       "1"
+    //"ItemBaseLevel"         "1"
+
+    //"ItemShopTags" "int;str;agi;mana_pool;health_pool;hard_to_tag"
+    //"ItemAliases" "this;appears_in;search"
+
+    "Modifiers"
+    {
+      "item"
+      {
+        "Passive"      "1"
+        "IsHidden"      "1"
+        "IsDebuff"      "0"
+        "Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+        "Properties"
+        {
+          "MODIFIER_PROPERTY_HEALTH_BONUS"  "%bonus_health"
+          "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"   "%bonus_health_regen"
+        }
+      }
+    }
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_health"      "60"
+      }
+      "02"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_health_regen"      "3"
+      }
+    }
+  }
+  "item_sa_iron_plate"
+  {
+    "ID"   "2031"
+    "BaseClass"                 "item_datadriven"
+    "AbilityTextureName"      "item_sa_iron_plate"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_iron_plate"
+    "Model" "models/props_gameplay/red_box.vmdl"
+    "ItemQuality"         "rare"
+    //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+    "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+    "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+    "ItemAlertable" "1"
+
+    "ItemCost"            "0"
+    "ItemPurchasable"          "1"
+    "ItemKillable"             "1"
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+
+    //"ItemStockMax" "1" 
+    //"ItemStockTime" "100"
+    //"ItemStockInitial" "3"
+
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+
+    "ItemStackable" "0"
+    "ItemPermanent" "0"
+
+    //"ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    
+    //"MaxUpgradeLevel"       "1"
+    //"ItemBaseLevel"         "1"
+
+    //"ItemShopTags" "int;str;agi;mana_pool;health_pool;hard_to_tag"
+    //"ItemAliases" "this;appears_in;search"
+
+    "Modifiers"
+    {
+      "item"
+      {
+        "Passive"      "1"
+        "IsHidden"      "1"
+        "IsDebuff"      "0"
+        "Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+        "Properties"
+        {
+          "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"    "%bonus_armor"
+          "MODIFIER_PROPERTY_HEALTH_BONUS"  "%bonus_health"
+          "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"   "%bonus_health_regen"
+        }
+      }
+    }
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_armor"      "5"
+      }
+      "02"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_health"      "100"
+      }
+      "03"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_health_regen"      "5"
+      }
+    }
+  }
+  "item_sa_armored_boots"
+  {
+    "ID"   "2032"
+    "BaseClass"                 "item_datadriven"
+    "AbilityTextureName"      "item_sa_armored_boots"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_armored_boots"
+    "Model" "models/props_gameplay/red_box.vmdl"
+    "ItemQuality"         "epic"
+    //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityCooldown"        "40.0"
+    "AbilityManaCost"        "80"
+    "AbilityCastAnimation"  "ACT_RESET"
+
+    "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+    "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+    "ItemAlertable" "1"
+
+    "ItemCost"            "0"
+    "ItemPurchasable"          "1"
+    "ItemKillable"             "1"
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+
+    //"ItemStockMax" "1" 
+    //"ItemStockTime" "100"
+    //"ItemStockInitial" "3"
+
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+
+    "ItemStackable" "0"
+    "ItemPermanent" "0"
+
+    "precache"
+    {
+      "particle"  "particles/items_fx/black_king_bar_avatar.vpcf"
+    }
+
+    //"ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    
+    //"MaxUpgradeLevel"       "1"
+    //"ItemBaseLevel"         "1"
+
+    //"ItemShopTags" "int;str;agi;mana_pool;health_pool;hard_to_tag"
+    //"ItemAliases" "this;appears_in;search"
+
+    "OnSpellStart"
+    {
+      "ApplyModifier"
+      {
+        "ModifierName"  "modifier_sa_armored_boots_active"
+        "Target"     "CASTER"
+      }
+    }
+
+    "Modifiers"
+    {
+      "item"
+      {
+        "Passive"      "1"
+        "IsHidden"      "1"
+        "IsDebuff"      "0"
+        "Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+        "Properties"
+        {
+          "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"  "%bonus_ms"
+          "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"    "%bonus_armor"
+          "MODIFIER_PROPERTY_HEALTH_BONUS"  "%bonus_health"
+          "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"   "%bonus_health_regen"
+        }
+      }
+      "modifier_sa_armored_boots_active"
+      {
+        "Duration"    "%duration"
+        "IsHidden"    "0"
+
+        "EffectName"    "particles/items_fx/black_king_bar_avatar.vpcf"
+
+        "States"
+        {
+          "MODIFIER_STATE_DISARMED"    "MODIFIER_STATE_VALUE_ENABLED"
+          "MODIFIER_STATE_INVULNERABLE"   "MODIFIER_STATE_VALUE_ENABLED"
+        }
+        "Properties"
+        {
+          "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "-%slow_prt"
+        }
+      }
+    }
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_ms"      "50"
+      }
+      "02"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_armor"      "8"
+      }
+      "03"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_health"      "400"
+      }
+      "04"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_health_regen"      "10"
+      }
+      "05"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "duration"      "6"
+      }
+      "06"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "slow_prt"      "90"
+      }
+    }
+  }
+  "item_sa_druid_staff"
+  {
+    "ID"   "2033"
+    "BaseClass"                 "item_datadriven"
+    "AbilityTextureName"      "item_sa_druid_staff"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_druid_staff"
+    "Model" "models/props_gameplay/red_box.vmdl"
+    "ItemQuality"       "common"
+    //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+    "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+    "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+    "ItemAlertable" "1"
+
+    "ItemCost"            "0"
+    "ItemPurchasable"          "1"
+    "ItemKillable"             "1"
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+
+    //"ItemStockMax" "1" 
+    //"ItemStockTime" "100"
+    //"ItemStockInitial" "3"
+
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+
+    "ItemStackable" "0"
+    "ItemPermanent" "0"
+
+    //"ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    
+    //"MaxUpgradeLevel"       "1"
+    //"ItemBaseLevel"         "1"
+
+    //"ItemShopTags" "int;str;agi;mana_pool;health_pool;hard_to_tag"
+    //"ItemAliases" "this;appears_in;search"
+
+    "Modifiers"
+    {
+      "item"
+      {
+        "Passive"      "1"
+        "IsHidden"      "1"
+        "IsDebuff"      "0"
+        "Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+        "Properties"
+        {
+          "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%bonus_int"
+          "MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE" "%bonus_mana_regen_prt"
+        }
+      }
+    }
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_int"      "6"
+      }
+      "02"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_mana_regen_prt"      "40"
+      }
+    }
+  }
+  "item_sa_shaman_staff"
+  {
+    "ID"   "2034"
+    "BaseClass"                 "item_datadriven"
+    "AbilityTextureName"      "item_sa_shaman_staff"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_shaman_staff"
+    "Model" "models/props_gameplay/red_box.vmdl"
+    "ItemQuality"       "common"
+    //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityCooldown"        "40.0"
+    "AbilityManaCost"        "80"
+    "AbilityCastAnimation"  "ACT_RESET"
+
+    "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+    "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+    "ItemAlertable" "1"
+
+    "ItemCost"            "0"
+    "ItemPurchasable"          "1"
+    "ItemKillable"             "1"
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+
+    //"ItemStockMax" "1" 
+    //"ItemStockTime" "100"
+    //"ItemStockInitial" "3"
+
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+
+    "ItemStackable" "0"
+    "ItemPermanent" "0"
+
+    //"ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    
+    //"MaxUpgradeLevel"       "1"
+    //"ItemBaseLevel"         "1"
+
+    //"ItemShopTags" "int;str;agi;mana_pool;health_pool;hard_to_tag"
+    //"ItemAliases" "this;appears_in;search"
+
+    "OnSpellStart"
+    {
+      "RunScript"
+      {
+        "ScriptFile"  "items/item_sa_shaman_staff.lua"
+        "Function"    "Spawn"
+      }
+    }
+
+    "Modifiers"
+    {
+      "item"
+      {
+        "Passive"      "1"
+        "IsHidden"      "1"
+        "IsDebuff"      "0"
+        "Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+        "Properties"
+        {
+          "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%bonus_int"
+          "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "%bonus_dmg"
+        }
+      }
+    }
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_int"      "10"
+      }
+      "02"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_dmg"      "16"
+      }
+      "03"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "duration"      "50"
+      }
+    }
+  }
+  "item_sa_archmage_staff"
+  {
+    "ID"   "2035"
+    "BaseClass"                 "item_datadriven"
+    "AbilityTextureName"      "item_sa_archmage_staff"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_archmage_staff"
+    "Model" "models/props_gameplay/red_box.vmdl"
+    "ItemQuality"       "epic"
+    //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+    "AbilityCooldown"        "50.0"
+    "AbilityManaCost"        "150"
+    "AbilityCastAnimation"  "ACT_RESET"
+
+    "AoERadius"     "%radius"
+    "AbilityCastRange"        "%distance"
+
+    "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+    "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+    "ItemAlertable" "1"
+
+    "ItemCost"            "0"
+    "ItemPurchasable"          "1"
+    "ItemKillable"             "1"
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+
+    //"ItemStockMax" "1" 
+    //"ItemStockTime" "100"
+    //"ItemStockInitial" "3"
+
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+
+    "ItemStackable" "0"
+    "ItemPermanent" "0"
+
+    //"ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    
+    //"MaxUpgradeLevel"       "1"
+    //"ItemBaseLevel"         "1"
+
+    //"ItemShopTags" "int;str;agi;mana_pool;health_pool;hard_to_tag"
+    //"ItemAliases" "this;appears_in;search"
+
+    "OnSpellStart"
+    {
+      "RunScript"
+      {
+        "ScriptFile"  "items/item_sa_archmage_staff.lua"
+        "Function"    "Spawn"
+        "Target"      "POINT"
+      }
+    }
+
+    "precache"
+    {
+      "particle"  "particles/units/heroes/hero_ursa/ursa_earthshock_soil1.vpcf"
+      "particle"  "particles/units/heroes/hero_ursa/ursa_earthshock_rocks.vpcf"
+      "particle"  "particles/items/item_sa_archmage_staff/stone_explosion.vpcf"
+      "particle"  "particles/items/item_sa_archmage_staff/dust_hit_ring.vpcf"
+      "soundfile" "soundevents/game_sounds_heroes/game_sounds_visage.vsndevts"
+      "soundfile" "soundevents/game_sounds_heroes/game_sounds_earth_spirit.vsndevts"
+    }
+
+    "Modifiers"
+    {
+      "item"
+      {
+        "Passive"      "1"
+        "IsHidden"      "1"
+        "IsDebuff"      "0"
+        "Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+        "Properties"
+        {
+          "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%bonus_int"
+          "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "%bonus_dmg"
+          "MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"   "%bonus_mana_regen_prt"
+        }
+      }
+      "golem_disable"
+      {
+        "IsHidden"    "1"
+        "States"
+        {
+          "MODIFIER_STATE_STUNNED"    "MODIFIER_STATE_VALUE_ENABLED"
+        }
+      }
+    }
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_int"      "20"
+      }
+      "02"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_dmg"      "20"
+      }
+      "03"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_mana_regen_prt"      "60"
+      }
+      "04"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "duration"      "50"
+      }
+      "05"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "radius"      "200"
+      }
+      "06"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "damage"      "250"
+      }
+      "07"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "stun_duration"      "3"
+      }
+      "08"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "distance"      "700"
+      }
+    }
+  }
   //Recipes
     "item_recipe_sa_forest_staff" 
     {
@@ -2546,6 +3118,90 @@
         "ItemRequirements"
         {
             "01" "item_sa_boots;item_sa_pitchfork"
+        }
+    }
+    "item_recipe_sa_amulet_of_will" 
+    {
+        "ID" "3008"
+        "BaseClass"           "item_datadriven"
+        "Model"        "models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"    "recipe"
+        "ItemRecipe"          "1" //destroyed after combine
+        "ItemCost"            "120" //if its 0, it will combine without needing a recipe.
+        "ItemResult"          "item_sa_amulet_of_will" //the result of combining the ItemRequirements
+        "ItemRequirements"
+        {
+            "01" "item_sa_amulet_of_health;item_sa_recovery_ring"
+        }
+    }
+    "item_recipe_sa_iron_plate" 
+    {
+        "ID" "3009"
+        "BaseClass"           "item_datadriven"
+        "Model"        "models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"    "recipe"
+        "ItemRecipe"          "1" //destroyed after combine
+        "ItemCost"            "200" //if its 0, it will combine without needing a recipe.
+        "ItemResult"          "item_sa_iron_plate" //the result of combining the ItemRequirements
+        "ItemRequirements"
+        {
+            "01" "item_sa_knight_helmet;item_sa_amulet_of_will"
+        }
+    }
+    "item_recipe_sa_armored_boots" 
+    {
+        "ID" "3010"
+        "BaseClass"           "item_datadriven"
+        "Model"        "models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"    "recipe"
+        "ItemRecipe"          "1" //destroyed after combine
+        "ItemCost"            "600" //if its 0, it will combine without needing a recipe.
+        "ItemResult"          "item_sa_armored_boots" //the result of combining the ItemRequirements
+        "ItemRequirements"
+        {
+            "01" "item_sa_boots;item_sa_iron_plate"
+        }
+    }
+    "item_recipe_sa_druid_staff" 
+    {
+        "ID" "3011"
+        "BaseClass"           "item_datadriven"
+        "Model"        "models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"    "recipe"
+        "ItemRecipe"          "1" //destroyed after combine
+        "ItemCost"            "100" //if its 0, it will combine without needing a recipe.
+        "ItemResult"          "item_sa_druid_staff" //the result of combining the ItemRequirements
+        "ItemRequirements"
+        {
+            "01" "item_sa_staff;item_sa_spell_ring"
+        }
+    }
+    "item_recipe_sa_shaman_staff" 
+    {
+        "ID" "3012"
+        "BaseClass"           "item_datadriven"
+        "Model"        "models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"    "recipe"
+        "ItemRecipe"          "1" //destroyed after combine
+        "ItemCost"            "100" //if its 0, it will combine without needing a recipe.
+        "ItemResult"          "item_sa_shaman_staff" //the result of combining the ItemRequirements
+        "ItemRequirements"
+        {
+            "01" "item_sa_forest_staff"
+        }
+    }
+    "item_recipe_sa_archmage_staff" 
+    {
+        "ID" "3013"
+        "BaseClass"           "item_datadriven"
+        "Model"        "models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"    "recipe"
+        "ItemRecipe"          "1" //destroyed after combine
+        "ItemCost"            "1500" //if its 0, it will combine without needing a recipe.
+        "ItemResult"          "item_sa_archmage_staff" //the result of combining the ItemRequirements
+        "ItemRequirements"
+        {
+            "01" "item_sa_shaman_staff;item_sa_druid_staff"
         }
     }
 }

@@ -1,5 +1,9 @@
 modifier_item_vamp = class({})
 
+function modifier_item_vamp:IsHidden()
+	return true
+end
+
 function modifier_item_vamp:DeclareFunctions()
 	local funcs = {
 		MODIFIER_EVENT_ON_ATTACK_LANDED
@@ -15,7 +19,8 @@ end
 function modifier_item_vamp:OnAttackLanded(keys)
 	--PrintTable(keys)
 	if keys.attacker == self:GetParent() then
-		print(self.vamp_prt)
+		--print(self.vamp_prt)
+		local nFXIndex = ParticleManager:CreateParticle( "particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_OVERHEAD_FOLLOW, keys.attacker )
 		PopupHealing( keys.attacker, keys.damage * (self.vamp_prt/100.0) )
 		keys.attacker:Heal( keys.damage * (self.vamp_prt/100.0), keys.attacker )
 	end

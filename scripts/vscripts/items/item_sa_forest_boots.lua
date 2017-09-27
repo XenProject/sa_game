@@ -3,6 +3,7 @@ function Blink( event )
 	local ability = event.ability
 
 	caster:EmitSound("DOTA_Item.BlinkDagger.Activate")
+	local nFXIndex = ParticleManager:CreateParticle( "particles/econ/events/fall_major_2016/blink_dagger_start_fm06.vpcf", PATTACH_ABSORIGIN, caster )
 	
 	local origin_point = caster:GetAbsOrigin()
 	local target_point = event.target_points[1]
@@ -14,6 +15,9 @@ function Blink( event )
 	
 	caster:SetAbsOrigin(target_point)
 	FindClearSpaceForUnit(caster, target_point, false)
+
+	nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/enchantress/enchantress_lodestar/ench_death_lodestar_flower.vpcf", PATTACH_ABSORIGIN, caster )
+	ParticleManager:SetParticleControl(nFXIndex, 0, caster:GetAbsOrigin())
 
 	local enemyUnits = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(),
 				nil, event.radius,

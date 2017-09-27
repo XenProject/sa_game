@@ -707,12 +707,16 @@
         "ApplyModifier"
         {
           "ModifierName"  "modifier_missile_defense"
-          "Target"     "CASTER"
+          "Target"
+          {
+            "Center"  "CASTER"
+            "Flags"   "DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+          }
           "Duration"    "%duration"
         }
         "FireSound"
         {
-            "Target"            "CASTER"
+            "Target"    "CASTER"
             "EffectName"        "Hero_Tinker.Heat-Seeking_Missile"
         }
       }
@@ -740,6 +744,7 @@
           "Passive"      "0"
           "IsHidden"      "1"
           "IsDebuff"      "0"
+          "Attributes"    "MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
 
           "ThinkInterval" "0.1"
           "OnIntervalThink"
