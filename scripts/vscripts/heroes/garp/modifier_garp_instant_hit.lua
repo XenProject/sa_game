@@ -5,11 +5,14 @@ function modifier_garp_instant_hit:IsHidden()
 end
 
 function modifier_garp_instant_hit:OnCreated( kv )
-	self.chance = self:GetAbility():GetSpecialValueFor( "chance" )
-	self.radius = self:GetAbility():GetSpecialValueFor( "radius" )
-	self.damage = self:GetAbility():GetSpecialValueFor( "damage" )
-	self.agi_multiplier_prt = self:GetAbility():GetSpecialValueFor( "agi_multiplier_prt" )
-	self.vamp_prt = self:GetAbility():GetSpecialValueFor( "vamp_prt" )
+	if IsServer() then
+		self.chance = self:GetAbility():GetSpecialValueFor( "chance" )
+		self.radius = self:GetAbility():GetSpecialValueFor( "radius" )
+		self.damage = self:GetAbility():GetSpecialValueFor( "damage" )
+		self.agi_multiplier_prt = self:GetAbility():GetSpecialValueFor( "agi_multiplier_prt" )
+		self.vamp_prt = self:GetAbility():GetSpecialValueFor( "vamp_prt" )
+		self.pseudo = PseudoRandom:New(self.chance*0.01)
+	end
 end
 
 function modifier_garp_instant_hit:OnRefresh( kv )
@@ -29,7 +32,7 @@ function modifier_garp_instant_hit:DeclareFunctions()
 end
 
 function modifier_garp_instant_hit:OnAttackLanded( params )
-	if IsServer() and RollPercentage(self.chance) then
+	if IsServer() and self.pseudo:Trigger() then
 		if params.attacker == self:GetParent() and ( not self:GetParent():IsIllusion() ) then
 			if self:GetParent():PassivesDisabled() then
 				return 0
