@@ -15,6 +15,8 @@ function vasya_clear_sky:OnSpellStart()
 	ParticleManager:SetParticleControl( nFXIndex, 1, Vector( radius, 1, 1 ) )
 	ParticleManager:ReleaseParticleIndex( nFXIndex )
 
+	caster:EmitSound("Ability.SandKing_SandStorm.start")
+
 	local enemyUnits = FindUnitsInRadius(caster:GetTeamNumber(), point,
 				nil, radius,
 	    		DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL,

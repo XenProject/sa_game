@@ -3,6 +3,7 @@ modifier_elay_great_knowledge = class({})
 function modifier_elay_great_knowledge:OnCreated( kv )
 	self.int_bonus = self:GetAbility():GetSpecialValueFor( "int_bonus" )
 	if IsServer() then
+		self.pseudo = PseudoRandom:New(self:GetAbility():GetSpecialValueFor("chance")*0.01)
 		self:SetStackCount( 0 )
 		self:GetParent():CalculateStatBonus()
 	end
@@ -11,6 +12,7 @@ end
 function modifier_elay_great_knowledge:OnRefresh( kv )
 	self.int_bonus = self:GetAbility():GetSpecialValueFor( "int_bonus" )
 	if IsServer() then
+		self.pseudo = PseudoRandom:New(self:GetAbility():GetSpecialValueFor("chance")*0.01)
 		self:GetParent():CalculateStatBonus()
 	end
 end

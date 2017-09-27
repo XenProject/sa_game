@@ -1,6 +1,7 @@
 "DOTAHeroes"
 {
-    //Attack rate: str = 1.5  agi = 1.2  int = 1.4
+    //Attack rate: str = 1.5  agi = 1.3  int = 1.4
+    //str:hp - 1:20  agi:armor - 1:0,14  int:mp - 1:12
     "npc_dota_hero_ancient_apparition_barebones"
     {
         "AbilityLayout"     "6"
@@ -104,7 +105,7 @@
         "Ability15"       ""
         "Ability16"       ""
         "MovementSpeed"       "300"
-        "AttackRate"    "1.2"
+        "AttackRate"    "1.3"
         "AttributePrimary"      "DOTA_ATTRIBUTE_AGILITY"
         "AttributeBaseStrength"     "22"
         "AttributeStrengthGain"     "1.900000"
@@ -112,8 +113,11 @@
         "AttributeAgilityGain"      "2.700000"
         "AttributeBaseIntelligence"     "16"
         "AttributeIntelligenceGain"     "1.800000"
+        "ArmorPhysical"     "1"
         "AttackDamageMin"       "39"
         "AttackDamageMax"       "42"
+        "StatusHealth"      "57"
+        "StatusMana"        "30"
     }
     "npc_dota_hero_elay"
     {
@@ -135,8 +139,19 @@
         "Ability14"       ""
         "Ability15"       ""
         "Ability16"       ""
-        "MovementSpeed"       "550"
-        "AttackRate"    "0.5"
+        "MovementSpeed"       "300"
+        "AttackRate"    "1.4"
+        "AttributeBaseStrength"     "24"
+        "AttributeStrengthGain"     "2.000000"
+        "AttributeBaseAgility"      "12"
+        "AttributeAgilityGain"      "2.500000"
+        "AttributeBaseIntelligence"     "30"
+        "AttributeIntelligenceGain"     "2.600000"
+        "ArmorPhysical"     "0"
+        "AttackDamageMin"       "39"
+        "AttackDamageMax"       "42"
+        "StatusHealth"      "44"
+        "StatusMana"        "0"
     }
     "npc_dota_hero_ti_15"
     {
@@ -167,8 +182,11 @@
         "AttributeAgilityGain"      "1.900000"
         "AttributeBaseIntelligence"     "25"
         "AttributeIntelligenceGain"     "2.500000"
+        "ArmorPhysical"     "0"
         "AttackDamageMin"       "39"
         "AttackDamageMax"       "42"
+        "StatusHealth"      "0"
+        "StatusMana"        "0"
     }
     "npc_dota_hero_lora"
     {
@@ -214,9 +232,20 @@
         "Ability14"       ""
         "Ability15"       ""
         "Ability16"       ""
-        "MovementSpeed"   "550"
-        "AttackRate"    "0.5"
+        "MovementSpeed"       "310"
+        "AttackRate"    "1.3"
         "AttributePrimary"      "DOTA_ATTRIBUTE_AGILITY"
+        "AttributeBaseStrength"     "24"
+        "AttributeStrengthGain"     "2.300000"
+        "AttributeBaseAgility"      "30"
+        "AttributeAgilityGain"      "2.500000"
+        "AttributeBaseIntelligence"     "20"
+        "AttributeIntelligenceGain"     "1.900000"
+        "ArmorPhysical"     "-1"
+        "AttackDamageMin"       "22"
+        "AttackDamageMax"       "24"
+        "StatusHealth"      "64"
+        "StatusMana"        "10"
     }
     "npc_dota_hero_vasya"
     {
@@ -238,7 +267,19 @@
         "Ability14"       ""
         "Ability15"       ""
         "Ability16"       ""
-        "MovementSpeed"   "550"
-        "AttackRate"    "0.5"
+        "MovementSpeed"       "300"
+        "AttackRate"    "1.5"
+        "AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+        "AttributeBaseStrength"     "28"
+        "AttributeStrengthGain"     "2.700000"
+        "AttributeBaseAgility"      "19"
+        "AttributeAgilityGain"      "2.200000"
+        "AttributeBaseIntelligence"     "23"
+        "AttributeIntelligenceGain"     "2.100000"
+        "ArmorPhysical"     "0"
+        "AttackDamageMin"       "39"
+        "AttackDamageMax"       "42"
+        "StatusHealth"      "18"
+        "StatusMana"        "0"
     }
 }

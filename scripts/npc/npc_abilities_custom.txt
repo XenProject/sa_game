@@ -585,6 +585,14 @@
       "AbilityTextureName"      "lich_chain_frost"
       "MaxLevel"             "4"
       "AbilityType"     "DOTA_ABILITY_TYPE_BASIC"
+      "AbilityCastAnimation"    "ACT_DOTA_ATTACK"
+      "AbilityCastPoint"        "0.2"
+
+      "AbilityCooldown"        "19.0"
+      "AbilityManaCost"        "120"
+
+      "AbilityCastRange"        "750"
+      //"AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
 
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
       "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -594,6 +602,7 @@
       "precache"
       {
         "particle"  "particles/heroes/elay/elay_energy_ball.vpcf"
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"
       }
 
       "AbilitySpecial"
@@ -856,6 +865,7 @@
           {
             "Random"
             {
+              "PseudoRandom" "DOTA_PSEUDO_RANDOM_CHAOS_CRIT"
               "Chance"      "%chance"
               //"PseudoRandom"    "DOTA_PSEUDO_RANDOM_JUGG_CRIT"
               "OnSuccess"
@@ -1761,6 +1771,7 @@
       "precache"
       {
         "particle"  "particles/heroes/vasya/vasya_clear_sky.vpcf"
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_sandking.vsndevts"
       }
 
       "AbilitySpecial"
@@ -1784,6 +1795,9 @@
       "AbilityTextureName"      "vasya_rescue"
       "MaxLevel"             "4"
       "AbilityType"     "DOTA_ABILITY_TYPE_BASIC"
+
+      "AbilityCastAnimation"  "ACT_DOTA_CAST_ABILITY_4"
+      "AbilityCastPoint"    "0.3"
 
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
       "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -1836,6 +1850,11 @@
 
       "OnSpellStart"
       {
+        "FireSound"
+        {
+          "EffectName"  "Hero_Omniknight.Purification"
+          "Target"     "TARGET"
+        }
         "ApplyModifier"
         {
           "ModifierName"  "modifier_vasya_blessing"

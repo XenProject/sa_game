@@ -13,7 +13,7 @@ function elay_energy_ball:OnSpellStart()
 			iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_1
 		}
 	ProjectileManager:CreateTrackingProjectile( info )
-	--EmitSoundOn( "Hero_VengefulSpirit.MagicMissile", self:GetCaster() )
+	EmitSoundOn( "Hero_Lich.ChainFrost", self:GetCaster() )
 end
 
 function elay_energy_ball:OnProjectileHit( hTarget, vLocation )
@@ -31,10 +31,31 @@ function elay_energy_ball:OnProjectileHit( hTarget, vLocation )
 			ability = self
 		}
 		ApplyDamage( damageTable )
+		EmitSoundOn("Hero_Lich.ChainFrostImpact.Creep", hTarget)
+
 		targets = FindUnitsInRadius(DOTA_TEAM_BADGUYS, hTarget:GetAbsOrigin(),
 				nil, self:GetSpecialValueFor("radius"),
 	    		DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL,
 	        	DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+
+		local target_to_jump = nil
+
+		for _,target in pairs(targets) do
+			if target ~= hTarget then
+				local damageTableAoE = {
+					victim = target,
+					attacker = self:GetCaster(),
+					damage = damage + damageInt,
+					damage_type = DAMAGE_TYPE_MAGICAL,
+					ability = self
+				}
+				ApplyDamage( damageTableAoE )
+				if (not target_to_jump or not target_to_jump:IsAlive() ) and target:IsAlive() then
+					target_to_jump = target
+				end
+			end
+		end
+
 		self:CheckUpgrade1()
 
 		if not self.jump_counter then
@@ -42,27 +63,16 @@ function elay_energy_ball:OnProjectileHit( hTarget, vLocation )
 		end
 
 		if self.jump_counter <= jumps then
-
-			local target_to_jump = nil
-			for _,target in pairs(targets) do
-				if target ~= hTarget then
-					local damageTableAoE = {
-						victim = target,
-						attacker = self:GetCaster(),
-						damage = damage + damageInt,
-						damage_type = DAMAGE_TYPE_MAGICAL,
-						ability = self
-					}
-					ApplyDamage( damageTableAoE )
-					if not target_to_jump then
-						target_to_jump = target
+			if not target_to_jump or not target_to_jump:IsAlive() then
+				for _,target in pairs(targets) do
+					if target ~= hTarget then
+						if (not target_to_jump or not target_to_jump:IsAlive() ) and target:IsAlive() then
+							target_to_jump = target
+						end
 					end
 				end
 			end
-
 			if target_to_jump then
-				--print("Bounce number "..self.jump_counter)
-				-- Create the next projectile
 				local info = {
 					Target = target_to_jump,
 					Source = hTarget,
@@ -89,7 +99,7 @@ function elay_energy_ball:CheckUpgrade1()
 	local ability2 = self:GetCaster():GetAbilityByIndex(1);
 	local ability2_modifier = self:GetCaster():FindModifierByName( ability2:GetIntrinsicModifierName() )
 
-	if RollPercentage( ability2:GetSpecialValueFor("chance")) then
+	if ability2_modifier ~= nil and ability2_modifier.pseudo:Trigger() then
 		ability2_modifier:SetStackCount( ability2_modifier:GetStackCount() + 1 )
 		ability2_modifier:ForceRefresh()
 	end
