@@ -18,7 +18,7 @@
   {
     "item"      "item_sa_claws"
     "item"      "item_sa_sword"
-    "item"      "item_sa_hummer"
+    "item"      "item_sa_hammer"
     "item"      "item_sa_bow"
     "item"      "item_sa_spear"
     "item"      "item_sa_wooden_shield"
@@ -48,6 +48,7 @@
     "item"      "item_sa_heavy_hammer"
     "item"      "item_sa_forest_boots"
     "item"      "item_sa_amulet_of_will"
+    "item"      "item_sa_beast_glove"
   }
 
   // Level 2 - Blue Recipes
@@ -67,13 +68,17 @@
   // Level 3 - Purple Recipes 
   "defense"
   {
+    "item"    "item_sa_belt_of_death"
     "item"    "item_sa_iron_plate"
     "item"    "item_sa_armored_boots"
   }
       
   "weapons"
   {
-    
+    "item"      "item_sa_punched_hammer"
+    "item"      "item_sa_shaman_glove"
+    "item"      "item_sa_lightning_axe"
+    "item"      "item_sa_freezing_hammer"
   }
     
   // Level 4 - Orange / Orb / Artifacts       
