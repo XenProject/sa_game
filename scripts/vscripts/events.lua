@@ -32,7 +32,7 @@ function GameMode:OnNPCSpawned(keys)
 
   local npc = EntIndexToHScript(keys.entindex)
 
-  if npc:GetName() == "npc_dota_hero_omniknight" and npc.bFirstSpawned == true then
+  if npc:GetName() == "npc_dota_hero_omniknight" and npc.bFirstSpawned == true then--Vasya's Halo
     npc.bFirstSpawned = false
     local nFXIndex = ParticleManager:CreateParticle("particles/halo.vpcf", PATTACH_POINT_FOLLOW, npc)
     --ParticleManager:SetParticleControl( nFXIndex, 0, Vector(0,0,55) )
@@ -254,8 +254,8 @@ function GameMode:OnEntityKilled( keys )
 
   -- Put code here to handle when an entity gets killed
   if not killedUnit:IsHero() and string.find(killedUnit:GetUnitName(),"wave_unit_")then
-    _G.UNITS_LEFT = _G.UNITS_LEFT-1
-    if _G.UNITS_LEFT == 0 then
+    SpecArena.unitsLeft = SpecArena.unitsLeft-1
+    if SpecArena.unitsLeft == 0 then
       SpecArena:WaveEnd()
     end
   end
@@ -356,10 +356,10 @@ function GameMode:OnPlayerChat(keys)
 
   local text = keys.text
 
-  if text == "+" and SpecArena.State == _G.STATE_PRE_ROUND_TIME and PlayerResource:GetPlayer(playerID).bFirstVote == nil then
-    print(playerID.." is ready!")
+  if text == "+" and SpecArena.State == STATE_PRE_ROUND_TIME and PlayerResource:GetPlayer(playerID).bFirstVote == nil then
+    --print(playerID.." is ready!")
     PlayerResource:GetPlayer(playerID).bFirstVote = false
-    _G.READY_PLAYERS = _G.READY_PLAYERS + 1
+    SpecArena.readyPlayers = SpecArena.readyPlayers + 1
     SpecArena:CheckReadyPlayers()
   end
 end

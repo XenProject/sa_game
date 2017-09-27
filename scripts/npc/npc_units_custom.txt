@@ -1352,7 +1352,7 @@
         }
         "wave_unit_6_boss" 
         {
-            "Model"                   "models/creeps/lane_creeps/creep_dire_hulk/creep_dire_ancient_hulk.vmd"
+            "Model"                   "models/creeps/lane_creeps/creep_dire_hulk/creep_dire_ancient_hulk.vmdl"
             "BaseClass"               "npc_dota_creature"
             "Level"                         "1"
             "SoundSet"               "Creep_Bad_Melee_Mega"

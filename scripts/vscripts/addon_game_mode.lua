@@ -40,8 +40,10 @@ function Precache( context )
   PrecacheItemByNameSync("item_sa_forest_staff", context)
   PrecacheItemByNameSync("item_sa_shaman_staff", context)
   PrecacheItemByNameSync("item_sa_archmage_staff", context)
-  for i=1,_G.MAX_ROUNDS do
+  for i=1,MAX_ROUNDS do
     PrecacheUnitByNameSync("wave_unit_"..i, context)
+    PrecacheUnitByNameSync("wave_unit_"..i.."_killer", context)
+    PrecacheUnitByNameSync("wave_unit_"..i.."_boss", context)
   end
 end
 

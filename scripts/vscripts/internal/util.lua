@@ -135,3 +135,12 @@ function GetItemInInventory(unit,itemName)
   end
   return nil
 end
+
+function ResetCooldownAbilities( hero )--without ultimate  !!!!!! ONLY 4 abilities
+  for i=0, 3 do
+    local ability = hero:GetAbilityByIndex(i)
+    if ability:GetAbilityType() ~= 1 then -- DOTA_ABILITY_TYPE_ULTIMATE = 1
+      ability:EndCooldown()
+    end
+  end
+end
