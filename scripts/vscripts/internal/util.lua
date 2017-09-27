@@ -144,3 +144,36 @@ function ResetCooldownAbilities( hero )--without ultimate  !!!!!! ONLY 4 abiliti
     end
   end
 end
+
+function DoWithAllHeroes(whatDo)
+  if type(whatDo) ~= "function" then
+    print("DoWithAllHeroes:not func")
+    return
+  end
+  for i = 1, #SpecArena.allHeroes do
+    if not SpecArena.allHeroes[i].hidden then
+      whatDo(SpecArena.allHeroes[i])
+    end
+  end
+end
+
+function SetCameraToPosForPlayer(playerID,vector)
+  local camera_guy = CreateUnitByName("npc_dummy_unit", vector, false, nil, nil, DOTA_TEAM_GOODGUYS)
+  Timers:CreateTimer(1,function() camera_guy:RemoveSelf() end)
+  
+  if playerID == -1 then --для всех игроков
+    DoWithAllHeroes(function(hero)
+      PlayerResource:SetCameraTarget(hero:GetPlayerID(),camera_guy)
+    end)
+    Timers:CreateTimer(0.1,function()
+      DoWithAllHeroes(function(hero)
+        PlayerResource:SetCameraTarget(hero:GetPlayerID(),nil)
+      end)
+    end)
+  else --для одного игрока
+    PlayerResource:SetCameraTarget(playerID,camera_guy)
+    Timers:CreateTimer(0.1,function()
+      PlayerResource:SetCameraTarget(playerID,nil)
+    end)
+  end  
+end

@@ -97,9 +97,8 @@ function SpecArena:TeleportHeroes( point )
 		hero:SetAbsOrigin(point)
 		FindClearSpaceForUnit(hero, point, false)
 		hero:Stop()
-		PlayerResource:SetCameraTarget(hero:GetPlayerID(), hero )
-		SendToConsole("dota_camera_center")
-		PlayerResource:SetCameraTarget(hero:GetPlayerID(), nil )
+		
+		SetCameraToPosForPlayer(hero:GetPlayerID(), hero:GetAbsOrigin() )
 	end
 end
 
