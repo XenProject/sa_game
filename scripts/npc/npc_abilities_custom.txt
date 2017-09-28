@@ -1189,13 +1189,15 @@
       "AbilityUnitDamageType"      "DAMAGE_TYPE_MAGICAL"
 
       "AbilityCooldown"        "30.0"
-      "AbilityManaCost"        "100"
+      "AbilityManaCost"        "130"
 
       "precache"
       {
         "particle"  "particles/heroes/lora/magical_fireballs.vpcf"
         "particle"  "particles/heroes/lora/fireball_laser.vpcf"
         "particle"    "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
+        "soundfile"   "soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts"
+        "soundfile"   "soundevents/game_sounds_heroes/game_sounds_batrider.vsndevts"
       }
 
       "OnSpellStart"
@@ -1217,6 +1219,11 @@
           "Target"     "CASTER"
           "Duration"    "%duration"
         }
+        "FireSound"
+        {
+          "EffectName"  "Hero_Phoenix.FireSpirits.Cast"
+          "Target"     "CASTER"
+        }
       }
 
       "Modifiers"
@@ -1229,6 +1236,11 @@
             {
               "ScriptFile"  "heroes/lora/lora_fireballs.lua"
               "Function"    "FireBallsStart"
+            }
+            "FireSound"
+            {
+              "EffectName"  "Hero_Batrider.Firefly.loop"
+              "Target"     "CASTER"
             }
           }
 
@@ -1365,6 +1377,9 @@
       "MaxLevel"             "4"
       "AbilityType"     "DOTA_ABILITY_TYPE_BASIC"
 
+      "AbilityCooldown"        "22.0"
+      "AbilityManaCost"        "130"
+
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
       "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
       "AbilityUnitTargetType"      "DOTA_UNIT_TARGET_HERO"
@@ -1373,6 +1388,8 @@
       "precache"
       {
         "particle"  "particles/heroes/lora/fire_shield.vpcf"
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts"
       }
 
       "AbilitySpecial"
