@@ -1,5 +1,5 @@
 if not SpecArena then
-    SpecArena = class({})
+    _G.SpecArena = class({})
 end
 
 _G.STATE_PRE_ROUND_TIME = 1
@@ -18,8 +18,6 @@ function SpecArena:Init()
 
 	local GameMode = GameRules:GetGameModeEntity()
 	GameMode:SetSelectionGoldPenaltyEnabled(false)
-
-	CustomGameEventManager:RegisterListener("timer_end", Dynamic_Wrap(SpecArena, "SpawnWaveUnits") )
 
 	self.allHeroes = {}
 	self.allPlayers = {}
@@ -48,6 +46,12 @@ function SpecArena:PrepareNextRound()
 	end
 
 	StartTimer(self.preRoundTime,self.State,self.currentGameRound)
+	Timers:CreateTimer("StartRoundTimer",
+        {
+            endTime = self.preRoundTime, 
+            callback = function() self:SpawnWaveUnits() end
+        }
+    )
 
 	for _,hero in pairs(self.allHeroes) do
         if hero:GetPlayerOwner() == nil then
@@ -56,45 +60,41 @@ function SpecArena:PrepareNextRound()
             self:UnhideHero(hero)
         end
     end
-    PrintTable(self.allHeroes)
-    print("------------------------------------------\n")
-    PrintTable(self.allPlayers)
-    print("------------------------------------------\n")
 end
 
 function SpecArena:SpawnWaveUnits()
-	SpecArena.State = STATE_ROUND_WAVE
-	SpecArena.unitsLeft = SpecArena.roundCreeps + SpecArena.roundKillers + 1--Кол-во оставшихся юнитов = кол-во обычных + кол-во убийц + босс волны
-	for i=1, SpecArena.roundCreeps do
+	self.State = STATE_ROUND_WAVE
+	self.unitsLeft = self.roundCreeps + self.roundKillers + 1--Кол-во оставшихся юнитов = кол-во обычных + кол-во убийц + босс волны
+	for i=1, self.roundCreeps do
 		if i%3 == 0 then 
-	  		local unit = CreateUnitByName( "wave_unit_" .. SpecArena.currentGameRound, SPAWN_3 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
+	  		local unit = CreateUnitByName( "wave_unit_" .. self.currentGameRound, SPAWN_3 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
 	  	elseif	i%2 == 0 then
-	  		local unit = CreateUnitByName( "wave_unit_" .. SpecArena.currentGameRound, SPAWN_2 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
+	  		local unit = CreateUnitByName( "wave_unit_" .. self.currentGameRound, SPAWN_2 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
 	  	else
-	  		local unit = CreateUnitByName( "wave_unit_" .. SpecArena.currentGameRound, SPAWN_1 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
+	  		local unit = CreateUnitByName( "wave_unit_" .. self.currentGameRound, SPAWN_1 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
 	  	end
 	end
 
 	Timers:CreateTimer( 5, function()
-		for i=1, SpecArena.roundKillers do
+		for i=1, self.roundKillers do
 			if i%3 == 0 then 
-		  		local unit = CreateUnitByName( "wave_unit_" .. SpecArena.currentGameRound .. "_killer", SPAWN_3 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
+		  		local unit = CreateUnitByName( "wave_unit_" .. self.currentGameRound .. "_killer", SPAWN_3 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
 		  	elseif	i%2 == 0 then
-		  		local unit = CreateUnitByName( "wave_unit_" .. SpecArena.currentGameRound .. "_killer", SPAWN_2 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
+		  		local unit = CreateUnitByName( "wave_unit_" .. self.currentGameRound .. "_killer", SPAWN_2 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
 		  	else
-		  		local unit = CreateUnitByName( "wave_unit_" .. SpecArena.currentGameRound .. "_killer", SPAWN_1 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
+		  		local unit = CreateUnitByName( "wave_unit_" .. self.currentGameRound .. "_killer", SPAWN_1 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
 		  	end
 		end
 	end )
 
 	Timers:CreateTimer( 8, function()
 		local i = RandomInt(1, 3)
-		if i == 1 then local unit = CreateUnitByName( "wave_unit_" .. SpecArena.currentGameRound .. "_boss", SPAWN_1 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS ) end
-		if i == 2 then local unit = CreateUnitByName( "wave_unit_" .. SpecArena.currentGameRound .. "_boss", SPAWN_2 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS ) end
-		if i == 3 then local unit = CreateUnitByName( "wave_unit_" .. SpecArena.currentGameRound .. "_boss", SPAWN_3 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS ) end
+		if i == 1 then local unit = CreateUnitByName( "wave_unit_" .. self.currentGameRound .. "_boss", SPAWN_1 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS ) end
+		if i == 2 then local unit = CreateUnitByName( "wave_unit_" .. self.currentGameRound .. "_boss", SPAWN_2 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS ) end
+		if i == 3 then local unit = CreateUnitByName( "wave_unit_" .. self.currentGameRound .. "_boss", SPAWN_3 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS ) end
 	end )
 
-	SpecArena:TeleportHeroes(ARENA_MID)
+	self:TeleportHeroes(ARENA_MID)
 end
 
 function SpecArena:WaveEnd()
@@ -125,6 +125,10 @@ end
 function SpecArena:CheckReadyPlayers()
 	if self.readyPlayers == PlayerResource:GetPlayerCount() and self.State == STATE_PRE_ROUND_TIME then
 		SetTimeLeft(3)
+		Timers:RemoveTimer("StartRoundTimer")
+		Timers:CreateTimer( 3.0, function()
+			self:SpawnWaveUnits()
+		end)
 	end
 end
 

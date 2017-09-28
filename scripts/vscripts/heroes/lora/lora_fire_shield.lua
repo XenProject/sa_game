@@ -5,4 +5,5 @@ function lora_fire_shield:OnSpellStart()
 	local target = self:GetCursorTarget()
 	local caster = self:GetCaster()
 	target:AddNewModifier(caster, self, "modifier_lora_fire_shield", nil)
+	caster:EmitSound("Hero_EmberSpirit.FireRemnant.Cast")
 end

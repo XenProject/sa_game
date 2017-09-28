@@ -324,7 +324,7 @@ function FireBallsPhysics( event )
 
 				-- Heal is calculated as: a percentage of the units average attack damage multiplied by the amount of attacks the spirit did.
 				--print("Healed ",heal_done)
-
+				caster:StopSound("Hero_Batrider.Firefly.loop")
 				unit:SetPhysicsVelocity(Vector(0,0,0))
 	        	unit:OnPhysicsFrame(nil)
 	        	unit:ForceKill(false)
@@ -363,6 +363,7 @@ function FireBallsDeath( event )
 	        unit:OnPhysicsFrame(nil)
 
 			-- Kill
+			caster:StopSound("Hero_Batrider.Firefly.loop")
 	        unit:ForceKill(false)
     	end
 	end

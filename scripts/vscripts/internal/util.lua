@@ -158,7 +158,7 @@ function DoWithAllHeroes(whatDo)
 end
 
 function SetCameraToPosForPlayer(playerID,vector)
-  local camera_guy = CreateUnitByName("npc_dummy_unit", vector, false, nil, nil, DOTA_TEAM_GOODGUYS)
+  local camera_guy = CreateUnitByName("camera", vector, false, nil, nil, DOTA_TEAM_GOODGUYS)
   Timers:CreateTimer(1,function() camera_guy:RemoveSelf() end)
   
   if playerID == -1 then --для всех игроков
