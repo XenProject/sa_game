@@ -144,6 +144,10 @@ function GameMode:InitGameMode()
 
   DebugPrint('[BAREBONES] Done loading Barebones gamemode!\n\n')
 
+  local GameMode = GameRules:GetGameModeEntity()
+  GameMode:SetCustomXPRequiredToReachNextLevel(XP_PER_LEVEL_TABLE)
+  GameMode:SetUseCustomHeroLevels(true)
+
   --ListenToGameEvent('npc_spawned', Dynamic_Wrap(GameMode, 'OnNPCSpawned'), self)
 end
 

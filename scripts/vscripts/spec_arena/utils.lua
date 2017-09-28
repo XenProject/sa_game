@@ -1,5 +1,12 @@
 function SpecArena:CheckReadyPlayers()
-	if self.readyPlayers == PlayerResource:GetPlayerCount() and self.State == STATE_PRE_ROUND_TIME then
+	local playersOnGame = 0
+	for _,hero in pairs(self.allHeroes) do
+		if hero:GetPlayerOwner() ~= nil then
+			playersOnGame = playersOnGame + 1
+		end
+	end
+	GameRules:SendCustomMessage("Ready <font color='blue'>" .. SpecArena.readyPlayers .. "</font> players out of <font color='green'>" .. playersOnGame .."</font>", 0, 0)
+	if self.readyPlayers == playersOnGame and self.State == STATE_PRE_ROUND_TIME then
 		SetTimeLeft(3)
 		Timers:RemoveTimer("StartRoundTimer")
 		Timers:CreateTimer( 3.0, function()

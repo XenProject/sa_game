@@ -10,6 +10,10 @@ function GameMode:OnDisconnect(keys)
   local reason = keys.reason
   local userid = keys.userid
 
+  if hero then
+    SpecArena:HideHero(hero)
+  end
+
 end
 -- The overall game state has changed
 function GameMode:OnGameRulesStateChange(keys)
@@ -226,6 +230,13 @@ function GameMode:OnPlayerPickHero(keys)
   end
 
   table.insert(SpecArena.allHeroes, hero)
+
+  local player = EntIndexToHScript(keys.player) 
+  if player then 
+      player:SetTeam(DOTA_TEAM_GOODGUYS) 
+  else
+      self:HideHero(hero)
+  end
 end
 
 -- A player killed another player in a multi-team context
@@ -270,6 +281,10 @@ function GameMode:OnEntityKilled( keys )
       SpecArena:WaveEnd()
     end
   end
+
+  if not killedUnit:IsOwnedByAnyPlayer() and attacker ~= killedUnit then
+    SpecArena:ExperienceDistribute(killedUnit)
+  end
 end
 
 
@@ -292,6 +307,11 @@ function GameMode:OnConnectFull(keys)
   
   -- The Player ID of the joining player
   local playerID = ply:GetPlayerID()
+
+  local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+  if hero then
+      SpecArena:UnhideHero(hero) --in utils.lua
+  end
 
 end
 
@@ -371,7 +391,6 @@ function GameMode:OnPlayerChat(keys)
     --print(playerID.." is ready!")
     PlayerResource:GetPlayer(playerID).bFirstVote = false
     SpecArena.readyPlayers = SpecArena.readyPlayers + 1
-    GameRules:SendCustomMessage("Ready <font color='blue'>" .. SpecArena.readyPlayers .. "</font> players out of <font color='green'>" .. #SpecArena.allPlayers .."</font>", 0, 0)
     SpecArena:CheckReadyPlayers()
   end
 end

@@ -2,6 +2,7 @@ if not SpecArena then
     _G.SpecArena = class({})
 end
 
+_G.STATE_PRE_GAME = 0
 _G.STATE_PRE_ROUND_TIME = 1
 _G.STATE_PRE_DUEL_TIME = 2
 _G.STATE_ROUND_WAVE = 3
@@ -13,6 +14,12 @@ require('spec_arena/utils')
 
 LinkLuaModifier( "modifier_hide", LUA_MODIFIER_MOTION_NONE )
 
+XP_PER_LEVEL_TABLE = {}
+XP_PER_LEVEL_TABLE[1] = 0
+for i=2,MAX_LEVEL do
+	XP_PER_LEVEL_TABLE[i] = XP_PER_LEVEL_TABLE[i-1] + i * 100
+end
+
 function SpecArena:Init()
 	_G.ARENA_MID = Entities:FindByName(nil, "arena_mid"):GetAbsOrigin()
 	_G.SHOP_MID = Entities:FindByName(nil, "shop_mid"):GetAbsOrigin()
@@ -21,8 +28,12 @@ function SpecArena:Init()
 	_G.SPAWN_3 = Entities:FindByName(nil, "spawn_3"):GetAbsOrigin()
 	trigger_shop = Entities:FindByClassname(nil, "trigger_shop")
 
+	self.State = STATE_PRE_GAME
+
 	local GameMode = GameRules:GetGameModeEntity()
 	GameMode:SetSelectionGoldPenaltyEnabled(false)
+	GameMode:SetCustomXPRequiredToReachNextLevel(XP_PER_LEVEL_TABLE)
+	GameMode:SetUseCustomHeroLevels(true)
 
 	GameMode:SetExecuteOrderFilter(Dynamic_Wrap(SpecArena, "OrderFilter"), self)
 
@@ -40,6 +51,9 @@ function SpecArena:Init()
     self.unitsLeft = 0
     self.readyPlayers = 0
     self.preRoundTime = 25
+    self.allEnemies = self.roundCreeps + self.roundKillers + 1--Кол-во оставшихся юнитов = кол-во обычных + кол-во убийц + босс волны
+
+    self.nGoldPerWave = {8,8,8,8,8,16,16,16,16,16,32,32,32,32,32,32,32,32,32}
 
 end
 
@@ -71,7 +85,7 @@ end
 
 function SpecArena:SpawnWaveUnits()
 	self.State = STATE_ROUND_WAVE
-	self.unitsLeft = self.roundCreeps + self.roundKillers + 1--Кол-во оставшихся юнитов = кол-во обычных + кол-во убийц + босс волны
+	self.unitsLeft = self.allEnemies
 	for i=1, self.roundCreeps do
 		if i%3 == 0 then 
 	  		local unit = CreateUnitByName( "wave_unit_" .. self.currentGameRound, SPAWN_3 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
@@ -105,6 +119,7 @@ function SpecArena:SpawnWaveUnits()
 end
 
 function SpecArena:WaveEnd()
+	self:GiveRoundBounty()
 	Timers:CreateTimer( 2.0, function()
 		self:TeleportHeroes( SHOP_MID )
 		self:PrepareNextRound()
@@ -131,7 +146,7 @@ end
 function SpecArena:OrderFilter(filterTable)
 	--PrintTable(filterTable)
 	if filterTable.order_type == DOTA_UNIT_ORDER_PURCHASE_ITEM then
-        if SpecArena.State ~= STATE_PRE_ROUND_TIME and SpecArena.State ~= STATE_PRE_DUEL_TIME then
+        if SpecArena.State ~= STATE_PRE_GAME and SpecArena.State ~= STATE_PRE_ROUND_TIME and SpecArena.State ~= STATE_PRE_DUEL_TIME then
             local hero = PlayerResource:GetSelectedHeroEntity(filterTable.issuer_player_id_const)
             --if hero:GetNumItemsInStash() == 6 then
                 return false
@@ -146,4 +161,23 @@ function SpecArena:OrderFilter(filterTable)
     end
 
     return true
+end
+
+function SpecArena:ExperienceDistribute( killedUnit )
+	local nHeroesAlive = SpecArena:GetHeroCount(true)
+    local xp = --[[killedUnit:GetDeathXP()/nHeroesAlive +]] 3 * (self.currentGameRound + 1)
+    DoWithAllHeroes(function(hero)
+        if hero:IsAlive() then
+            hero:AddExperience(xp,DOTA_ModifyXP_Unspecified,false,true)
+            --print(hero:GetCurrentXP())
+        end
+    end)
+end
+
+function SpecArena:GiveRoundBounty()
+	local heroCount = SpecArena:GetHeroCount(false)
+    goldBounty = self.allEnemies / heroCount * self.nGoldPerWave[self.currentGameRound]
+    DoWithAllHeroes(function(hero)
+    	hero:ModifyGold(goldBounty, false, DOTA_ModifyGold_Unspecified)
+    end)
 end

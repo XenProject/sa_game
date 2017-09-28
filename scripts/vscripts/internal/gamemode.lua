@@ -4,7 +4,6 @@ function GameMode:_InitGameMode()
   if GameMode._reentrantCheck then
     return
   end
-
   -- Setup rules
   GameRules:SetSafeToLeave(true)
   GameRules:SetShowcaseTime(0)
