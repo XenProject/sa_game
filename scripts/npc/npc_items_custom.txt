@@ -4102,7 +4102,7 @@
     }
     "item_recipe_sa_lightning_axe" 
     {
-        "ID" "3019"
+        "ID" "3020"
         "BaseClass"           "item_datadriven"
         "Model"        "models/props_gameplay/recipe.vmdl"
         "AbilityTextureName"    "recipe"
