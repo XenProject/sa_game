@@ -44,7 +44,7 @@ function Spawn( event )
 	    			victim = enemy,
 	    			attacker = caster,
 	    			damage = damage,
-					damage_type = DAMAGE_TYPE_MAGICAL,
+					damage_type = DAMAGE_TYPE_PURE,
 					ability = ability
 	    		}
 	    		ApplyDamage(damageTable)

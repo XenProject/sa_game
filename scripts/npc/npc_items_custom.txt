@@ -3610,6 +3610,215 @@
       }
     }
   }
+  //Consumable
+    "item_sa_healing_elixir"
+    {
+      "ID"   "2043"
+      "BaseClass"                 "item_lua"
+      "ScriptFile"        "items/item_sa_healing_elixir.lua"
+      "AbilityTextureName"      "item_sa_healing_elixir"
+      "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_healing_elixir"
+      "Model" "models/props_gameplay/red_box.vmdl"
+      "ItemQuality"     "consumable"
+      //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+      "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+      "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+      "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO"
+
+      "AbilityCastRange"        "100"
+      "AbilityCastPoint"        "0.0"
+      "AbilityCooldown"       "40.0"
+
+      "AbilitySharedCooldown" "Heal"
+
+      "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+      "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+      "ItemAlertable" "1"
+
+      "ItemCost"            "10"
+      "ItemPurchasable"          "1"
+      "ItemKillable"             "1"
+      "ItemDroppable"         "1"
+      "ItemSellable"          "1"
+      "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+
+      "ItemStackable"         "1"
+      "ItemShareability"        "ITEM_FULLY_SHAREABLE_STACKING"
+      "ItemPermanent"         "0"
+      "ItemInitialCharges"    "1"
+
+      //"ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+      
+      //"MaxUpgradeLevel"       "1"
+      //"ItemBaseLevel"         "1"
+
+      //"ItemShopTags" "int;str;agi;mana_pool;health_pool;hard_to_tag"
+      //"ItemAliases" "this;appears_in;search"
+      "AbilitySpecial"
+      {
+        "01"
+        {
+          "var_type"        "FIELD_INTEGER"
+          "heal_amount"       "500"
+        }
+      }
+    }
+    "item_sa_healing_potion"
+    {
+      "ID"   "2044"
+      "BaseClass"                 "item_lua"
+      "ScriptFile"        "items/item_sa_healing_potion.lua"
+      "AbilityTextureName"      "item_sa_healing_potion"
+      "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_healing_potion"
+      "Model" "models/props_gameplay/red_box.vmdl"
+      "ItemQuality"     "consumable"
+      //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+      "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+      "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+      "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO"
+
+      "AbilityCastRange"        "100"
+      "AbilityCastPoint"        "0.0"
+      "AbilityCooldown"       "40.0"
+
+      "AbilitySharedCooldown" "Heal"
+
+      "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+      "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+      "ItemAlertable" "1"
+
+      "ItemCost"            "25"
+      "ItemPurchasable"          "1"
+      "ItemKillable"             "1"
+      "ItemDroppable"         "1"
+      "ItemSellable"          "1"
+      "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+
+      "ItemStackable"         "1"
+      "ItemShareability"        "ITEM_FULLY_SHAREABLE_STACKING"
+      "ItemPermanent"         "0"
+      "ItemInitialCharges"    "1"
+
+      //"ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+      
+      //"MaxUpgradeLevel"       "1"
+      //"ItemBaseLevel"         "1"
+
+      //"ItemShopTags" "int;str;agi;mana_pool;health_pool;hard_to_tag"
+      //"ItemAliases" "this;appears_in;search"
+      "AbilitySpecial"
+      {
+        "01"
+        {
+          "var_type"        "FIELD_INTEGER"
+          "heal_amount"       "1500"
+        }
+      }
+    }
+    "item_sa_mana_elixir"
+    {
+      "ID"   "2045"
+      "BaseClass"                 "item_lua"
+      "ScriptFile"        "items/item_sa_mana_elixir.lua"
+      "AbilityTextureName"      "item_sa_mana_elixir"
+      "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_mana_elixir"
+      "Model" "models/props_gameplay/red_box.vmdl"
+      "ItemQuality"     "consumable"
+      //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+      "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+      "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+      "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO"
+
+      "AbilityCastRange"        "100"
+      "AbilityCastPoint"        "0.0"
+      "AbilityCooldown"       "40.0"
+
+      "AbilitySharedCooldown" "Mana"
+
+      "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+      "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+      "ItemAlertable" "1"
+
+      "ItemCost"            "10"
+      "ItemPurchasable"          "1"
+      "ItemKillable"             "1"
+      "ItemDroppable"         "1"
+      "ItemSellable"          "1"
+      "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+
+      "ItemStackable"         "1"
+      "ItemShareability"        "ITEM_FULLY_SHAREABLE_STACKING"
+      "ItemPermanent"         "0"
+      "ItemInitialCharges"    "1"
+
+      //"ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+      
+      //"MaxUpgradeLevel"       "1"
+      //"ItemBaseLevel"         "1"
+
+      //"ItemShopTags" "int;str;agi;mana_pool;health_pool;hard_to_tag"
+      //"ItemAliases" "this;appears_in;search"
+      "AbilitySpecial"
+      {
+        "01"
+        {
+          "var_type"        "FIELD_INTEGER"
+          "mana_amount"       "300"
+        }
+      }
+    }
+    "item_sa_mana_potion"
+    {
+      "ID"   "2046"
+      "BaseClass"                 "item_lua"
+      "ScriptFile"        "items/item_sa_mana_potion.lua"
+      "AbilityTextureName"      "item_sa_mana_potion"
+      "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_mana_potion"
+      "Model" "models/props_gameplay/red_box.vmdl"
+      "ItemQuality"     "consumable"
+      //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+      "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+      "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+      "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO"
+
+      "AbilityCastRange"        "100"
+      "AbilityCastPoint"        "0.0"
+      "AbilityCooldown"       "40.0"
+
+      "AbilitySharedCooldown" "Mana"
+
+      "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+      "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+      "ItemAlertable" "1"
+
+      "ItemCost"            "25"
+      "ItemPurchasable"          "1"
+      "ItemKillable"             "1"
+      "ItemDroppable"         "1"
+      "ItemSellable"          "1"
+      "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+
+      "ItemStackable"         "1"
+      "ItemShareability"        "ITEM_FULLY_SHAREABLE_STACKING"
+      "ItemPermanent"         "0"
+      "ItemInitialCharges"    "1"
+
+      //"ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+      
+      //"MaxUpgradeLevel"       "1"
+      //"ItemBaseLevel"         "1"
+
+      //"ItemShopTags" "int;str;agi;mana_pool;health_pool;hard_to_tag"
+      //"ItemAliases" "this;appears_in;search"
+      "AbilitySpecial"
+      {
+        "01"
+        {
+          "var_type"        "FIELD_INTEGER"
+          "mana_amount"       "900"
+        }
+      }
+    }
   //Recipes
     "item_recipe_sa_forest_staff" 
     {

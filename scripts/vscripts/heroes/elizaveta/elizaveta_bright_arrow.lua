@@ -20,7 +20,7 @@ function elizaveta_bright_arrow:OnSpellStart()
 		}
 
 	ProjectileManager:CreateTrackingProjectile( info )
-	--EmitSoundOn( "Hero_VengefulSpirit.MagicMissile", self:GetCaster() )
+	EmitSoundOn( "Hero_DrowRanger.FrostArrows", self:GetCaster() )
 end
 
 function elizaveta_bright_arrow:OnProjectileHit( hTarget, vLocation )
@@ -28,7 +28,7 @@ function elizaveta_bright_arrow:OnProjectileHit( hTarget, vLocation )
 		local modifier = self:GetCaster():FindModifierByName("modifier_elizaveta_bright_arrow")
 		local radius = self:GetSpecialValueFor("radius")
 
-		--EmitSoundOn( "Hero_VengefulSpirit.MagicMissileImpact", hTarget )
+		EmitSoundOn( "Hero_Mirana.ProjectileImpact", hTarget )
 
 		local damageTable = {
 			victim = hTarget,
@@ -43,6 +43,7 @@ function elizaveta_bright_arrow:OnProjectileHit( hTarget, vLocation )
 
 			local nFXIndex = ParticleManager:CreateParticle( "particles/heroes/elizaveta/elizaveta_bright_arrow_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget )
 			ParticleManager:SetParticleControl( nFXIndex, 1, Vector( radius, 0, 0 ) )
+			EmitSoundOn("Hero_OgreMagi.Fireblast.Target", hTarget)
 			--ParticleManager:ReleaseParticleIndex( nFXIndex )
 
 			enemies = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), hTarget:GetAbsOrigin(),

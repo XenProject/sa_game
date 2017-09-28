@@ -1519,6 +1519,9 @@
       "precache"
       {
         "particle"  "particles/heroes/elizaveta/elizaveta_bright_arrow.vpcf"
+        "soundfile"   "soundevents/game_sounds_heroes/game_sounds_drowranger.vsndevts"
+        "soundfile"   "soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
+        "soundfile"   "soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"
       }
 
       "AbilitySpecial"

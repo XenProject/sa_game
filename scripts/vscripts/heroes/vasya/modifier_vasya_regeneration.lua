@@ -22,7 +22,7 @@ end
 
 function modifier_vasya_regeneration:OnTakeDamage( event )
 	local caster = self:GetCaster()
-	if event.unit == caster then
+	if event.unit == caster and event.attacker ~= caster then
 		self.attacks = self.attacks + 1
 		if self.attacks == 5 then
 			self.attacks = 0

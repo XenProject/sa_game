@@ -1,8 +1,8 @@
 "itembuilds"
 {
 	"author"		"Xen"
-	"hero"			"npc_dota_hero_omniknight"
-	"Title"			"Recommended items for Vasya"
+	"hero"			"npc_dota_hero_windrunner"
+	"Title"			"Recommended items for Elizaveta"
 	
 	"Items"
 	{		
