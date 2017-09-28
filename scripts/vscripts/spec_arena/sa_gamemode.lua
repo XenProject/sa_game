@@ -9,15 +9,22 @@ _G.STATE_ROUND_MEGABOSS = 4
 _G.STATE_ROUND_FINALBOSS = 5
 _G.STATE_DUEL_TIME = 6
 
+require('spec_arena/utils')
+
+LinkLuaModifier( "modifier_hide", LUA_MODIFIER_MOTION_NONE )
+
 function SpecArena:Init()
 	_G.ARENA_MID = Entities:FindByName(nil, "arena_mid"):GetAbsOrigin()
 	_G.SHOP_MID = Entities:FindByName(nil, "shop_mid"):GetAbsOrigin()
 	_G.SPAWN_1 = Entities:FindByName(nil, "spawn_1"):GetAbsOrigin()
 	_G.SPAWN_2 = Entities:FindByName(nil, "spawn_2"):GetAbsOrigin()
 	_G.SPAWN_3 = Entities:FindByName(nil, "spawn_3"):GetAbsOrigin()
+	trigger_shop = Entities:FindByClassname(nil, "trigger_shop")
 
 	local GameMode = GameRules:GetGameModeEntity()
 	GameMode:SetSelectionGoldPenaltyEnabled(false)
+
+	GameMode:SetExecuteOrderFilter(Dynamic_Wrap(SpecArena, "OrderFilter"), self)
 
 	self.allHeroes = {}
 	self.allPlayers = {}
@@ -28,7 +35,7 @@ function SpecArena:Init()
     end
 
     self.currentGameRound = 0
-    self.roundCreeps = 36
+    self.roundCreeps = 24
     self.roundKillers = 12
     self.unitsLeft = 0
     self.readyPlayers = 0
@@ -105,33 +112,38 @@ function SpecArena:WaveEnd()
 end
 
 function SpecArena:TeleportHeroes( point )
-	for _,hero in pairs(self.allHeroes) do
+	DoWithAllHeroes( function(hero)
 		if hero:IsAlive() then
 			hero:Heal(hero:GetMaxHealth(), nil)
 			hero:SetMana( hero:GetMaxMana() )
 		else
 			hero:RespawnUnit()
 		end
-		ResetCooldownAbilities( hero )
-
+		ResetCooldownAbilities(hero)
 		hero:SetAbsOrigin(point)
 		FindClearSpaceForUnit(hero, point, false)
 		hero:Stop()
-		
+	
 		SetCameraToPosForPlayer(hero:GetPlayerID(), hero:GetAbsOrigin() )
-	end
+	end )
 end
 
-function SpecArena:CheckReadyPlayers()
-	if self.readyPlayers == PlayerResource:GetPlayerCount() and self.State == STATE_PRE_ROUND_TIME then
-		SetTimeLeft(3)
-		Timers:RemoveTimer("StartRoundTimer")
-		Timers:CreateTimer( 3.0, function()
-			self:SpawnWaveUnits()
-		end)
-	end
-end
+function SpecArena:OrderFilter(filterTable)
+	--PrintTable(filterTable)
+	if filterTable.order_type == DOTA_UNIT_ORDER_PURCHASE_ITEM then
+        if SpecArena.State ~= STATE_PRE_ROUND_TIME and SpecArena.State ~= STATE_PRE_DUEL_TIME then
+            local hero = PlayerResource:GetSelectedHeroEntity(filterTable.issuer_player_id_const)
+            --if hero:GetNumItemsInStash() == 6 then
+                return false
+            --end
+        end
+    end
 
-function SpecArena:Distance( v1, v2 )
-	return math.sqrt( math.pow( (v1.x-v2.x), 2) + math.pow( (v1.y-v2.y), 2) )
+    if filterTable.order_type == DOTA_UNIT_ORDER_EJECT_ITEM_FROM_STASH then
+        if SpecArena.State ~= STATE_PRE_ROUND_TIME and SpecArena.State ~= STATE_PRE_DUEL_TIME then
+            return false
+        end
+    end
+
+    return true
 end
