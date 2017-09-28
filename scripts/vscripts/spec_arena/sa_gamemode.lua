@@ -10,35 +10,56 @@ _G.STATE_ROUND_FINALBOSS = 5
 _G.STATE_DUEL_TIME = 6
 
 function SpecArena:Init()
-	self.allHeroes = FindUnitsInRadius(DOTA_TEAM_GOODGUYS, Vector(0,0,0),
-				nil, FIND_UNITS_EVERYWHERE,
-	    		DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO,
-	        	DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
-
 	_G.ARENA_MID = Entities:FindByName(nil, "arena_mid"):GetAbsOrigin()
 	_G.SHOP_MID = Entities:FindByName(nil, "shop_mid"):GetAbsOrigin()
 	_G.SPAWN_1 = Entities:FindByName(nil, "spawn_1"):GetAbsOrigin()
 	_G.SPAWN_2 = Entities:FindByName(nil, "spawn_2"):GetAbsOrigin()
 	_G.SPAWN_3 = Entities:FindByName(nil, "spawn_3"):GetAbsOrigin()
 
-	self.allPlayers = {}
+	local GameMode = GameRules:GetGameModeEntity()
+	GameMode:SetSelectionGoldPenaltyEnabled(false)
 
+	CustomGameEventManager:RegisterListener("timer_end", Dynamic_Wrap(SpecArena, "SpawnWaveUnits") )
+
+	self.allHeroes = {}
+	self.allPlayers = {}
 	for playerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
     	if PlayerResource:IsValidPlayerID(playerID) then
     		table.insert(self.allPlayers, PlayerResource:GetPlayer(playerID) )
     	end
     end
 
-    self.State = STATE_PRE_ROUND_TIME
-    self.currentGameRound = 1
+    self.currentGameRound = 0
     self.roundCreeps = 36
     self.roundKillers = 12
     self.unitsLeft = 0
     self.readyPlayers = 0
+    self.preRoundTime = 25
 
-	CustomGameEventManager:RegisterListener("timer_end", Dynamic_Wrap(SpecArena, "SpawnWaveUnits") )
+end
 
-	StartTimer(20,self.State, self.currentGameRound)
+function SpecArena:PrepareNextRound()
+	self.State = STATE_PRE_ROUND_TIME
+	self.currentGameRound = self.currentGameRound + 1
+
+	self.readyPlayers = 0
+	for _,player in pairs(self.allPlayers) do
+		player.bFirstVote = nil
+	end
+
+	StartTimer(self.preRoundTime,self.State,self.currentGameRound)
+
+	for _,hero in pairs(self.allHeroes) do
+        if hero:GetPlayerOwner() == nil then
+            self:HideHero(hero)
+        elseif hero.hidden then
+            self:UnhideHero(hero)
+        end
+    end
+    PrintTable(self.allHeroes)
+    print("------------------------------------------\n")
+    PrintTable(self.allPlayers)
+    print("------------------------------------------\n")
 end
 
 function SpecArena:SpawnWaveUnits()
@@ -78,9 +99,8 @@ end
 
 function SpecArena:WaveEnd()
 	Timers:CreateTimer( 2.0, function()
-		self:ChangeState(STATE_PRE_ROUND_TIME)
-		self:TeleportHeroes(SHOP_MID)
-		StartTimer(30,self.State,self.currentGameRound)
+		self:TeleportHeroes( SHOP_MID )
+		self:PrepareNextRound()
 	end )
 end
 
@@ -105,17 +125,6 @@ end
 function SpecArena:CheckReadyPlayers()
 	if self.readyPlayers == PlayerResource:GetPlayerCount() and self.State == STATE_PRE_ROUND_TIME then
 		SetTimeLeft(3)
-	end
-end
-
-function SpecArena:ChangeState( state )
-	self.State = state
-	if state == STATE_PRE_ROUND_TIME then
-		self.readyPlayers = 0
-		self.currentGameRound = self.currentGameRound + 1
-		for _,player in pairs(self.allPlayers) do
-			player.bFirstVote = nil
-		end
 	end
 end
 

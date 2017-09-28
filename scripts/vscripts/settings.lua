@@ -1,12 +1,12 @@
 -- In this file you can set up all the properties and settings for your game mode.
 MAX_ROUNDS = 10
 
-ENABLE_HERO_RESPAWN = true              -- Should the heroes automatically respawn on a timer or stay dead until manually respawned
+ENABLE_HERO_RESPAWN = false              -- Should the heroes automatically respawn on a timer or stay dead until manually respawned
 UNIVERSAL_SHOP_MODE = false             -- Should the main shop contain Secret Shop items as well as regular items
-ALLOW_SAME_HERO_SELECTION = true        -- Should we let people select the same hero as each other
+ALLOW_SAME_HERO_SELECTION = false        -- Should we let people select the same hero as each other
 
-HERO_SELECTION_TIME = 30.0              -- How long should we let people select their hero?
-PRE_GAME_TIME = 5.0                    -- How long after people select their heroes should the horn blow and the game start?
+HERO_SELECTION_TIME = 40.0              -- How long should we let people select their hero?
+PRE_GAME_TIME = 0.0                    -- How long after people select their heroes should the horn blow and the game start?
 POST_GAME_TIME = 60.0                   -- How long should we let people look at the scoreboard before closing the server automatically?
 TREE_REGROW_TIME = 60.0                 -- How long should it take individual trees to respawn after being cut down/destroyed?
 
@@ -17,7 +17,7 @@ RECOMMENDED_BUILDS_DISABLED = false     -- Should we disable the recommened buil
 CAMERA_DISTANCE_OVERRIDE = 1300           -- How far out should we allow the camera to go?  Use -1 for the default (1134) while still allowing for panorama camera distance changes
 
 MINIMAP_ICON_SIZE = 1                   -- What icon size should we use for our heroes?
-MINIMAP_CREEP_ICON_SIZE = 1             -- What icon size should we use for creeps?
+MINIMAP_CREEP_ICON_SIZE = 0.7             -- What icon size should we use for creeps?
 MINIMAP_RUNE_ICON_SIZE = 1              -- What icon size should we use for runes?
 
 RUNE_SPAWN_TIME = 120                   -- How long in seconds should we wait between rune spawns?
@@ -56,7 +56,7 @@ ENABLE_FIRST_BLOOD = false               -- Should we enable first blood for the
 HIDE_KILL_BANNERS = false               -- Should we hide the kill banners that show when a player is killed?
 LOSE_GOLD_ON_DEATH = false               -- Should we have players lose the normal amount of dota gold on death?
 SHOW_ONLY_PLAYER_INVENTORY = false      -- Should we only allow players to see their own inventory even when selecting other units?
-DISABLE_STASH_PURCHASING = true        -- Should we prevent players from being able to buy items into their stash when not at a shop?
+DISABLE_STASH_PURCHASING = false        -- Should we prevent players from being able to buy items into their stash when not at a shop?
 DISABLE_ANNOUNCER = false               -- Should we disable the announcer from working in the game?
 FORCE_PICKED_HERO = nil                 -- What hero should we force all players to spawn as? (e.g. "npc_dota_hero_axe").  Use nil to allow players to pick their own hero.
 
@@ -67,7 +67,7 @@ FOUNTAIN_PERCENTAGE_HEALTH_REGEN = -1   -- What should we use for the percentage
 MAXIMUM_ATTACK_SPEED = 600              -- What should we use for the maximum attack speed?
 MINIMUM_ATTACK_SPEED = 20               -- What should we use for the minimum attack speed?
 
-GAME_END_DELAY = -1                     -- How long should we wait after the game winner is set to display the victory banner and End Screen?  Use -1 to keep the default (about 10 seconds)
+GAME_END_DELAY = 1                     -- How long should we wait after the game winner is set to display the victory banner and End Screen?  Use -1 to keep the default (about 10 seconds)
 VICTORY_MESSAGE_DURATION = 3            -- How long should we wait after the victory message displays to show the End Screen?  Use 
 STARTING_GOLD = 170                     -- How much starting gold should we give to each player?(170)
 DISABLE_DAY_NIGHT_CYCLE = false         -- Should we disable the day night cycle from naturally occurring? (Manual adjustment still possible)

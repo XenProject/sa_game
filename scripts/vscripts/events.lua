@@ -18,6 +18,10 @@ function GameMode:OnGameRulesStateChange(keys)
 
   local newState = GameRules:State_Get()
 
+  if newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
+    SpecArena:Init()
+  end
+
   if newState == DOTA_GAMERULES_STATE_STRATEGY_TIME then
     Timers:CreateTimer(0.5, function()
       CustomGameEventManager:Send_ServerToAllClients("StrategyScreen", nil)
@@ -212,9 +216,16 @@ function GameMode:OnPlayerPickHero(keys)
   DebugPrint('[BAREBONES] OnPlayerPickHero')
   DebugPrintTable(keys)
 
-  local heroClass = keys.hero
-  local heroEntity = EntIndexToHScript(keys.heroindex)
-  local player = EntIndexToHScript(keys.player)
+  local hero = EntIndexToHScript(keys.heroindex)
+  local playerID = hero:GetPlayerID()
+  
+  local heroSelected = PlayerResource:GetSelectedHeroEntity(playerID)
+  
+  if heroSelected then --отсеиваем иллюзии
+      return
+  end
+
+  table.insert(SpecArena.allHeroes, hero)
 end
 
 -- A player killed another player in a multi-team context
@@ -253,7 +264,7 @@ function GameMode:OnEntityKilled( keys )
   local damagebits = keys.damagebits -- This might always be 0 and therefore useless
 
   -- Put code here to handle when an entity gets killed
-  if not killedUnit:IsHero() and string.find(killedUnit:GetUnitName(),"wave_unit_")then
+  if not killedUnit:IsHero() and string.find(killedUnit:GetUnitName(),"wave_unit_") then
     SpecArena.unitsLeft = SpecArena.unitsLeft-1
     if SpecArena.unitsLeft == 0 then
       SpecArena:WaveEnd()
@@ -360,6 +371,7 @@ function GameMode:OnPlayerChat(keys)
     --print(playerID.." is ready!")
     PlayerResource:GetPlayer(playerID).bFirstVote = false
     SpecArena.readyPlayers = SpecArena.readyPlayers + 1
+    GameRules:SendCustomMessage("Ready <font color='blue'>" .. SpecArena.readyPlayers .. "</font> players out of <font color='green'>" .. #SpecArena.allPlayers .."</font>", 0, 0)
     SpecArena:CheckReadyPlayers()
   end
 end
