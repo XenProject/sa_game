@@ -2024,7 +2024,7 @@
         }
         "wave_unit_10_killer" 
         {
-            "Model"                   "models/items/lone_druid/bear/dark_wood_bear_white/dark_wood_bear_white.vmdl"
+            "Model"                   "models/items/lone_druid/bear/iron_claw_spirit_bear/iron_claw_spirit_bear.vmdl"
             "BaseClass"               "npc_dota_creature"
             "Level"                         "1"
             "SoundSet"               "LoneDruid_SpiritBear"
