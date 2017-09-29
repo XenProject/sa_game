@@ -4414,7 +4414,12 @@
     "Model" "models/props_gameplay/red_box.vmdl"
     "ItemQuality"     "rare"
     //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
-    "AbilityBehavior"   "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityBehavior"   "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+    "AbilityCooldown"        "30.0"
+    "AbilityManaCost"        "100"
+    "AbilityCastRange"        "%radius"
+    "AbilityCastAnimation"    "ACT_RESET"
 
     "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
     "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
@@ -4446,16 +4451,49 @@
 
     "precache"
     {
-      "particle"  "particles/items_fx/chain_lightning.vpcf"
+      "particle"  "particles/items/item_sa_blade_of_lightning/item_sa_blade_of_lightning.vpcf"
+      "soundfile" "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
     }
 
-    "OnProjectileHitUnit"
+    "OnSpellStart"
     {
-      "DeleteOnHit"  "1"
-      "RunScript"
+      "ActOnTargets"
       {
-        "ScriptFile"  "items/item_sa_blade_of_lightning.lua"
-        "Function"    "Lighting"
+        "Target"
+        {
+          "Center"    "CASTER"
+          "Radius"   "%radius"
+          "Teams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+          "Types"   "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        }  
+        "Action"    
+        {
+          "Damage"
+          {
+            "Target"    "TARGET"
+            "Type"      "DAMAGE_TYPE_PURE"
+            "Damage"    "%damage"
+          }
+        }
+      }
+      "FireSound"
+      {
+        "EffectName"  "Hero_Zuus.Righteous.Layer"
+        "Target"     "CASTER"
+      }
+      "AttachEffect"
+      {
+        "EffectName"        "particles/items/item_sa_blade_of_lightning/item_sa_blade_of_lightning.vpcf"
+        "EffectAttachType"  "attach_hitloc"
+        "Target"            "CASTER"
+        "ControlPointEntities"
+        {
+          "CASTER" "attach_hitloc"
+        }
+        "ControlPoints"
+        {
+          "01"  "%radius 0 0"
+        }
       }
     }
 
@@ -4487,14 +4525,10 @@
             "PseudoRandom" "DOTA_PSEUDO_RANDOM_PHANTOMASSASSIN_CRIT"
             "OnSuccess"
             {
-              "TrackingProjectile"
+              "RunScript"
               {
-                "Target"             "TARGET"
-                "EffectName"    "particles/items_fx/chain_lightning.vpcf"
-                "ProvidesVision"  "1"
-                "VisionRadius"    "60"
-                "MoveSpeed"          "1000"
-                "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+                "ScriptFile"  "items/item_sa_blade_of_lightning.lua"
+                "Function"    "Lightning"
               }
             }
           }
@@ -4506,7 +4540,7 @@
       "01"
       {
         "var_type"      "FIELD_INTEGER"
-        "bonus_dmg"      "48"
+        "bonus_dmg"      "1"
       }
       "02"
       {
@@ -4532,6 +4566,16 @@
       {
         "var_type"      "FIELD_INTEGER"
         "maxBounces"      "3"
+      }
+      "07"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "radius"      "450"
+      }
+      "08"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "damage"      "250"
       }
     }
   }
