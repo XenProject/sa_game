@@ -4540,7 +4540,7 @@
       "01"
       {
         "var_type"      "FIELD_INTEGER"
-        "bonus_dmg"      "1"
+        "bonus_dmg"      "48"
       }
       "02"
       {
@@ -4555,7 +4555,7 @@
       "04"
       {
         "var_type"      "FIELD_INTEGER"
-        "chance"      "100"
+        "chance"      "15"
       }
       "05"
       {

@@ -1,7 +1,7 @@
 function SpecArena:CheckReadyPlayers()
 	local playersOnGame = 0
 	for _,hero in pairs(self.allHeroes) do
-		if hero:GetPlayerOwner() ~= nil then
+		if hero:GetPlayerOwner() ~= nil and PlayerResource:IsFakeClient( hero:GetPlayerOwnerID() ) then
 			playersOnGame = playersOnGame + 1
 		end
 	end
