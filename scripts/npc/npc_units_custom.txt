@@ -2226,4 +2226,1084 @@
                 "XPGain"               "15"
             }
         }
+        "wave_unit_11" 
+        {
+            "Model"                   "models/items/lone_druid/bear/spirit_of_anger/spirit_of_anger.vmdl"
+            "BaseClass"               "npc_dota_creature"
+            "Level"                         "1"
+            "SoundSet"               "LoneDruid_SpiritBear"
+            "GameSoundsFile"         "soundevents/game_sounds_creeps.vsndevts"
+            "Modelscale"              ".9"
+
+            "Ability1"               "lone_druid_savage_roar_bear"         // Ability 1
+            "Ability2"               ""         // Ability 2
+            "Ability3"               ""         // Ability 3
+            "Ability4"               ""         // Ability 4
+
+            "ArmorPhysical"            "25"
+            "MagicalResistance"         "10"
+
+            "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
+            "AttackDamageMin"         "50"      // Damage range min.
+            "AttackDamageMax"         "60"      // Damage range max.
+            "AttackRate"            "1.65"      // Speed of attack.
+            "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
+            "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
+            "AttackRange"            "100"   // Range within a target can be attacked.
+
+            "RingRadius"            "70"
+            "HealthBarOffset"         "215"
+
+            "BountyXP"               "5"      // Experience earn.
+            "BountyGoldMin"            "8"      // Gold earned min.
+            "BountyGoldMax"            "8"      // Gold earned max.
+
+            "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+            "MovementSpeed"            "340"      // Speed.      
+
+            "StatusHealth"            "2000"      // Base health.
+            "StatusHealthRegen"         "4"      // Health regeneration rate.
+            "StatusMana"            "300"         // Base mana.
+            "StatusManaRegen"         "0.5"      // Mana regeneration rate.   
+
+            "VisionDaytimeRange"      "5000"      // Range of vision during day light.
+            "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
+
+            "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+            "Creature"
+            {
+                //Level Up
+                "HPGain"               "50"
+                "DamageGain"            "2"
+                "ArmorGain"               "0.25"
+                "MagicResistGain"         "0.1"
+                "MoveSpeedGain"            "1"
+                "BountyGain"            "3"
+                "XPGain"               "15"
+            }
+        }
+        "wave_unit_11_killer" 
+        {
+            "Model"                   "models/items/lone_druid/bear/iron_claw_spirit_bear/iron_claw_spirit_bear.vmdl"
+            "BaseClass"               "npc_dota_creature"
+            "Level"                         "1"
+            "SoundSet"               "LoneDruid_SpiritBear"
+            "GameSoundsFile"         "soundevents/game_sounds_creeps.vsndevts"
+            "Modelscale"              "1"
+
+            "Ability1"               "lone_druid_savage_roar_bear"         // Ability 1
+            "Ability2"               "lone_druid_spirit_bear_entangle"         // Ability 2
+            "Ability3"               ""         // Ability 3
+            "Ability4"               ""         // Ability 4
+
+            "ArmorPhysical"            "35"
+            "MagicalResistance"         "25"
+
+            "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
+            "AttackDamageMin"         "75"      // Damage range min.
+            "AttackDamageMax"         "85"      // Damage range max.
+            "AttackRate"            "2"      // Speed of attack.
+            "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
+            "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
+            "AttackRange"            "100"   // Range within a target can be attacked.
+
+            "RingRadius"            "70"
+            "HealthBarOffset"         "215"
+
+            "BountyXP"               "5"      // Experience earn.
+            "BountyGoldMin"            "16"      // Gold earned min.
+            "BountyGoldMax"            "16"      // Gold earned max.
+
+            "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+            "MovementSpeed"            "340"      // Speed.      
+
+            "StatusHealth"            "2500"      // Base health.
+            "StatusHealthRegen"         "4"      // Health regeneration rate.
+            "StatusMana"            "300"         // Base mana.
+            "StatusManaRegen"         "0.5"      // Mana regeneration rate.   
+
+            "VisionDaytimeRange"      "5000"      // Range of vision during day light.
+            "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
+
+            "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+            "Creature"
+            {
+                //Level Up
+                "HPGain"               "50"
+                "DamageGain"            "2"
+                "ArmorGain"               "0.25"
+                "MagicResistGain"         "0.1"
+                "MoveSpeedGain"            "1"
+                "BountyGain"            "3"
+                "XPGain"               "15"
+            }
+        }
+        "wave_unit_11_boss" 
+        {
+            "Model"                   "models/items/lone_druid/true_form/rabid_black_bear/rabid_black_bear.vmdl"
+            "BaseClass"               "npc_dota_creature"
+            "Level"                         "1"
+            "SoundSet"               "LoneDruid_SpiritBear"
+            "GameSoundsFile"         "soundevents/game_sounds_creeps.vsndevts"
+            "Modelscale"              ".9"
+
+            "Ability1"               "lone_druid_savage_roar_bear"         // Ability 1
+            "Ability2"               "lone_druid_spirit_bear_demolish"         // Ability 2
+            "Ability3"               "lone_druid_spirit_bear_entangle"         // Ability 3
+            "Ability4"               ""         // Ability 4
+
+            "ArmorPhysical"            "40"
+            "MagicalResistance"         "10"
+
+            "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
+            "AttackDamageMin"         "150"      // Damage range min.
+            "AttackDamageMax"         "175"      // Damage range max.
+            "AttackRate"            "2"      // Speed of attack.
+            "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
+            "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
+            "AttackRange"            "100"   // Range within a target can be attacked.
+
+            "RingRadius"            "70"
+            "HealthBarOffset"         "215"
+
+            "BountyXP"               "5"      // Experience earn.
+            "BountyGoldMin"            "72"      // Gold earned min.
+            "BountyGoldMax"            "72"      // Gold earned max.
+
+            "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+            "MovementSpeed"            "340"      // Speed.      
+
+            "StatusHealth"            "3500"      // Base health.
+            "StatusHealthRegen"         "4"      // Health regeneration rate.
+            "StatusMana"            "300"         // Base mana.
+            "StatusManaRegen"         "0.5"      // Mana regeneration rate.   
+
+            "VisionDaytimeRange"      "5000"      // Range of vision during day light.
+            "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
+
+            "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+            "Creature"
+            {
+                //Level Up
+                "HPGain"               "50"
+                "DamageGain"            "2"
+                "ArmorGain"               "0.25"
+                "MagicResistGain"         "0.1"
+                "MoveSpeedGain"            "1"
+                "BountyGain"            "3"
+                "XPGain"               "15"
+            }
+        }
+        "wave_unit_12" 
+        {
+            "Model"                   "models/items/lone_druid/bear/spirit_of_anger/spirit_of_anger.vmdl"
+            "BaseClass"               "npc_dota_creature"
+            "Level"                         "1"
+            "SoundSet"               "LoneDruid_SpiritBear"
+            "GameSoundsFile"         "soundevents/game_sounds_creeps.vsndevts"
+            "Modelscale"              ".9"
+
+            "Ability1"               "lone_druid_savage_roar_bear"         // Ability 1
+            "Ability2"               ""         // Ability 2
+            "Ability3"               ""         // Ability 3
+            "Ability4"               ""         // Ability 4
+
+            "ArmorPhysical"            "25"
+            "MagicalResistance"         "10"
+
+            "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
+            "AttackDamageMin"         "50"      // Damage range min.
+            "AttackDamageMax"         "60"      // Damage range max.
+            "AttackRate"            "1.65"      // Speed of attack.
+            "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
+            "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
+            "AttackRange"            "100"   // Range within a target can be attacked.
+
+            "RingRadius"            "70"
+            "HealthBarOffset"         "215"
+
+            "BountyXP"               "5"      // Experience earn.
+            "BountyGoldMin"            "8"      // Gold earned min.
+            "BountyGoldMax"            "8"      // Gold earned max.
+
+            "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+            "MovementSpeed"            "340"      // Speed.      
+
+            "StatusHealth"            "2000"      // Base health.
+            "StatusHealthRegen"         "4"      // Health regeneration rate.
+            "StatusMana"            "300"         // Base mana.
+            "StatusManaRegen"         "0.5"      // Mana regeneration rate.   
+
+            "VisionDaytimeRange"      "5000"      // Range of vision during day light.
+            "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
+
+            "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+            "Creature"
+            {
+                //Level Up
+                "HPGain"               "50"
+                "DamageGain"            "2"
+                "ArmorGain"               "0.25"
+                "MagicResistGain"         "0.1"
+                "MoveSpeedGain"            "1"
+                "BountyGain"            "3"
+                "XPGain"               "15"
+            }
+        }
+        "wave_unit_12_killer" 
+        {
+            "Model"                   "models/items/lone_druid/bear/iron_claw_spirit_bear/iron_claw_spirit_bear.vmdl"
+            "BaseClass"               "npc_dota_creature"
+            "Level"                         "1"
+            "SoundSet"               "LoneDruid_SpiritBear"
+            "GameSoundsFile"         "soundevents/game_sounds_creeps.vsndevts"
+            "Modelscale"              "1"
+
+            "Ability1"               "lone_druid_savage_roar_bear"         // Ability 1
+            "Ability2"               "lone_druid_spirit_bear_entangle"         // Ability 2
+            "Ability3"               ""         // Ability 3
+            "Ability4"               ""         // Ability 4
+
+            "ArmorPhysical"            "35"
+            "MagicalResistance"         "25"
+
+            "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
+            "AttackDamageMin"         "75"      // Damage range min.
+            "AttackDamageMax"         "85"      // Damage range max.
+            "AttackRate"            "2"      // Speed of attack.
+            "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
+            "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
+            "AttackRange"            "100"   // Range within a target can be attacked.
+
+            "RingRadius"            "70"
+            "HealthBarOffset"         "215"
+
+            "BountyXP"               "5"      // Experience earn.
+            "BountyGoldMin"            "16"      // Gold earned min.
+            "BountyGoldMax"            "16"      // Gold earned max.
+
+            "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+            "MovementSpeed"            "340"      // Speed.      
+
+            "StatusHealth"            "2500"      // Base health.
+            "StatusHealthRegen"         "4"      // Health regeneration rate.
+            "StatusMana"            "300"         // Base mana.
+            "StatusManaRegen"         "0.5"      // Mana regeneration rate.   
+
+            "VisionDaytimeRange"      "5000"      // Range of vision during day light.
+            "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
+
+            "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+            "Creature"
+            {
+                //Level Up
+                "HPGain"               "50"
+                "DamageGain"            "2"
+                "ArmorGain"               "0.25"
+                "MagicResistGain"         "0.1"
+                "MoveSpeedGain"            "1"
+                "BountyGain"            "3"
+                "XPGain"               "15"
+            }
+        }
+        "wave_unit_12_boss" 
+        {
+            "Model"                   "models/items/lone_druid/true_form/rabid_black_bear/rabid_black_bear.vmdl"
+            "BaseClass"               "npc_dota_creature"
+            "Level"                         "1"
+            "SoundSet"               "LoneDruid_SpiritBear"
+            "GameSoundsFile"         "soundevents/game_sounds_creeps.vsndevts"
+            "Modelscale"              ".9"
+
+            "Ability1"               "lone_druid_savage_roar_bear"         // Ability 1
+            "Ability2"               "lone_druid_spirit_bear_demolish"         // Ability 2
+            "Ability3"               "lone_druid_spirit_bear_entangle"         // Ability 3
+            "Ability4"               ""         // Ability 4
+
+            "ArmorPhysical"            "40"
+            "MagicalResistance"         "10"
+
+            "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
+            "AttackDamageMin"         "150"      // Damage range min.
+            "AttackDamageMax"         "175"      // Damage range max.
+            "AttackRate"            "2"      // Speed of attack.
+            "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
+            "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
+            "AttackRange"            "100"   // Range within a target can be attacked.
+
+            "RingRadius"            "70"
+            "HealthBarOffset"         "215"
+
+            "BountyXP"               "5"      // Experience earn.
+            "BountyGoldMin"            "72"      // Gold earned min.
+            "BountyGoldMax"            "72"      // Gold earned max.
+
+            "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+            "MovementSpeed"            "340"      // Speed.      
+
+            "StatusHealth"            "3500"      // Base health.
+            "StatusHealthRegen"         "4"      // Health regeneration rate.
+            "StatusMana"            "300"         // Base mana.
+            "StatusManaRegen"         "0.5"      // Mana regeneration rate.   
+
+            "VisionDaytimeRange"      "5000"      // Range of vision during day light.
+            "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
+
+            "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+            "Creature"
+            {
+                //Level Up
+                "HPGain"               "50"
+                "DamageGain"            "2"
+                "ArmorGain"               "0.25"
+                "MagicResistGain"         "0.1"
+                "MoveSpeedGain"            "1"
+                "BountyGain"            "3"
+                "XPGain"               "15"
+            }
+        }
+        "wave_unit_13" 
+        {
+            "Model"                   "models/items/lone_druid/bear/spirit_of_anger/spirit_of_anger.vmdl"
+            "BaseClass"               "npc_dota_creature"
+            "Level"                         "1"
+            "SoundSet"               "LoneDruid_SpiritBear"
+            "GameSoundsFile"         "soundevents/game_sounds_creeps.vsndevts"
+            "Modelscale"              ".9"
+
+            "Ability1"               "lone_druid_savage_roar_bear"         // Ability 1
+            "Ability2"               ""         // Ability 2
+            "Ability3"               ""         // Ability 3
+            "Ability4"               ""         // Ability 4
+
+            "ArmorPhysical"            "25"
+            "MagicalResistance"         "10"
+
+            "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
+            "AttackDamageMin"         "50"      // Damage range min.
+            "AttackDamageMax"         "60"      // Damage range max.
+            "AttackRate"            "1.65"      // Speed of attack.
+            "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
+            "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
+            "AttackRange"            "100"   // Range within a target can be attacked.
+
+            "RingRadius"            "70"
+            "HealthBarOffset"         "215"
+
+            "BountyXP"               "5"      // Experience earn.
+            "BountyGoldMin"            "8"      // Gold earned min.
+            "BountyGoldMax"            "8"      // Gold earned max.
+
+            "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+            "MovementSpeed"            "340"      // Speed.      
+
+            "StatusHealth"            "2000"      // Base health.
+            "StatusHealthRegen"         "4"      // Health regeneration rate.
+            "StatusMana"            "300"         // Base mana.
+            "StatusManaRegen"         "0.5"      // Mana regeneration rate.   
+
+            "VisionDaytimeRange"      "5000"      // Range of vision during day light.
+            "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
+
+            "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+            "Creature"
+            {
+                //Level Up
+                "HPGain"               "50"
+                "DamageGain"            "2"
+                "ArmorGain"               "0.25"
+                "MagicResistGain"         "0.1"
+                "MoveSpeedGain"            "1"
+                "BountyGain"            "3"
+                "XPGain"               "15"
+            }
+        }
+        "wave_unit_13_killer" 
+        {
+            "Model"                   "models/items/lone_druid/bear/iron_claw_spirit_bear/iron_claw_spirit_bear.vmdl"
+            "BaseClass"               "npc_dota_creature"
+            "Level"                         "1"
+            "SoundSet"               "LoneDruid_SpiritBear"
+            "GameSoundsFile"         "soundevents/game_sounds_creeps.vsndevts"
+            "Modelscale"              "1"
+
+            "Ability1"               "lone_druid_savage_roar_bear"         // Ability 1
+            "Ability2"               "lone_druid_spirit_bear_entangle"         // Ability 2
+            "Ability3"               ""         // Ability 3
+            "Ability4"               ""         // Ability 4
+
+            "ArmorPhysical"            "35"
+            "MagicalResistance"         "25"
+
+            "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
+            "AttackDamageMin"         "75"      // Damage range min.
+            "AttackDamageMax"         "85"      // Damage range max.
+            "AttackRate"            "2"      // Speed of attack.
+            "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
+            "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
+            "AttackRange"            "100"   // Range within a target can be attacked.
+
+            "RingRadius"            "70"
+            "HealthBarOffset"         "215"
+
+            "BountyXP"               "5"      // Experience earn.
+            "BountyGoldMin"            "16"      // Gold earned min.
+            "BountyGoldMax"            "16"      // Gold earned max.
+
+            "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+            "MovementSpeed"            "340"      // Speed.      
+
+            "StatusHealth"            "2500"      // Base health.
+            "StatusHealthRegen"         "4"      // Health regeneration rate.
+            "StatusMana"            "300"         // Base mana.
+            "StatusManaRegen"         "0.5"      // Mana regeneration rate.   
+
+            "VisionDaytimeRange"      "5000"      // Range of vision during day light.
+            "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
+
+            "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+            "Creature"
+            {
+                //Level Up
+                "HPGain"               "50"
+                "DamageGain"            "2"
+                "ArmorGain"               "0.25"
+                "MagicResistGain"         "0.1"
+                "MoveSpeedGain"            "1"
+                "BountyGain"            "3"
+                "XPGain"               "15"
+            }
+        }
+        "wave_unit_13_boss" 
+        {
+            "Model"                   "models/items/lone_druid/true_form/rabid_black_bear/rabid_black_bear.vmdl"
+            "BaseClass"               "npc_dota_creature"
+            "Level"                         "1"
+            "SoundSet"               "LoneDruid_SpiritBear"
+            "GameSoundsFile"         "soundevents/game_sounds_creeps.vsndevts"
+            "Modelscale"              ".9"
+
+            "Ability1"               "lone_druid_savage_roar_bear"         // Ability 1
+            "Ability2"               "lone_druid_spirit_bear_demolish"         // Ability 2
+            "Ability3"               "lone_druid_spirit_bear_entangle"         // Ability 3
+            "Ability4"               ""         // Ability 4
+
+            "ArmorPhysical"            "40"
+            "MagicalResistance"         "10"
+
+            "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
+            "AttackDamageMin"         "150"      // Damage range min.
+            "AttackDamageMax"         "175"      // Damage range max.
+            "AttackRate"            "2"      // Speed of attack.
+            "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
+            "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
+            "AttackRange"            "100"   // Range within a target can be attacked.
+
+            "RingRadius"            "70"
+            "HealthBarOffset"         "215"
+
+            "BountyXP"               "5"      // Experience earn.
+            "BountyGoldMin"            "72"      // Gold earned min.
+            "BountyGoldMax"            "72"      // Gold earned max.
+
+            "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+            "MovementSpeed"            "340"      // Speed.      
+
+            "StatusHealth"            "3500"      // Base health.
+            "StatusHealthRegen"         "4"      // Health regeneration rate.
+            "StatusMana"            "300"         // Base mana.
+            "StatusManaRegen"         "0.5"      // Mana regeneration rate.   
+
+            "VisionDaytimeRange"      "5000"      // Range of vision during day light.
+            "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
+
+            "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+            "Creature"
+            {
+                //Level Up
+                "HPGain"               "50"
+                "DamageGain"            "2"
+                "ArmorGain"               "0.25"
+                "MagicResistGain"         "0.1"
+                "MoveSpeedGain"            "1"
+                "BountyGain"            "3"
+                "XPGain"               "15"
+            }
+        }
+        "wave_unit_14" 
+        {
+            "Model"                   "models/items/lone_druid/bear/spirit_of_anger/spirit_of_anger.vmdl"
+            "BaseClass"               "npc_dota_creature"
+            "Level"                         "1"
+            "SoundSet"               "LoneDruid_SpiritBear"
+            "GameSoundsFile"         "soundevents/game_sounds_creeps.vsndevts"
+            "Modelscale"              ".9"
+
+            "Ability1"               "lone_druid_savage_roar_bear"         // Ability 1
+            "Ability2"               ""         // Ability 2
+            "Ability3"               ""         // Ability 3
+            "Ability4"               ""         // Ability 4
+
+            "ArmorPhysical"            "25"
+            "MagicalResistance"         "10"
+
+            "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
+            "AttackDamageMin"         "50"      // Damage range min.
+            "AttackDamageMax"         "60"      // Damage range max.
+            "AttackRate"            "1.65"      // Speed of attack.
+            "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
+            "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
+            "AttackRange"            "100"   // Range within a target can be attacked.
+
+            "RingRadius"            "70"
+            "HealthBarOffset"         "215"
+
+            "BountyXP"               "5"      // Experience earn.
+            "BountyGoldMin"            "8"      // Gold earned min.
+            "BountyGoldMax"            "8"      // Gold earned max.
+
+            "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+            "MovementSpeed"            "340"      // Speed.      
+
+            "StatusHealth"            "2000"      // Base health.
+            "StatusHealthRegen"         "4"      // Health regeneration rate.
+            "StatusMana"            "300"         // Base mana.
+            "StatusManaRegen"         "0.5"      // Mana regeneration rate.   
+
+            "VisionDaytimeRange"      "5000"      // Range of vision during day light.
+            "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
+
+            "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+            "Creature"
+            {
+                //Level Up
+                "HPGain"               "50"
+                "DamageGain"            "2"
+                "ArmorGain"               "0.25"
+                "MagicResistGain"         "0.1"
+                "MoveSpeedGain"            "1"
+                "BountyGain"            "3"
+                "XPGain"               "15"
+            }
+        }
+        "wave_unit_14_killer" 
+        {
+            "Model"                   "models/items/lone_druid/bear/iron_claw_spirit_bear/iron_claw_spirit_bear.vmdl"
+            "BaseClass"               "npc_dota_creature"
+            "Level"                         "1"
+            "SoundSet"               "LoneDruid_SpiritBear"
+            "GameSoundsFile"         "soundevents/game_sounds_creeps.vsndevts"
+            "Modelscale"              "1"
+
+            "Ability1"               "lone_druid_savage_roar_bear"         // Ability 1
+            "Ability2"               "lone_druid_spirit_bear_entangle"         // Ability 2
+            "Ability3"               ""         // Ability 3
+            "Ability4"               ""         // Ability 4
+
+            "ArmorPhysical"            "35"
+            "MagicalResistance"         "25"
+
+            "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
+            "AttackDamageMin"         "75"      // Damage range min.
+            "AttackDamageMax"         "85"      // Damage range max.
+            "AttackRate"            "2"      // Speed of attack.
+            "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
+            "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
+            "AttackRange"            "100"   // Range within a target can be attacked.
+
+            "RingRadius"            "70"
+            "HealthBarOffset"         "215"
+
+            "BountyXP"               "5"      // Experience earn.
+            "BountyGoldMin"            "16"      // Gold earned min.
+            "BountyGoldMax"            "16"      // Gold earned max.
+
+            "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+            "MovementSpeed"            "340"      // Speed.      
+
+            "StatusHealth"            "2500"      // Base health.
+            "StatusHealthRegen"         "4"      // Health regeneration rate.
+            "StatusMana"            "300"         // Base mana.
+            "StatusManaRegen"         "0.5"      // Mana regeneration rate.   
+
+            "VisionDaytimeRange"      "5000"      // Range of vision during day light.
+            "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
+
+            "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+            "Creature"
+            {
+                //Level Up
+                "HPGain"               "50"
+                "DamageGain"            "2"
+                "ArmorGain"               "0.25"
+                "MagicResistGain"         "0.1"
+                "MoveSpeedGain"            "1"
+                "BountyGain"            "3"
+                "XPGain"               "15"
+            }
+        }
+        "wave_unit_14_boss" 
+        {
+            "Model"                   "models/items/lone_druid/true_form/rabid_black_bear/rabid_black_bear.vmdl"
+            "BaseClass"               "npc_dota_creature"
+            "Level"                         "1"
+            "SoundSet"               "LoneDruid_SpiritBear"
+            "GameSoundsFile"         "soundevents/game_sounds_creeps.vsndevts"
+            "Modelscale"              ".9"
+
+            "Ability1"               "lone_druid_savage_roar_bear"         // Ability 1
+            "Ability2"               "lone_druid_spirit_bear_demolish"         // Ability 2
+            "Ability3"               "lone_druid_spirit_bear_entangle"         // Ability 3
+            "Ability4"               ""         // Ability 4
+
+            "ArmorPhysical"            "40"
+            "MagicalResistance"         "10"
+
+            "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
+            "AttackDamageMin"         "150"      // Damage range min.
+            "AttackDamageMax"         "175"      // Damage range max.
+            "AttackRate"            "2"      // Speed of attack.
+            "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
+            "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
+            "AttackRange"            "100"   // Range within a target can be attacked.
+
+            "RingRadius"            "70"
+            "HealthBarOffset"         "215"
+
+            "BountyXP"               "5"      // Experience earn.
+            "BountyGoldMin"            "72"      // Gold earned min.
+            "BountyGoldMax"            "72"      // Gold earned max.
+
+            "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+            "MovementSpeed"            "340"      // Speed.      
+
+            "StatusHealth"            "3500"      // Base health.
+            "StatusHealthRegen"         "4"      // Health regeneration rate.
+            "StatusMana"            "300"         // Base mana.
+            "StatusManaRegen"         "0.5"      // Mana regeneration rate.   
+
+            "VisionDaytimeRange"      "5000"      // Range of vision during day light.
+            "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
+
+            "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+            "Creature"
+            {
+                //Level Up
+                "HPGain"               "50"
+                "DamageGain"            "2"
+                "ArmorGain"               "0.25"
+                "MagicResistGain"         "0.1"
+                "MoveSpeedGain"            "1"
+                "BountyGain"            "3"
+                "XPGain"               "15"
+            }
+        }
+        "wave_unit_15" 
+        {
+            "Model"                   "models/items/lone_druid/bear/spirit_of_anger/spirit_of_anger.vmdl"
+            "BaseClass"               "npc_dota_creature"
+            "Level"                         "1"
+            "SoundSet"               "LoneDruid_SpiritBear"
+            "GameSoundsFile"         "soundevents/game_sounds_creeps.vsndevts"
+            "Modelscale"              ".9"
+
+            "Ability1"               "lone_druid_savage_roar_bear"         // Ability 1
+            "Ability2"               ""         // Ability 2
+            "Ability3"               ""         // Ability 3
+            "Ability4"               ""         // Ability 4
+
+            "ArmorPhysical"            "25"
+            "MagicalResistance"         "10"
+
+            "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
+            "AttackDamageMin"         "50"      // Damage range min.
+            "AttackDamageMax"         "60"      // Damage range max.
+            "AttackRate"            "1.65"      // Speed of attack.
+            "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
+            "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
+            "AttackRange"            "100"   // Range within a target can be attacked.
+
+            "RingRadius"            "70"
+            "HealthBarOffset"         "215"
+
+            "BountyXP"               "5"      // Experience earn.
+            "BountyGoldMin"            "16"      // Gold earned min.
+            "BountyGoldMax"            "16"      // Gold earned max.
+
+            "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+            "MovementSpeed"            "340"      // Speed.      
+
+            "StatusHealth"            "2000"      // Base health.
+            "StatusHealthRegen"         "4"      // Health regeneration rate.
+            "StatusMana"            "300"         // Base mana.
+            "StatusManaRegen"         "0.5"      // Mana regeneration rate.   
+
+            "VisionDaytimeRange"      "5000"      // Range of vision during day light.
+            "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
+
+            "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+            "Creature"
+            {
+                //Level Up
+                "HPGain"               "50"
+                "DamageGain"            "2"
+                "ArmorGain"               "0.25"
+                "MagicResistGain"         "0.1"
+                "MoveSpeedGain"            "1"
+                "BountyGain"            "3"
+                "XPGain"               "15"
+            }
+        }
+        "wave_unit_15_killer" 
+        {
+            "Model"                   "models/items/lone_druid/bear/iron_claw_spirit_bear/iron_claw_spirit_bear.vmdl"
+            "BaseClass"               "npc_dota_creature"
+            "Level"                         "1"
+            "SoundSet"               "LoneDruid_SpiritBear"
+            "GameSoundsFile"         "soundevents/game_sounds_creeps.vsndevts"
+            "Modelscale"              "1"
+
+            "Ability1"               "lone_druid_savage_roar_bear"         // Ability 1
+            "Ability2"               "lone_druid_spirit_bear_entangle"         // Ability 2
+            "Ability3"               ""         // Ability 3
+            "Ability4"               ""         // Ability 4
+
+            "ArmorPhysical"            "35"
+            "MagicalResistance"         "25"
+
+            "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
+            "AttackDamageMin"         "75"      // Damage range min.
+            "AttackDamageMax"         "85"      // Damage range max.
+            "AttackRate"            "2"      // Speed of attack.
+            "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
+            "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
+            "AttackRange"            "100"   // Range within a target can be attacked.
+
+            "RingRadius"            "70"
+            "HealthBarOffset"         "215"
+
+            "BountyXP"               "5"      // Experience earn.
+            "BountyGoldMin"            "32"      // Gold earned min.
+            "BountyGoldMax"            "32"      // Gold earned max.
+
+            "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+            "MovementSpeed"            "340"      // Speed.      
+
+            "StatusHealth"            "2500"      // Base health.
+            "StatusHealthRegen"         "4"      // Health regeneration rate.
+            "StatusMana"            "300"         // Base mana.
+            "StatusManaRegen"         "0.5"      // Mana regeneration rate.   
+
+            "VisionDaytimeRange"      "5000"      // Range of vision during day light.
+            "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
+
+            "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+            "Creature"
+            {
+                //Level Up
+                "HPGain"               "50"
+                "DamageGain"            "2"
+                "ArmorGain"               "0.25"
+                "MagicResistGain"         "0.1"
+                "MoveSpeedGain"            "1"
+                "BountyGain"            "3"
+                "XPGain"               "15"
+            }
+        }
+        "wave_unit_15_boss" 
+        {
+            "Model"                   "models/items/lone_druid/true_form/rabid_black_bear/rabid_black_bear.vmdl"
+            "BaseClass"               "npc_dota_creature"
+            "Level"                         "1"
+            "SoundSet"               "LoneDruid_SpiritBear"
+            "GameSoundsFile"         "soundevents/game_sounds_creeps.vsndevts"
+            "Modelscale"              ".9"
+
+            "Ability1"               "lone_druid_savage_roar_bear"         // Ability 1
+            "Ability2"               "lone_druid_spirit_bear_demolish"         // Ability 2
+            "Ability3"               "lone_druid_spirit_bear_entangle"         // Ability 3
+            "Ability4"               ""         // Ability 4
+
+            "ArmorPhysical"            "40"
+            "MagicalResistance"         "10"
+
+            "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
+            "AttackDamageMin"         "150"      // Damage range min.
+            "AttackDamageMax"         "175"      // Damage range max.
+            "AttackRate"            "2"      // Speed of attack.
+            "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
+            "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
+            "AttackRange"            "100"   // Range within a target can be attacked.
+
+            "RingRadius"            "70"
+            "HealthBarOffset"         "215"
+
+            "BountyXP"               "5"      // Experience earn.
+            "BountyGoldMin"            "144"      // Gold earned min.
+            "BountyGoldMax"            "144"      // Gold earned max.
+
+            "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+            "MovementSpeed"            "340"      // Speed.      
+
+            "StatusHealth"            "3500"      // Base health.
+            "StatusHealthRegen"         "4"      // Health regeneration rate.
+            "StatusMana"            "300"         // Base mana.
+            "StatusManaRegen"         "0.5"      // Mana regeneration rate.   
+
+            "VisionDaytimeRange"      "5000"      // Range of vision during day light.
+            "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
+
+            "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+            "Creature"
+            {
+                //Level Up
+                "HPGain"               "50"
+                "DamageGain"            "2"
+                "ArmorGain"               "0.25"
+                "MagicResistGain"         "0.1"
+                "MoveSpeedGain"            "1"
+                "BountyGain"            "3"
+                "XPGain"               "15"
+            }
+        }
+        "wave_unit_16" 
+        {
+            "Model"                   "models/items/lone_druid/bear/spirit_of_anger/spirit_of_anger.vmdl"
+            "BaseClass"               "npc_dota_creature"
+            "Level"                         "1"
+            "SoundSet"               "LoneDruid_SpiritBear"
+            "GameSoundsFile"         "soundevents/game_sounds_creeps.vsndevts"
+            "Modelscale"              ".9"
+
+            "Ability1"               "lone_druid_savage_roar_bear"         // Ability 1
+            "Ability2"               ""         // Ability 2
+            "Ability3"               ""         // Ability 3
+            "Ability4"               ""         // Ability 4
+
+            "ArmorPhysical"            "25"
+            "MagicalResistance"         "10"
+
+            "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
+            "AttackDamageMin"         "50"      // Damage range min.
+            "AttackDamageMax"         "60"      // Damage range max.
+            "AttackRate"            "1.65"      // Speed of attack.
+            "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
+            "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
+            "AttackRange"            "100"   // Range within a target can be attacked.
+
+            "RingRadius"            "70"
+            "HealthBarOffset"         "215"
+
+            "BountyXP"               "5"      // Experience earn.
+            "BountyGoldMin"            "16"      // Gold earned min.
+            "BountyGoldMax"            "16"      // Gold earned max.
+
+            "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+            "MovementSpeed"            "340"      // Speed.      
+
+            "StatusHealth"            "2000"      // Base health.
+            "StatusHealthRegen"         "4"      // Health regeneration rate.
+            "StatusMana"            "300"         // Base mana.
+            "StatusManaRegen"         "0.5"      // Mana regeneration rate.   
+
+            "VisionDaytimeRange"      "5000"      // Range of vision during day light.
+            "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
+
+            "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+            "Creature"
+            {
+                //Level Up
+                "HPGain"               "50"
+                "DamageGain"            "2"
+                "ArmorGain"               "0.25"
+                "MagicResistGain"         "0.1"
+                "MoveSpeedGain"            "1"
+                "BountyGain"            "3"
+                "XPGain"               "15"
+            }
+        }
+        "wave_unit_16_killer" 
+        {
+            "Model"                   "models/items/lone_druid/bear/iron_claw_spirit_bear/iron_claw_spirit_bear.vmdl"
+            "BaseClass"               "npc_dota_creature"
+            "Level"                         "1"
+            "SoundSet"               "LoneDruid_SpiritBear"
+            "GameSoundsFile"         "soundevents/game_sounds_creeps.vsndevts"
+            "Modelscale"              "1"
+
+            "Ability1"               "lone_druid_savage_roar_bear"         // Ability 1
+            "Ability2"               "lone_druid_spirit_bear_entangle"         // Ability 2
+            "Ability3"               ""         // Ability 3
+            "Ability4"               ""         // Ability 4
+
+            "ArmorPhysical"            "35"
+            "MagicalResistance"         "25"
+
+            "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
+            "AttackDamageMin"         "75"      // Damage range min.
+            "AttackDamageMax"         "85"      // Damage range max.
+            "AttackRate"            "2"      // Speed of attack.
+            "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
+            "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
+            "AttackRange"            "100"   // Range within a target can be attacked.
+
+            "RingRadius"            "70"
+            "HealthBarOffset"         "215"
+
+            "BountyXP"               "5"      // Experience earn.
+            "BountyGoldMin"            "32"      // Gold earned min.
+            "BountyGoldMax"            "32"      // Gold earned max.
+
+            "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+            "MovementSpeed"            "340"      // Speed.      
+
+            "StatusHealth"            "2500"      // Base health.
+            "StatusHealthRegen"         "4"      // Health regeneration rate.
+            "StatusMana"            "300"         // Base mana.
+            "StatusManaRegen"         "0.5"      // Mana regeneration rate.   
+
+            "VisionDaytimeRange"      "5000"      // Range of vision during day light.
+            "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
+
+            "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+            "Creature"
+            {
+                //Level Up
+                "HPGain"               "50"
+                "DamageGain"            "2"
+                "ArmorGain"               "0.25"
+                "MagicResistGain"         "0.1"
+                "MoveSpeedGain"            "1"
+                "BountyGain"            "3"
+                "XPGain"               "15"
+            }
+        }
+        "wave_unit_16_boss" 
+        {
+            "Model"                   "models/items/lone_druid/true_form/rabid_black_bear/rabid_black_bear.vmdl"
+            "BaseClass"               "npc_dota_creature"
+            "Level"                         "1"
+            "SoundSet"               "LoneDruid_SpiritBear"
+            "GameSoundsFile"         "soundevents/game_sounds_creeps.vsndevts"
+            "Modelscale"              ".9"
+
+            "Ability1"               "lone_druid_savage_roar_bear"         // Ability 1
+            "Ability2"               "lone_druid_spirit_bear_demolish"         // Ability 2
+            "Ability3"               "lone_druid_spirit_bear_entangle"         // Ability 3
+            "Ability4"               ""         // Ability 4
+
+            "ArmorPhysical"            "40"
+            "MagicalResistance"         "10"
+
+            "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
+            "AttackDamageMin"         "150"      // Damage range min.
+            "AttackDamageMax"         "175"      // Damage range max.
+            "AttackRate"            "2"      // Speed of attack.
+            "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
+            "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
+            "AttackRange"            "100"   // Range within a target can be attacked.
+
+            "RingRadius"            "70"
+            "HealthBarOffset"         "215"
+
+            "BountyXP"               "5"      // Experience earn.
+            "BountyGoldMin"            "144"      // Gold earned min.
+            "BountyGoldMax"            "144"      // Gold earned max.
+
+            "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+            "MovementSpeed"            "340"      // Speed.      
+
+            "StatusHealth"            "3500"      // Base health.
+            "StatusHealthRegen"         "4"      // Health regeneration rate.
+            "StatusMana"            "300"         // Base mana.
+            "StatusManaRegen"         "0.5"      // Mana regeneration rate.   
+
+            "VisionDaytimeRange"      "5000"      // Range of vision during day light.
+            "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
+
+            "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+            "Creature"
+            {
+                //Level Up
+                "HPGain"               "50"
+                "DamageGain"            "2"
+                "ArmorGain"               "0.25"
+                "MagicResistGain"         "0.1"
+                "MoveSpeedGain"            "1"
+                "BountyGain"            "3"
+                "XPGain"               "15"
+            }
+        }
 }
