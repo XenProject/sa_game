@@ -1335,7 +1335,7 @@
         "03"
         {
           "var_type"    "FIELD_FLOAT"
-          "duration"    "7.0"
+          "duration"    "4.0 5.0 6.0 7.0"
         }
         "04"
         {
@@ -1819,6 +1819,9 @@
       "AbilityCastAnimation"  "ACT_DOTA_CAST_ABILITY_4"
       "AbilityCastPoint"    "0.3"
 
+      "AbilityCooldown"        "20.0"
+      "AbilityManaCost"        "100"
+
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
       "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
       "AbilityUnitTargetType"      "DOTA_UNIT_TARGET_HERO"
@@ -1839,6 +1842,8 @@
       "AbilityTextureName"      "vasya_regeneration"
       "MaxLevel"             "4"
       "AbilityType"     "DOTA_ABILITY_TYPE_BASIC"
+
+      "AbilityCooldown"        "3.0"
 
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE"
       "AbilityUnitDamageType"      "DAMAGE_TYPE_MAGICAL"
@@ -1863,6 +1868,9 @@
       "AbilityTextureName"      "vasya_blessing"
       "MaxLevel"             "3"
       "AbilityType"     "DOTA_ABILITY_TYPE_ULTIMATE"
+
+      "AbilityCooldown"        "140.0 100.0 60.0"
+      "AbilityManaCost"        "130"
 
       "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
       "AbilityUnitTargetTeam"      "DOTA_UNIT_TARGET_TEAM_FRIENDLY"

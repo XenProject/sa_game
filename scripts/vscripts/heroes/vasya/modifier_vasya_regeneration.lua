@@ -22,7 +22,8 @@ end
 
 function modifier_vasya_regeneration:OnTakeDamage( event )
 	local caster = self:GetCaster()
-	if event.unit == caster and event.attacker ~= caster then
+	local ability = self:GetAbility()
+	if event.unit == caster and event.attacker ~= caster and ability:IsCooldownReady() then
 		self.attacks = self.attacks + 1
 		if self.attacks == 5 then
 			self.attacks = 0
@@ -31,7 +32,7 @@ function modifier_vasya_regeneration:OnTakeDamage( event )
 				attacker = caster,
 				damage = self.damage,
 				damage_type = DAMAGE_TYPE_MAGICAL,
-				ability = self:GetAbility()
+				ability = ability
 			}
 
 			local particleName = "particles/heroes/vasya/vasya_regeneration.vpcf"	
@@ -49,6 +50,7 @@ function modifier_vasya_regeneration:OnTakeDamage( event )
 			ApplyDamage(damageTable)
 			caster:Heal(self.damage, caster)
 			PopupHealing(caster, self.damage)
+			ability:StartCooldown( ability:GetCooldown( ability:GetLevel() ) )
 		end
 	end
 end

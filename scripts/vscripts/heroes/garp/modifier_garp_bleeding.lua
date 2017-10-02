@@ -29,7 +29,7 @@ function modifier_garp_bleeding:OnIntervalThink()
 			victim = self:GetParent(),
 			attacker = self:GetCaster(),
 			damage = damagePerTick,
-			damage_type = DAMAGE_TYPE_PHYSICAL,
+			damage_type = DAMAGE_TYPE_PURE,
 			ability = self:GetAbility()
 		}
 		ApplyDamage( damage )
