@@ -2327,6 +2327,9 @@
     "AoERadius"   "%radius"
     "AbilityCastRange"        "%distance"
     "AbilityCastAnimation"  "ACT_RESET"
+    
+    "AbilityCooldown"        "20.0"
+    "AbilityManaCost"        "50"
 
     "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
     "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
@@ -5090,6 +5093,145 @@
       }
     }
   }
+  "item_sa_death_bow"
+  {
+    "ID"   "2062"
+    "BaseClass"                 "item_datadriven"
+    "AbilityTextureName"      "item_sa_death_bow"
+    "PingOverrideText" "DOTA_Tooltip_Ability_item_sa_death_bow"
+    "Model" "models/props_gameplay/red_box.vmdl"
+    //"ItemQuality"
+    //"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+    "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+    "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+    "ItemAlertable" "1"
+
+    "ItemCost"            "0"
+    "ItemPurchasable"          "1"
+    "ItemKillable"             "1"
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+
+    //"ItemStockMax" "1" 
+    //"ItemStockTime" "100"
+    //"ItemStockInitial" "3"
+
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+
+    "ItemStackable" "0"
+    "ItemPermanent" "0"
+
+    //"ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    
+    //"MaxUpgradeLevel"       "1"
+    //"ItemBaseLevel"         "1"
+
+    //"ItemShopTags" "int;str;agi;mana_pool;health_pool;hard_to_tag"
+    //"ItemAliases" "this;appears_in;search"
+
+    "Modifiers"
+    {
+      "item"
+      {
+        "Passive"      "1"
+        "IsHidden"      "1"
+        "IsDebuff"      "0"
+        "Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+        "Properties"
+        {
+          "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "%bonus_dmg"
+          "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"  "%bonus_as"
+        }
+      }
+      "modifier_sa_death_bow"
+      {
+        "Passive"      "1"
+        "IsHidden"      "1"
+        "IsDebuff"      "0"
+
+        "OnAttackStart"
+        {
+          "RemoveModifier"
+          {
+            "ModifierName"  "modifier_sa_death_bow_crit"
+            "Target"    "CASTER"
+          }
+  
+          "Random"
+          {
+            "Chance"    "%chance"
+            "PseudoRandom"  "DOTA_PSEUDO_RANDOM_PHANTOMASSASSIN_CRIT"
+  
+            "OnSuccess"
+            {
+              "ApplyModifier"
+              {
+                "ModifierName"  "modifier_sa_death_bow_crit"
+                "Target"    "CASTER"
+              }
+            }
+          }
+        }
+
+        "Properties"
+        {
+          "MODIFIER_PROPERTY_EVASION_CONSTANT" "%chance"
+        }
+
+        "States"
+        {
+          "MODIFIER_STATE_CANNOT_MISS"      "MODIFIER_STATE_VALUE_ENABLED"
+        }
+      }
+      "modifier_sa_death_bow_crit"
+      {
+        "Passive"      "0"
+        "IsHidden"      "1"
+        "IsDebuff"      "0"
+
+        "Properties"
+        {
+          "MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%dmg_multiplier_prt"
+        }
+  
+        "OnAttackLanded"
+        {
+          "RemoveModifier"
+          {
+            "ModifierName"  "modifier_sa_death_bow_crit"
+            "Target"    "CASTER"
+          }
+        }
+      }
+    }
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_dmg"      "62"
+      }
+      "02"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "bonus_as"      "62"
+      }
+      "03"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "chance"      "15"
+      }
+      "04"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "dmg_multiplier_prt"      "200"
+      }
+    }
+  }
   //Consumable
     "item_sa_healing_elixir"
     {
@@ -5802,6 +5944,20 @@
         "ItemRequirements"
         {
             "01" "item_sa_drum;item_sa_pitchfork;item_sa_staff"
+        }
+    }
+    "item_recipe_sa_death_bow" 
+    {
+        "ID" "3036"
+        "BaseClass"           "item_datadriven"
+        "Model"        "models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"    "recipe"
+        "ItemRecipe"          "1" //destroyed after combine
+        "ItemCost"            "950" //if its 0, it will combine without needing a recipe.
+        "ItemResult"          "item_sa_death_bow" //the result of combining the ItemRequirements
+        "ItemRequirements"
+        {
+            "01" "item_sa_iron_bow;item_sa_warrior_glove;item_sa_bow"
         }
     }
 }

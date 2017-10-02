@@ -50,11 +50,13 @@ function SpecArena:Init()
     self.roundKillers = 12
     self.unitsLeft = 0
     self.readyPlayers = 0
-    self.preRoundTime = 25
-    self.allEnemies = self.roundCreeps + self.roundKillers + 1--Кол-во оставшихся юнитов = кол-во обычных + кол-во убийц + босс волны
+    self.preRoundTime = 40
+
+    self.roundCreeps = {24,34,44,54,64}
+    self.roundKillers = self.roundCreeps[#self.allPlayers]/2
 
     self.nGoldPerWave = {8,8,8,8,8,16,16,16,16,16,32,32,32,32,32,32,32,32,32}
-
+    self.allEnemies = self.roundCreeps[#self.allPlayers] + self.roundKillers + 1--Кол-во оставшихся юнитов = кол-во обычных + кол-во убийц + босс волны
 end
 
 function SpecArena:PrepareNextRound()
@@ -86,7 +88,7 @@ end
 function SpecArena:SpawnWaveUnits()
 	self.State = STATE_ROUND_WAVE
 	self.unitsLeft = self.allEnemies
-	for i=1, self.roundCreeps do
+	for i=1, self.roundCreeps[#self.allPlayers] do
 		if i%3 == 0 then 
 	  		local unit = CreateUnitByName( "wave_unit_" .. self.currentGameRound, SPAWN_3 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
 	  	elseif	i%2 == 0 then

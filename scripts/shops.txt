@@ -91,6 +91,7 @@
     "item"      "item_sa_bone_sword"
     "item"      "item_sa_javelin"
     "item"      "item_sa_battle_spear"
+    "item"      "item_sa_death_bow"
     "item"      "item_sa_deadly_blade"
     "item"      "item_sa_blade_of_lightning"
     "item"      "item_sa_highspeed_axe"
