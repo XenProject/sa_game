@@ -420,8 +420,8 @@
             "MagicalResistance"        "0"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
-            "AttackDamageMin"         "8"      // Damage range min.
-            "AttackDamageMax"         "9"      // Damage range max.
+            "AttackDamageMin"         "2"      // Damage range min.
+            "AttackDamageMax"         "4"      // Damage range max.
             "AttackRate"            "1.3"      // Speed of attack.
             "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
@@ -446,8 +446,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -480,8 +480,8 @@
             "MagicalResistance"        "1"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
-            "AttackDamageMin"         "13"      // Damage range min.
-            "AttackDamageMax"         "14"      // Damage range max.
+            "AttackDamageMin"         "4"      // Damage range min.
+            "AttackDamageMax"         "6"      // Damage range max.
             "AttackRate"            "1"      // Speed of attack.
             "AttackAnimationPoint"      "0.38"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
@@ -506,8 +506,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -541,8 +541,8 @@
             "MagicalResistance"        "1"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
-            "AttackDamageMin"         "20"      // Damage range min.
-            "AttackDamageMax"         "25"      // Damage range max.
+            "AttackDamageMin"         "10"      // Damage range min.
+            "AttackDamageMax"         "10"      // Damage range max.
             "AttackRate"            "0.8"      // Speed of attack.
             "AttackAnimationPoint"      "0.38"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
@@ -567,8 +567,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -601,8 +601,8 @@
             "MagicalResistance"         "0"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_RANGED_ATTACK"
-            "AttackDamageMin"         "8"      // Damage range min.
-            "AttackDamageMax"         "8"      // Damage range max.
+            "AttackDamageMin"         "4"      // Damage range min.
+            "AttackDamageMax"         "6"      // Damage range max.
             "AttackRate"            "2"      // Speed of attack.
             "AttackAnimationPoint"      "0.3"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
@@ -629,8 +629,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -663,8 +663,8 @@
             "MagicalResistance"        "2"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
-            "AttackDamageMin"         "15"      // Damage range min.
-            "AttackDamageMax"         "18"      // Damage range max.
+            "AttackDamageMin"         "6"      // Damage range min.
+            "AttackDamageMax"         "8"      // Damage range max.
             "AttackRate"            "1.5"      // Speed of attack.
             "AttackAnimationPoint"      "0.38"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
@@ -689,8 +689,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -724,8 +724,8 @@
             "MagicalResistance"        "5"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
-            "AttackDamageMin"         "25"      // Damage range min.
-            "AttackDamageMax"         "30"      // Damage range max.
+            "AttackDamageMin"         "15"      // Damage range min.
+            "AttackDamageMax"         "20"      // Damage range max.
             "AttackRate"            "0.6"      // Speed of attack.
             "AttackAnimationPoint"      "0.38"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
@@ -750,8 +750,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -810,8 +810,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -872,8 +872,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -933,8 +933,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -993,8 +993,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -1053,8 +1053,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -1114,8 +1114,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -1177,8 +1177,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -1238,8 +1238,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -1302,8 +1302,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -1362,8 +1362,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -1422,8 +1422,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -1483,8 +1483,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -1545,8 +1545,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -1607,8 +1607,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -1670,8 +1670,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -1730,8 +1730,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -1790,8 +1790,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -1851,8 +1851,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -1913,8 +1913,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -1975,8 +1975,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -2038,8 +2038,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -2098,8 +2098,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -2158,8 +2158,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -2219,8 +2219,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -2279,8 +2279,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -2339,8 +2339,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -2400,8 +2400,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -2460,8 +2460,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -2520,8 +2520,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -2581,8 +2581,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -2641,8 +2641,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -2701,8 +2701,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -2762,8 +2762,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -2822,8 +2822,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -2882,8 +2882,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HEROE"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -2943,8 +2943,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -3003,8 +3003,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -3063,8 +3063,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -3124,8 +3124,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -3184,8 +3184,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -3244,8 +3244,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
@@ -3305,8 +3305,8 @@
             "VisionNighttimeRange"      "5000"      // Range of vision at night time. 
 
             "TeamName"               "DOTA_TEAM_BADGUYS"                  // Team name.
-            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+            "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+            "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
             "Creature"
