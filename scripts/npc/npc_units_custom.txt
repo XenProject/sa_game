@@ -477,7 +477,7 @@
             "Ability4"               ""         // Ability 4
 
             "ArmorPhysical"            "2"
-            "MagicalResistance"        "1"
+            "MagicalResistance"        "0"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
             "AttackDamageMin"         "4"      // Damage range min.
@@ -587,7 +587,7 @@
         {
             "Model"                   "models/creeps/neutral_creeps/n_creep_ghost_a/n_creep_ghost_a.vmdl"
             "BaseClass"               "npc_dota_creature"
-            "Level"                         "3"
+            "Level"                         "1"
             "SoundSet"               "n_creep_Ranged"
             "GameSoundsFile"         "soundevents/game_sounds_creeps.vsndevts"
             "Modelscale"              ".9"
@@ -597,12 +597,12 @@
             "Ability3"               ""         // Ability 3
             "Ability4"               ""         // Ability 4
 
-            "ArmorPhysical"            "4"
+            "ArmorPhysical"            "3"
             "MagicalResistance"         "0"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_RANGED_ATTACK"
-            "AttackDamageMin"         "4"      // Damage range min.
-            "AttackDamageMax"         "6"      // Damage range max.
+            "AttackDamageMin"         "3"      // Damage range min.
+            "AttackDamageMax"         "5"      // Damage range max.
             "AttackRate"            "2"      // Speed of attack.
             "AttackAnimationPoint"      "0.3"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
@@ -659,12 +659,12 @@
             "Ability3"               ""         // Ability 3
             "Ability4"               ""         // Ability 4
 
-            "ArmorPhysical"            "8"
-            "MagicalResistance"        "2"
+            "ArmorPhysical"            "4"
+            "MagicalResistance"        "0"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
-            "AttackDamageMin"         "6"      // Damage range min.
-            "AttackDamageMax"         "8"      // Damage range max.
+            "AttackDamageMin"         "5"      // Damage range min.
+            "AttackDamageMax"         "7"      // Damage range max.
             "AttackRate"            "1.5"      // Speed of attack.
             "AttackAnimationPoint"      "0.38"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
@@ -709,7 +709,7 @@
         {
             "Model"                   "models/creeps/neutral_creeps/n_creep_ghost_b/n_creep_ghost_frost.vmdl"
             "BaseClass"               "npc_dota_creature"
-            "Level"                         "2"
+            "Level"                         "3"
             "SoundSet"               "n_creep_Melee"
             "GameSoundsFile"         "soundevents/game_sounds_creeps.vsndevts"
             "Modelscale"              "2"
@@ -720,12 +720,12 @@
             "Ability3"               ""         // Ability 3
             "Ability4"               ""         // Ability 4
 
-            "ArmorPhysical"            "10"
+            "ArmorPhysical"            "6"
             "MagicalResistance"        "5"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
-            "AttackDamageMin"         "15"      // Damage range min.
-            "AttackDamageMax"         "20"      // Damage range max.
+            "AttackDamageMin"         "10"      // Damage range min.
+            "AttackDamageMax"         "15"      // Damage range max.
             "AttackRate"            "0.6"      // Speed of attack.
             "AttackAnimationPoint"      "0.38"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
@@ -780,12 +780,12 @@
             "Ability3"               ""         // Ability 3
             "Ability4"               ""         // Ability 4
 
-            "ArmorPhysical"            "12"
+            "ArmorPhysical"            "5"
             "MagicalResistance"         "1"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
-            "AttackDamageMin"         "13"      // Damage range min.
-            "AttackDamageMax"         "15"      // Damage range max.
+            "AttackDamageMin"         "6"      // Damage range min.
+            "AttackDamageMax"         "8"      // Damage range max.
             "AttackRate"            "1.3"      // Speed of attack.
             "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
@@ -799,7 +799,7 @@
             "BountyGoldMax"            "2"      // Gold earned max.
 
             "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
-            "MovementSpeed"            "270"      // Speed.      
+            "MovementSpeed"            "350"      // Speed.      
 
             "StatusHealth"            "180"      // Base health.
             "StatusHealthRegen"         "0.5"      // Health regeneration rate.
@@ -830,7 +830,7 @@
         {
             "Model"                   "models/creeps/neutral_creeps/n_creep_forest_trolls/n_creep_forest_troll_high_priest.vmdl"
             "BaseClass"               "npc_dota_creature"
-            "Level"                         "2"
+            "Level"                         "3"
             "SoundSet"               "n_creep_Ranged"
             "GameSoundsFile"         "soundevents/game_sounds_creeps.vsndevts"
             "Modelscale"              "1.0"
@@ -841,11 +841,11 @@
             "Ability4"               ""         // Ability 4
 
             "ArmorPhysical"            "8"
-            "MagicalResistance"         "12"
+            "MagicalResistance"         "8"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_RANGED_ATTACK"
-            "AttackDamageMin"         "20"      // Damage range min.
-            "AttackDamageMax"         "23"      // Damage range max.
+            "AttackDamageMin"         "10"      // Damage range min.
+            "AttackDamageMax"         "12"      // Damage range max.
             "AttackRate"            "1.5"      // Speed of attack.
             "AttackAnimationPoint"      "0.3"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
@@ -892,7 +892,7 @@
         {
             "Model"                   "models/creeps/neutral_creeps/n_creep_troll_dark_a/n_creep_troll_dark_a.vmdl"
             "BaseClass"               "npc_dota_creature"
-            "Level"                         "3"
+            "Level"                         "1"
             "SoundSet"               "n_creep_Melee"
             "GameSoundsFile"         "soundevents/game_sounds_creeps.vsndevts"
             "Modelscale"              "1.3"
@@ -903,12 +903,12 @@
             "Ability3"               ""         // Ability 3
             "Ability4"               ""         // Ability 4
 
-            "ArmorPhysical"            "12"
-            "MagicalResistance"         "12"
+            "ArmorPhysical"            "10"
+            "MagicalResistance"         "10"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
-            "AttackDamageMin"         "30"      // Damage range min.
-            "AttackDamageMax"         "35"      // Damage range max.
+            "AttackDamageMin"         "13"      // Damage range min.
+            "AttackDamageMax"         "18"      // Damage range max.
             "AttackRate"            "1"      // Speed of attack.
             "AttackAnimationPoint"      "0.3"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
@@ -963,12 +963,12 @@
             "Ability3"               ""         // Ability 3
             "Ability4"               ""         // Ability 4
 
-            "ArmorPhysical"            "11"
+            "ArmorPhysical"            "8"
             "MagicalResistance"         "2"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
-            "AttackDamageMin"         "15"      // Damage range min.
-            "AttackDamageMax"         "18"      // Damage range max.
+            "AttackDamageMin"         "8"      // Damage range min.
+            "AttackDamageMax"         "10"      // Damage range max.
             "AttackRate"            "1.2"      // Speed of attack.
             "AttackAnimationPoint"      "0.33"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
@@ -1027,8 +1027,8 @@
             "MagicalResistance"         "5"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
-            "AttackDamageMin"         "25"      // Damage range min.
-            "AttackDamageMax"         "30"      // Damage range max.
+            "AttackDamageMin"         "13"      // Damage range min.
+            "AttackDamageMax"         "15"      // Damage range max.
             "AttackRate"            "1.2"      // Speed of attack.
             "AttackAnimationPoint"      "0.33"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
@@ -1084,12 +1084,12 @@
             "Ability3"               ""         // Ability 3
             "Ability4"               ""         // Ability 4
 
-            "ArmorPhysical"            "11"
-            "MagicalResistance"         "2"
+            "ArmorPhysical"            "13"
+            "MagicalResistance"         "13"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
-            "AttackDamageMin"         "50"      // Damage range min.
-            "AttackDamageMax"         "55"      // Damage range max.
+            "AttackDamageMin"         "15"      // Damage range min.
+            "AttackDamageMax"         "20"      // Damage range max.
             "AttackRate"            "1.3"      // Speed of attack.
             "AttackAnimationPoint"      "0.33"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
@@ -1103,7 +1103,7 @@
             "BountyGoldMax"            "18"      // Gold earned max.
 
             "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
-            "MovementSpeed"            "350"      // Speed.      
+            "MovementSpeed"            "400"      // Speed.      
 
             "StatusHealth"            "520"      // Base health.
             "StatusHealthRegen"         "6"      // Health regeneration rate.
@@ -1134,7 +1134,7 @@
         {
             "Model"                   "models/creeps/item_creeps/i_creep_necro_archer/necro_archer.vmdl"
             "BaseClass"               "npc_dota_creature"
-            "Level"                         "3"
+            "Level"                         "1"
             "SoundSet"               "Creep_Good_Range"
             "GameSoundsFile"         "soundevents/game_sounds_creeps.vsndevts"
             "Modelscale"              ".6"
@@ -1148,8 +1148,8 @@
             "MagicalResistance"         "5"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_RANGED_ATTACK"
-            "AttackDamageMin"         "17"      // Damage range min.
-            "AttackDamageMax"         "17"      // Damage range max.
+            "AttackDamageMin"         "12"      // Damage range min.
+            "AttackDamageMax"         "15"      // Damage range max.
             "AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
             "AttackRate"            "1.7"      // Speed of attack.
             "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
@@ -1197,7 +1197,7 @@
         {
             "Model"                   "models/creeps/item_creeps/i_creep_necro_warrior/necro_warrior.vmdl"
             "BaseClass"               "npc_dota_creature"
-            "Level"                         "4"
+            "Level"                         "3"
             "SoundSet"               "Creep_Good_Melee"
             "GameSoundsFile"         "soundevents/game_sounds_creeps.vsndevts"
             "Modelscale"              "1"
@@ -1211,8 +1211,8 @@
             "MagicalResistance"         "40"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
-            "AttackDamageMin"         "23"      // Damage range min.
-            "AttackDamageMax"         "23"      // Damage range max.
+            "AttackDamageMin"         "16"      // Damage range min.
+            "AttackDamageMax"         "18"      // Damage range max.
             "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
             "AttackRate"            "1.8"      // Speed of attack.
             "AttackAnimationPoint"      "0.56"      // Normalized time in animation cycle to attack.
@@ -1269,15 +1269,15 @@
             "Ability3"               ""         // Ability 3
             "Ability4"               ""         // Ability 4
 
-            "ArmorPhysical"            "11"
-            "MagicalResistance"         "5"
+            "ArmorPhysical"            "20"
+            "MagicalResistance"         "20"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_RANGED_ATTACK"
-            "AttackDamageMin"         "60"      // Damage range min.
-            "AttackDamageMax"         "65"      // Damage range max.
+            "AttackDamageMin"         "30"      // Damage range min.
+            "AttackDamageMax"         "40"      // Damage range max.
             "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
             "AttackRate"            "0.8"      // Speed of attack.
-            "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
+            "AttackAnimationPoint"      "0.33"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
             "AttackRange"            "550"   // Range within a target can be attacked.
             "ProjectileModel"       "particles/units/heroes/hero_necrolyte/necrolyte_base_attack.vpcf"
@@ -1316,18 +1316,24 @@
                 "MoveSpeedGain"            "1"
                 "BountyGain"            "3"
                 "XPGain"               "15"
+                "AttachWearables"
+              {
+                    "Wearable1" { "ItemDef" "5623" }
+                    "Wearable2" { "ItemDef" "7427" }
+                    "Wearable3" { "ItemDef" "6591" }
+              }
             }
-        }
+        }    
         "wave_unit_6" 
         {
             "Model"                   "models/creeps/lane_creeps/creep_bad_melee/creep_bad_melee.vmdl"
             "BaseClass"               "npc_dota_creature"
-            "Level"                         "1"
+            "Level"                         "3"
             "SoundSet"               "Creep_Bad_Melee_Mega"
             "GameSoundsFile"         "soundevents/game_sounds_creeps.vsndevts"
             "Modelscale"              "1.12"
 
-            "Ability1"               ""         // Ability 1
+            "Ability1"               "dragon_knight_dragon_blood"         // Ability 1
             "Ability2"               ""         // Ability 2
             "Ability3"               ""         // Ability 3
             "Ability4"               ""         // Ability 4
@@ -1336,8 +1342,8 @@
             "MagicalResistance"         "0"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
-            "AttackDamageMin"         "23"      // Damage range min.
-            "AttackDamageMax"         "25"      // Damage range max.
+            "AttackDamageMin"         "15"      // Damage range min.
+            "AttackDamageMax"         "18"      // Damage range max.
             "AttackRate"            "1.3"      // Speed of attack.
             "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
@@ -1396,8 +1402,8 @@
             "MagicalResistance"         "12"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
-            "AttackDamageMin"         "30"      // Damage range min.
-            "AttackDamageMax"         "35"      // Damage range max.
+            "AttackDamageMin"         "19"      // Damage range min.
+            "AttackDamageMax"         "23"      // Damage range max.
             "AttackRate"            "1.2"      // Speed of attack.
             "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
@@ -1442,13 +1448,13 @@
         {
             "Model"                   "models/creeps/lane_creeps/creep_bad_melee/creep_bad_melee_mega.vmdl"
             "BaseClass"               "npc_dota_creature"
-            "Level"                         "1"
+            "Level"                         "5"
             "SoundSet"               "Creep_Bad_Melee_Mega"
             "GameSoundsFile"         "soundevents/game_sounds_creeps.vsndevts"
             "Modelscale"              "1.5"
             "ConsideredHero"        "1"
 
-            "Ability1"               ""         // Ability 1
+            "Ability1"               "dragon_knight_dragon_blood"         // Ability 1
             "Ability2"               ""         // Ability 2
             "Ability3"               ""         // Ability 3
             "Ability4"               ""         // Ability 4
@@ -1457,8 +1463,8 @@
             "MagicalResistance"         "20"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
-            "AttackDamageMin"         "80"      // Damage range min.
-            "AttackDamageMax"         "80"      // Damage range max.
+            "AttackDamageMin"         "41"      // Damage range min.
+            "AttackDamageMax"         "46"      // Damage range max.
             "AttackRate"            "1.3"      // Speed of attack.
             "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
@@ -1517,8 +1523,8 @@
             "MagicalResistance"         "70"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_RANGED_ATTACK"
-            "AttackDamageMin"         "40"      // Damage range min.
-            "AttackDamageMax"         "45"      // Damage range max.
+            "AttackDamageMin"         "21"      // Damage range min.
+            "AttackDamageMax"         "23"      // Damage range max.
             "AttackRate"            "1.4"      // Speed of attack.
             "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
@@ -1579,8 +1585,8 @@
             "MagicalResistance"         "50"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_RANGED_ATTACK"
-            "AttackDamageMin"         "32"      // Damage range min.
-            "AttackDamageMax"         "34"      // Damage range max.
+            "AttackDamageMin"         "18"      // Damage range min.
+            "AttackDamageMax"         "20"      // Damage range max.
             "AttackRate"            "1.3"      // Speed of attack.
             "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
@@ -1642,9 +1648,9 @@
             "MagicalResistance"         "80"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_RANGED_ATTACK"
-            "AttackDamageMin"         "100"      // Damage range min.
-            "AttackDamageMax"         "140"      // Damage range max.
-            "AttackRate"            "1.5"      // Speed of attack.
+            "AttackDamageMin"         "46"      // Damage range min.
+            "AttackDamageMax"         "50"      // Damage range max.
+            "AttackRate"            "1.1"      // Speed of attack.
             "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
             "AttackRange"            "450"   // Range within a target can be attacked.
@@ -1704,8 +1710,8 @@
             "MagicalResistance"         "5"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
-            "AttackDamageMin"         "33"      // Damage range min.
-            "AttackDamageMax"         "35"      // Damage range max.
+            "AttackDamageMin"         "21"      // Damage range min.
+            "AttackDamageMax"         "25"      // Damage range max.
             "AttackRate"            "1.75"      // Speed of attack.
             "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
@@ -1764,8 +1770,8 @@
             "MagicalResistance"         "10"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
-            "AttackDamageMin"         "50"      // Damage range min.
-            "AttackDamageMax"         "53"      // Damage range max.
+            "AttackDamageMin"         "24"      // Damage range min.
+            "AttackDamageMax"         "28"      // Damage range max.
             "AttackRate"            "1.75"      // Speed of attack.
             "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
@@ -1825,8 +1831,8 @@
             "MagicalResistance"         "25"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
-            "AttackDamageMin"         "150"      // Damage range min.
-            "AttackDamageMax"         "150"      // Damage range max.
+            "AttackDamageMin"         "51"      // Damage range min.
+            "AttackDamageMax"         "55"      // Damage range max.
             "AttackRate"            "1.3"      // Speed of attack.
             "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
@@ -1885,8 +1891,8 @@
             "MagicalResistance"         "9"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_RANGED_ATTACK"
-            "AttackDamageMin"         "35"      // Damage range min.
-            "AttackDamageMax"         "38"      // Damage range max.
+            "AttackDamageMin"         "25"      // Damage range min.
+            "AttackDamageMax"         "28"      // Damage range max.
             "AttackRate"            "0.7"      // Speed of attack.
             "AttackAnimationPoint"      "0.5"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
@@ -1947,8 +1953,8 @@
             "MagicalResistance"         "15"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
-            "AttackDamageMin"         "55"      // Damage range min.
-            "AttackDamageMax"         "60"      // Damage range max.
+            "AttackDamageMin"         "27"      // Damage range min.
+            "AttackDamageMax"         "30"      // Damage range max.
             "AttackRate"            "0.8"      // Speed of attack.
             "AttackAnimationPoint"      "0.5"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
@@ -2010,8 +2016,8 @@
             "MagicalResistance"         "9"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_RANGED_ATTACK"
-            "AttackDamageMin"         "170"      // Damage range min.
-            "AttackDamageMax"         "185"      // Damage range max.
+            "AttackDamageMin"         "55"      // Damage range min.
+            "AttackDamageMax"         "61"      // Damage range max.
             "AttackRate"            "1.3"      // Speed of attack.
             "AttackAnimationPoint"      "0.5"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
@@ -2072,8 +2078,8 @@
             "MagicalResistance"         "10"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
-            "AttackDamageMin"         "50"      // Damage range min.
-            "AttackDamageMax"         "60"      // Damage range max.
+            "AttackDamageMin"         "29"      // Damage range min.
+            "AttackDamageMax"         "32"      // Damage range max.
             "AttackRate"            "1"      // Speed of attack.
             "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
@@ -2132,8 +2138,8 @@
             "MagicalResistance"         "25"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
-            "AttackDamageMin"         "100"      // Damage range min.
-            "AttackDamageMax"         "110"      // Damage range max.
+            "AttackDamageMin"         "33"      // Damage range min.
+            "AttackDamageMax"         "35"      // Damage range max.
             "AttackRate"            "1.8"      // Speed of attack.
             "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
@@ -2193,8 +2199,8 @@
             "MagicalResistance"         "10"
 
             "AttackCapabilities"      "DOTA_UNIT_CAP_MELEE_ATTACK"
-            "AttackDamageMin"         "250"      // Damage range min.
-            "AttackDamageMax"         "300"      // Damage range max.
+            "AttackDamageMin"         "65"      // Damage range min.
+            "AttackDamageMax"         "73"      // Damage range max.
             "AttackRate"            "2"      // Speed of attack.
             "AttackAnimationPoint"      "0.4"      // Normalized time in animation cycle to attack.
             "AttackAcquisitionRange"   "5000" // Range within a target can be acquired.
