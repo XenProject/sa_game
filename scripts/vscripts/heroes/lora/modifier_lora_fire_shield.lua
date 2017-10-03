@@ -25,7 +25,7 @@ end
 
 function modifier_lora_fire_shield:OnIntervalThink( )
 	if IsServer() then
-		enemyUnits = FindUnitsInRadius(DOTA_TEAM_BADGUYS, self:GetParent():GetAbsOrigin(),
+		local enemyUnits = FindUnitsInRadius(DOTA_TEAM_BADGUYS, self:GetParent():GetAbsOrigin(),
 				nil, self.radius,
 	    		DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL,
 	        	DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)

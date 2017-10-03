@@ -26,11 +26,11 @@ function GameMode:OnGameRulesStateChange(keys)
     SpecArena:Init()
   end
 
-  --if newState == DOTA_GAMERULES_STATE_STRATEGY_TIME then
+  if newState == DOTA_GAMERULES_STATE_STRATEGY_TIME then
     Timers:CreateTimer(0.5, function()
       CustomGameEventManager:Send_ServerToAllClients("StrategyScreen", nil)
     end) 
-  --end
+  end
 end
 
 -- An NPC has spawned somewhere in game.  This includes heroes

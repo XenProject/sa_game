@@ -1346,6 +1346,8 @@
             "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
             "UnitRelationshipClass"      "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
+            "vscripts"              "ai/wave_unit_5_boss.lua"
+
             "Creature"
             {
                 //Level Up
