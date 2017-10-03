@@ -25,23 +25,25 @@ end
 --------------------------------------------------------------------------------
 
 function garp_spear:OnProjectileHit( hTarget, vLocation )
-	if hTarget ~= nil and ( not hTarget:IsInvulnerable() ) and ( not hTarget:TriggerSpellAbsorb( self ) ) and ( not hTarget:IsMagicImmune() ) then
-		--EmitSoundOn( "Hero_VengefulSpirit.MagicMissileImpact", hTarget )
-		local duration_stun = self:GetSpecialValueFor( "duration_stun" )
-		local totalDamage = self:GetCaster():GetAgility()*self:GetSpecialValueFor("agi_multiplier") + self:GetSpecialValueFor("damage")
+	if IsServer() then
+		if hTarget ~= nil and ( not hTarget:IsInvulnerable() ) and ( not hTarget:TriggerSpellAbsorb( self ) ) and ( not hTarget:IsMagicImmune() ) then
+			--EmitSoundOn( "Hero_VengefulSpirit.MagicMissileImpact", hTarget )
+			local duration_stun = self:GetSpecialValueFor( "duration_stun" )
+			local totalDamage = self:GetCaster():GetAgility()*self:GetSpecialValueFor("agi_multiplier") + self:GetSpecialValueFor("damage")
 
-		local damage = {
-			victim = hTarget,
-			attacker = self:GetCaster(),
-			damage = totalDamage,
-			damage_type = DAMAGE_TYPE_PHYSICAL,
-			ability = self
-		}
-		ApplyDamage( damage )
-		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stun", { duration = duration_stun } )
-		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_garp_bleeding", nil)
+			local damage = {
+				victim = hTarget,
+				attacker = self:GetCaster(),
+				damage = totalDamage,
+				damage_type = DAMAGE_TYPE_PHYSICAL,
+				ability = self
+			}
+			hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stun", { duration = duration_stun } )
+			hTarget:AddNewModifier( self:GetCaster(), self, "modifier_garp_bleeding", nil)
+			ApplyDamage( damage )
 
-		EmitSoundOn( "Hero_PhantomLancer.Attack", hTarget )
+			EmitSoundOn( "Hero_PhantomLancer.Attack", hTarget )
+		end
 	end
 	return true
 end

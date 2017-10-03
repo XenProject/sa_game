@@ -442,6 +442,7 @@
         "particle"  "particles/units/heroes/hero_bloodseeker/bloodseeker_rupture_nuke.vpcf"
         "particle"  "particles/heroes/garp/garp_spear_burst.vpcf"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_phantom_lancer.vsndevts"
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_sandking.vsndevts"
       }
 
       "AbilitySpecial"
@@ -1264,6 +1265,12 @@
         }
         "modifier_fireball"
         {
+          "Aura"      "modifier_fireball_debuff"
+          "Aura_Radius"   "%damage_aoe"
+          "Aura_Teams"  "DOTA_UNIT_TARGET_TEAM_ENEMY"
+          "Aura_Types"  "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+          "Aura_Flags"  "DOTA_UNIT_TARGET_FLAG_NONE"
+
           "OnCreated"
           {
             "RunScript"
@@ -1278,35 +1285,6 @@
               "Target"            "TARGET"
             }
           }
-          "ThinkInterval" "1.0"
-          "OnIntervalThink"
-          {
-            "ActOnTargets"
-            {
-              "Target"
-              {
-                "Center"    "TARGET"
-                "Radius"   "%damage_aoe"
-                "Teams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
-                "Types"   "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-              }   
-              "Action"    
-              {
-                "Damage"
-                {
-                  "Target"    "TARGET"
-                  "Type"      "DAMAGE_TYPE_MAGICAL"
-                  "Damage"    "%damage"
-                }
-                "AttachEffect"
-                {
-                  "EffectName"        "particles/units/heroes/hero_phoenix/phoenix_fire_spirit_burn.vpcf"
-                  "EffectAttachType"  "follow_origin"
-                  "Target"            "TARGET"
-                }
-              }
-            }
-          }
           "States"
             {
               "MODIFIER_STATE_INVULNERABLE"   "MODIFIER_STATE_VALUE_ENABLED"
@@ -1317,6 +1295,27 @@
               "MODIFIER_STATE_FLYING"       "MODIFIER_STATE_VALUE_ENABLED"
               "MODIFIER_STATE_DISARMED"     "MODIFIER_STATE_VALUE_ENABLED"
             }
+        }
+        "modifier_fireball_debuff"
+        {
+          "IsHidden"    "1"
+          "IsDebuff"  "1"
+          "ThinkInterval" "1.0"
+          "OnIntervalThink"
+          {
+            "Damage"
+            {
+              "Target"    "TARGET"
+              "Type"      "DAMAGE_TYPE_MAGICAL"
+              "Damage"    "%damage"
+            }
+            "AttachEffect"
+            {
+              "EffectName"        "particles/units/heroes/hero_phoenix/phoenix_fire_spirit_burn.vpcf"
+              "EffectAttachType"  "follow_origin"
+              "Target"            "TARGET"
+            }
+          }
         }
       }
 

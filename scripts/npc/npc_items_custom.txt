@@ -5176,16 +5176,6 @@
             }
           }
         }
-
-        "Properties"
-        {
-          "MODIFIER_PROPERTY_EVASION_CONSTANT" "%chance"
-        }
-
-        "States"
-        {
-          "MODIFIER_STATE_CANNOT_MISS"      "MODIFIER_STATE_VALUE_ENABLED"
-        }
       }
       "modifier_sa_death_bow_crit"
       {

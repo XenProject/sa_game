@@ -46,8 +46,6 @@ function SpecArena:Init()
     end
 
     self.currentGameRound = 0
-    self.roundCreeps = 24
-    self.roundKillers = 12
     self.unitsLeft = 0
     self.readyPlayers = 0
     self.preRoundTime = 40
@@ -98,7 +96,7 @@ function SpecArena:SpawnWaveUnits()
 	  	end
 	end
 
-	Timers:CreateTimer( 5, function()
+	Timers:CreateTimer( 10, function()
 		for i=1, self.roundKillers do
 			if i%3 == 0 then 
 		  		local unit = CreateUnitByName( "wave_unit_" .. self.currentGameRound .. "_killer", SPAWN_3 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
@@ -110,7 +108,7 @@ function SpecArena:SpawnWaveUnits()
 		end
 	end )
 
-	Timers:CreateTimer( 8, function()
+	Timers:CreateTimer( 13, function()
 		local i = RandomInt(1, 3)
 		if i == 1 then local unit = CreateUnitByName( "wave_unit_" .. self.currentGameRound .. "_boss", SPAWN_1 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS ) end
 		if i == 2 then local unit = CreateUnitByName( "wave_unit_" .. self.currentGameRound .. "_boss", SPAWN_2 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS ) end

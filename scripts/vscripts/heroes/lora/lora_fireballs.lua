@@ -320,7 +320,7 @@ function FireBallsPhysics( event )
 			if Debug then DebugDrawCircle(point, endColor, 100, 25, true, 2) end
 
 			-- Last collision ends the unit
-			if collision then 
+			--if collision then 
 
 				-- Heal is calculated as: a percentage of the units average attack damage multiplied by the amount of attacks the spirit did.
 				--print("Healed ",heal_done)
@@ -329,7 +329,7 @@ function FireBallsPhysics( event )
 	        	unit:OnPhysicsFrame(nil)
 	        	unit:ForceKill(false)
 
-	        end
+	        --end
 	    end
     end)
 end
