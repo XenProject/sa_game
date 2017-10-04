@@ -266,7 +266,7 @@ function GameMode:OnHeroDeath(keys)
   end
 
   if SpecArena:GetHeroCount(true) == 0 then
-    GameRules:SetCustomVictoryMessage("You Loose")
+    GameRules:SetCustomVictoryMessage("You Lose")
     SpecArena:EndGame(DOTA_TEAM_BADGUYS)
     --GameRules:ResetToHeroSelection()
   end

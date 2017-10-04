@@ -34,7 +34,7 @@ function elizaveta_bright_arrow:OnProjectileHit( hTarget, vLocation )
 			victim = hTarget,
 			attacker = self:GetCaster(),
 			damage = self:GetSpecialValueFor("damage_base")+(modifier:GetStackCount()*self:GetSpecialValueFor("damage_per_stack")),
-			damage_type = DAMAGE_TYPE_MAGICAL,
+			damage_type = self:GetAbilityDamageType(),
 			ability = self
 		}
 		ApplyDamage(damageTable)
