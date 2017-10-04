@@ -37,6 +37,8 @@ function SpecArena:Init()
 
 	GameMode:SetExecuteOrderFilter(Dynamic_Wrap(SpecArena, "OrderFilter"), self)
 
+	GameRules:SetCustomVictoryMessage("You win!")
+
 	self.allHeroes = {}
 	self.allPlayers = {}
 	for playerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
@@ -86,6 +88,7 @@ end
 function SpecArena:SpawnWaveUnits()
 	self.State = STATE_ROUND_WAVE
 	self.unitsLeft = self.allEnemies
+	self:ChangeUnitsLeft(self.unitsLeft, self.allEnemies)
 	for i=1, self.roundCreeps[#self.allPlayers] do
 		if i%3 == 0 then 
 	  		local unit = CreateUnitByName( "wave_unit_" .. self.currentGameRound, SPAWN_3 + RandomVector( RandomFloat( 0, 200 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
@@ -179,5 +182,21 @@ function SpecArena:GiveRoundBounty()
     goldBounty = self.allEnemies / heroCount * self.nGoldPerWave[self.currentGameRound]
     DoWithAllHeroes(function(hero)
     	hero:ModifyGold(goldBounty, false, DOTA_ModifyGold_Unspecified)
+    end)
+end
+
+function SpecArena:ChangeUnitsLeft( unitsLeft, allUnits )
+	CustomNetTables:SetTableValue("sa_player_table", "sa_counter", 
+    {
+        unitsLeft = unitsLeft,
+        allUnits = allUnits
+    })
+end
+
+function SpecArena:EndGame(teamWin)
+    local GameMode = GameRules:GetGameModeEntity()
+    --local data = LiA:GetDataForSend()
+    Timers:CreateTimer(1,function()
+        GameRules:SetGameWinner(teamWin)
     end)
 end

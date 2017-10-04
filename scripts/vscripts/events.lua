@@ -250,6 +250,29 @@ function GameMode:OnTeamKillCredit(keys)
   local killerTeamNumber = keys.teamnumber
 end
 
+function GameMode:OnHeroDeath(keys)
+  local hero = EntIndexToHScript(keys.entindex_killed)
+  local attacker
+  local attackerHero
+
+  if keys.entindex_attacker then 
+      attacker = EntIndexToHScript(keys.entindex_attacker)
+      attackerHero = PlayerResource:GetSelectedHeroEntity(attacker:GetPlayerOwnerID())
+  end 
+  
+  local ownerHero = hero:GetPlayerOwner()
+  if ownerHero then
+      Timers:CreateTimer(0.1,function() ownerHero:SetKillCamUnit(nil) end) 
+  end
+
+  if SpecArena:GetHeroCount(true) == 0 then
+    GameRules:SetCustomVictoryMessage("You Loose")
+    SpecArena:EndGame(DOTA_TEAM_BADGUYS)
+    --GameRules:ResetToHeroSelection()
+  end
+
+end
+
 -- An entity died
 function GameMode:OnEntityKilled( keys )
   DebugPrint( '[BAREBONES] OnEntityKilled Called' )
@@ -274,9 +297,15 @@ function GameMode:OnEntityKilled( keys )
 
   local damagebits = keys.damagebits -- This might always be 0 and therefore useless
 
+  if killedUnit:IsRealHero() then
+    GameMode:OnHeroDeath(keys)
+    return
+  end
+
   -- Put code here to handle when an entity gets killed
-  if not killedUnit:IsHero() and string.find(killedUnit:GetUnitName(),"wave_unit_") then
+  if string.find(killedUnit:GetUnitName(),"wave_unit_") then
     SpecArena.unitsLeft = SpecArena.unitsLeft-1
+    SpecArena:ChangeUnitsLeft( SpecArena.unitsLeft, SpecArena.allEnemies )
     if SpecArena.unitsLeft == 0 then
       SpecArena:WaveEnd()
     end
